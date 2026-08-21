@@ -1,0 +1,15 @@
+{
+  "lastUpdated": "2026-08-21 18:03",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure.",
+  "entries": [
+    {
+      "label": "Batch run #1 — Module 01 Concepts 2-4",
+      "outcome": "All 3 concepts built cleanly, 0 errors, 0 retries.",
+      "totalTokens": 706037,
+      "toolUses": 160,
+      "durationMs": 3998282,
+      "estimatedCostLowUSD": 5.1,
+      "estimatedCostHighUSD": 6.0
+    }
+  ]
+}

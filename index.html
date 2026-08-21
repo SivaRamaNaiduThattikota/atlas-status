@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas status</title>
+<style>
+.viz-root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb;
+  --ink:#0b0b0b; --ink-2:#52514e; --ink-muted:#898781;
+  --line:#e1e0d9; --border:rgba(11,11,11,.10);
+  --rag:#1baf7a; --rag-bg:#e6f7f0;
+  --ml:#2a78d6; --ml-bg:#eaf2fc;
+  --good:#0ca30c;
+}
+[data-theme="dark"] .viz-root{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-muted:#898781;
+  --line:#2c2c2a; --border:rgba(255,255,255,.10);
+  --rag:#199e70; --rag-bg:#122a20;
+  --ml:#3987e5; --ml-bg:#122234;
+  --good:#0ca30c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.wrap{max-width:520px;margin:0 auto;padding:20px 16px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+h1{font-size:22px;margin:0}
+.theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:8px;padding:8px 12px;font-size:13px}
+.check-btn{width:100%;border:none;background:var(--ink);color:var(--page);border-radius:10px;padding:14px;font-size:15px;font-weight:700;margin:14px 0 6px}
+.last-checked{font-size:12.5px;color:var(--ink-muted);text-align:center;margin-bottom:18px;display:block}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.card-title{font-weight:800;font-size:15px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px}
+.rag-dot{background:var(--rag)}.ml-dot{background:var(--ml)}
+.bar-track{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:8px 0}
+.bar-fill{height:100%;border-radius:99px}
+.rag-fill{background:var(--rag)}.ml-fill{background:var(--ml)}
+.progress-text{font-size:13px;color:var(--ink-2)}
+.active-concept{font-size:13.5px;margin-top:8px;padding:10px;border-radius:8px}
+.rag-active{background:var(--rag-bg)}.ml-active{background:var(--ml-bg)}
+.active-concept b{display:block;font-size:12px;color:var(--ink-muted);margin-bottom:3px;font-weight:600}
+.cost-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px}
+.cost-total{font-size:24px;font-weight:800;margin:4px 0}
+.cost-row{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.cost-row:first-of-type{border-top:none}
+.note{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--ink-muted);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+  <div class="topbar">
+    <h1>Atlas status</h1>
+    <button class="theme-toggle" id="themeToggle" type="button">Dark</button>
+  </div>
+  <button class="check-btn" id="checkNow" type="button">Refresh now</button>
+  <span class="last-checked" id="lastChecked">Not checked yet</span>
+
+  <div class="card">
+    <div class="card-head"><span class="card-title"><i class="dot rag-dot"></i>RAG Atlas</span><span class="progress-text" id="ragCount">—</span></div>
+    <div class="bar-track"><div class="bar-fill rag-fill" id="ragBar" style="width:0%"></div></div>
+    <div class="active-concept rag-active" id="ragActive">Checking…</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="card-title"><i class="dot ml-dot"></i>ML Atlas</span><span class="progress-text" id="mlCount">—</span></div>
+    <div class="bar-track"><div class="bar-fill ml-fill" id="mlBar" style="width:0%"></div></div>
+    <div class="active-concept ml-active" id="mlActive">Checking…</div>
+  </div>
+
+  <div class="cost-card">
+    <span class="progress-text">TOTAL COST SO FAR (estimate)</span>
+    <div class="cost-total" id="costTotal">—</div>
+    <div id="costRows"></div>
+  </div>
+
+  <div class="note">Estimates only, updated after each batch — not a live billing meter. Check your Anthropic Console for the authoritative number.</div>
+</div>
+</div>
+<script>
+async function fetchText(path){
+  try{const res=await fetch(path+'?_='+Date.now(),{cache:'no-store'});if(!res.ok)return null;return await res.text()}catch(e){return null}
+}
+async function fetchJson(path){
+  const text=await fetchText(path);
+  if(!text)return null;
+  try{return JSON.parse(text)}catch(e){return null}
+}
+function countBuilt(roadmapText){
+  if(!roadmapText)return {built:0,total:0};
+  const modules=[...roadmapText.matchAll(/\{n:\d+,[^{]*?concepts:\[[^\]]*\]\}/g)];
+  let total=0,built=0;
+  modules.forEach(m=>{
+    const text=m[0];
+    const conceptsMatch=text.match(/concepts:\[([^\]]*)\]/);
+    if(!conceptsMatch)return;
+    const count=(conceptsMatch[1].match(/'/g)||[]).length/2;
+    total+=count;
+    const builtMatch=text.match(/builtCount:(\d+)/);
+    if(builtMatch)built+=Math.min(Number(builtMatch[1]),count);
+  });
+  return {built,total};
+}
+function activeConceptTitle(roadmapText){
+  if(!roadmapText)return null;
+  const activeModule=roadmapText.match(/\{n:(\d+),title:'([^']*)',[^{]*?next:true,builtCount:(\d+),concepts:\[([^\]]*)\]\}/);
+  if(!activeModule)return null;
+  const concepts=activeModule[4].split("','").map(s=>s.replace(/^'|'$/g,''));
+  const idx=Math.min(Number(activeModule[3]),concepts.length-1);
+  return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1]};
+}
+
+async function checkRag(){
+  const roadmap=await fetchText('rag-roadmap.js');
+  const {built,total}=countBuilt(roadmap);
+  document.querySelector('#ragCount').textContent=`${built} / ${total}`;
+  document.querySelector('#ragBar').style.width=(total?(built/total*100):0)+'%';
+  const active=activeConceptTitle(roadmap);
+  document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+}
+async function checkMl(){
+  const roadmap=await fetchText('ml-roadmap.js');
+  const {built,total}=countBuilt(roadmap);
+  document.querySelector('#mlCount').textContent=`${built} / ${total}`;
+  document.querySelector('#mlBar').style.width=(total?(built/total*100):0)+'%';
+  const active=activeConceptTitle(roadmap);
+  document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+}
+async function checkCost(){
+  const [ragLog,mlLog]=await Promise.all([fetchJson('rag-cost-log.json'),fetchJson('ml-cost-log.json')]);
+  const sum=(log)=>({
+    low:(log?.entries||[]).reduce((s,e)=>s+(e.estimatedCostLowUSD||0),0),
+    high:(log?.entries||[]).reduce((s,e)=>s+(e.estimatedCostHighUSD||0),0),
+  });
+  const rag=sum(ragLog),ml=sum(mlLog);
+  const totalLow=rag.low+ml.low,totalHigh=rag.high+ml.high;
+  document.querySelector('#costTotal').textContent=`$${totalLow.toFixed(2)}–$${totalHigh.toFixed(2)}`;
+  document.querySelector('#costRows').innerHTML=
+    `<div class="cost-row"><span>RAG Atlas</span><span>$${rag.low.toFixed(2)}–$${rag.high.toFixed(2)}</span></div>`+
+    `<div class="cost-row"><span>ML Atlas</span><span>$${ml.low.toFixed(2)}–$${ml.high.toFixed(2)}</span></div>`;
+}
+async function runCheck(){
+  document.querySelector('#checkNow').disabled=true;
+  await Promise.all([checkRag(),checkMl(),checkCost()]);
+  document.querySelector('#lastChecked').textContent='Last checked: '+new Date().toLocaleTimeString();
+  document.querySelector('#checkNow').disabled=false;
+}
+document.querySelector('#checkNow').addEventListener('click',runCheck);
+runCheck();
+
+const themeButton=document.querySelector('#themeToggle');
+const saved=localStorage.getItem('atlasPhoneStatusTheme');
+if(saved)document.documentElement.dataset.theme=saved;
+themeButton.textContent=document.documentElement.dataset.theme==='dark'?'Light':'Dark';
+themeButton.addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=next;
+  localStorage.setItem('atlasPhoneStatusTheme',next);
+  themeButton.textContent=next==='dark'?'Light':'Dark';
+});
+</script>
+</body>
+</html>

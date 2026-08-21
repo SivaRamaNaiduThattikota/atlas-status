@@ -1,0 +1,33 @@
+{
+  "lastUpdated": "2026-08-21 14:50",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions.",
+  "entries": [
+    {
+      "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
+      "outcome": "Concept 01: done. Concept 02: done. Concept 03: stalled after 6 retry attempts, failed. Concept 04: never started.",
+      "totalTokens": 1532344,
+      "toolUses": 201,
+      "durationMs": 6283622,
+      "estimatedCostLowUSD": 11.0,
+      "estimatedCostHighUSD": 13.0
+    },
+    {
+      "label": "Resume attempt — re-verified Concepts 1-2, Concept 3 stalled 12+ more times",
+      "outcome": "Stopped manually after confirming Concept 03 was repeatedly failing, not making progress. No new lesson content produced.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 6.0,
+      "estimatedCostHighUSD": 9.0
+    },
+    {
+      "label": "Concept 03 built manually in-conversation (not a separate workflow run)",
+      "outcome": "Done — no subagent stalls. Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
+    }
+  ]
+}
