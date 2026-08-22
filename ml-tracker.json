@@ -116,6 +116,11 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "2026-08-23 01:23:23"
+    "timestamp": "2026-08-23 01:25:56"
+  },
+  "M03C07": {
+    "title": "Diagnosing class imbalance early",
+    "status": "researching",
+    "timestamp": "2026-08-23 01:27:15"
   }
 }
