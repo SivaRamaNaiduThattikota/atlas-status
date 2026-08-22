@@ -111,5 +111,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 21:20:00",
     "note": "Module 05 Concept 01 (What is information retrieval?) did not exist yet despite Module 04 being fully complete -- self-healed by building it first (minimal but complete, all b/s ids, own verified references) so Concept 02 had a real template/dedup source and backlink target, then built Concept 02 as assigned. roadmap.js builtCount for module 5 set 0->2 (both concepts), not 1->2 as originally assumed."
+  },
+  "M05C03": {
+    "title": "Sparse retrieval and dense retrieval",
+    "status": "writing",
+    "timestamp": "Sat Aug 22 21:20:56 IST 2026"
   }
 }
