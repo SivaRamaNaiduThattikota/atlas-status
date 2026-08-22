@@ -12,5 +12,19 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Sat Aug 22 16:18:44 IST 2026"
+  },
+  "M03C12": {
+    "title": "When RAG should not be used",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sat Aug 22 16:34:25 IST 2026"
+  },
+  "M03C09": {
+    "title": "Naive, advanced and modular RAG taxonomy",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sat Aug 22 15:52:22 IST 2026"
   }
 }
