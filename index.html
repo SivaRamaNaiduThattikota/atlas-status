@@ -137,7 +137,7 @@ function activeConceptTitle(roadmapText){
   if(!activeModule)return null;
   const concepts=activeModule[4].split("','").map(s=>s.replace(/^'|'$/g,''));
   const idx=Math.min(Number(activeModule[3]),concepts.length-1);
-  return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1]};
+  return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1],conceptNumber:idx+1};
 }
 
 function latestTrackerEntry(tracker){
@@ -163,7 +163,7 @@ async function checkRag(){
   document.querySelector('#ragCount').textContent=`${built} / ${total}`;
   document.querySelector('#ragBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
-  document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+  document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
   renderLiveStatus(document.querySelector('#ragLiveStatus'),tracker);
 }
 async function checkMl(){
