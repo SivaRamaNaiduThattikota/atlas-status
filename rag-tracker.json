@@ -193,12 +193,16 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Sun Aug 23 00:21:47 IST 2026",
-    "note": "Written from a fully-resolved research plan (CER 0.20->0.00 on ORDER 4471/0RDER 447l, don't/donâ€™t mojibake, Cleaning Toggle Bench lab). Self-checked: tag-balanced, all b01-b10/s01-s24 ids present exactly once, JS syntax valid, lab logic re-verified in a sandboxed vm against the raw 153-character record (the plan's own '178-character' estimate did not match its own exact fixed string, so the readout computes the true baseline length live instead of hardcoding the mismatched number). roadmap.js and index.html not touched, per instructions -- reserved for the finalize stage."
+    "timestamp": "Sun Aug 23 00:25:31 IST 2026"
   },
   "M05C08": {
     "title": "Precision, recall and F-score",
     "status": "writing",
     "timestamp": "Sun Aug 23 00:04:14 IST 2026"
+  },
+  "M06C06": {
+    "title": "Deduplication and canonicalization",
+    "status": "researching",
+    "timestamp": "Sun Aug 23 00:26:39 IST 2026"
   }
 }
