@@ -37,7 +37,26 @@
   },
   "M02C08": {
     "title": "Metric-target misalignment and Goodhart's law",
-    "status": "writing",
-    "timestamp": "2026-08-22"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 21:10:00",
+    "note": "Agent's own attempt got cut off before writing any files -- completed manually reusing its fully-verified plan (curl-checked references, hand-verified optimization-pressure simulation), independently re-verified before use."
+  },
+  "M02C05": {
+    "title": "Regression metrics — MAE, RMSE and R²",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:32:00",
+    "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but its tracker checkpoint entry was never written (a recurring gap in this log, no functional impact)."
+  },
+  "M02C06": {
+    "title": "Calibration — what a probability actually means",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:45:00",
+    "note": "Backfilled -- same tracker-write gap as M02C05."
   }
 }
