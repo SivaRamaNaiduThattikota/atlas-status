@@ -90,7 +90,14 @@
   },
   "M03C03": {
     "title": "Missing data mechanisms — MCAR, MAR and MNAR",
-    "status": "writing",
-    "timestamp": "2026-08-22 16:39:13"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 16:56:20"
+  },
+  "M03C04": {
+    "title": "Outlier detection",
+    "status": "researching",
+    "timestamp": "2026-08-22"
   }
 }
