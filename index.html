@@ -43,6 +43,10 @@ h1{font-size:22px;margin:0}
 .active-concept{font-size:13.5px;margin-top:8px;padding:10px;border-radius:8px}
 .rag-active{background:var(--rag-bg)}.ml-active{background:var(--ml-bg)}
 .active-concept b{display:block;font-size:12px;color:var(--ink-muted);margin-bottom:3px;font-weight:600}
+.live-status{font-size:12px;color:var(--ink-muted);margin-top:8px;display:none}
+.live-status.show{display:flex;align-items:center;gap:6px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--good);flex:none;animation:live-pulse 1.6s ease-in-out infinite}
+@keyframes live-pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .cost-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px}
 .cost-total{font-size:24px;font-weight:800;margin:4px 0}
 .cost-row{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
@@ -64,12 +68,14 @@ h1{font-size:22px;margin:0}
     <div class="card-head"><span class="card-title"><i class="dot rag-dot"></i>RAG Atlas</span><span class="progress-text" id="ragCount">—</span></div>
     <div class="bar-track"><div class="bar-fill rag-fill" id="ragBar" style="width:0%"></div></div>
     <div class="active-concept rag-active" id="ragActive">Checking…</div>
+    <div class="live-status" id="ragLiveStatus"></div>
   </div>
 
   <div class="card">
     <div class="card-head"><span class="card-title"><i class="dot ml-dot"></i>ML Atlas</span><span class="progress-text" id="mlCount">—</span></div>
     <div class="bar-track"><div class="bar-fill ml-fill" id="mlBar" style="width:0%"></div></div>
     <div class="active-concept ml-active" id="mlActive">Checking…</div>
+    <div class="live-status" id="mlLiveStatus"></div>
   </div>
 
   <div class="cost-card">
@@ -114,21 +120,38 @@ function activeConceptTitle(roadmapText){
   return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1]};
 }
 
+function latestTrackerEntry(tracker){
+  if(!tracker||typeof tracker!=='object')return null;
+  const entries=Object.values(tracker).filter(e=>e&&e.timestamp);
+  if(!entries.length)return null;
+  entries.sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
+  return entries[0];
+}
+function renderLiveStatus(el,tracker){
+  if(!el)return;
+  const latest=latestTrackerEntry(tracker);
+  if(!latest){el.classList.remove('show');el.innerHTML='';return}
+  const label=latest.status==='done'?'last finished':'last attempt had issues';
+  el.classList.add('show');
+  el.innerHTML=`<span class="live-dot"></span><span>${label}: <b>${latest.title||'?'}</b></span>`;
+}
 async function checkRag(){
-  const roadmap=await fetchText('rag-roadmap.js');
+  const [roadmap,tracker]=await Promise.all([fetchText('rag-roadmap.js'),fetchJson('rag-tracker.json')]);
   const {built,total}=countBuilt(roadmap);
   document.querySelector('#ragCount').textContent=`${built} / ${total}`;
   document.querySelector('#ragBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+  renderLiveStatus(document.querySelector('#ragLiveStatus'),tracker);
 }
 async function checkMl(){
-  const roadmap=await fetchText('ml-roadmap.js');
+  const [roadmap,tracker]=await Promise.all([fetchText('ml-roadmap.js'),fetchJson('ml-tracker.json')]);
   const {built,total}=countBuilt(roadmap);
   document.querySelector('#mlCount').textContent=`${built} / ${total}`;
   document.querySelector('#mlBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+  renderLiveStatus(document.querySelector('#mlLiveStatus'),tracker);
 }
 async function checkCost(){
   const [ragLog,mlLog]=await Promise.all([fetchJson('rag-cost-log.json'),fetchJson('ml-cost-log.json')]);
