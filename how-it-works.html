@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How this is built — Atlas status</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,600&display=swap');
 .viz-root{
   color-scheme:light;
   --page:#f9f9f7; --surface:#fcfcfb;
@@ -25,6 +27,35 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+
+/* Brand cards -- lifted directly from each course site's own design tokens, not invented here */
+.brand-row{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.brand-card{flex:1;min-width:220px;border-radius:4px;padding:18px 16px;position:relative;overflow:hidden}
+.brand-card.rag{background:#f5f2e9;color:#14241f}
+.brand-card.ml{background:#eef1f6;color:#101826}
+.brand-card .bc-top{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.brand-card .bc-mark{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px}
+.brand-card.rag .bc-mark{background:#14241f;color:#d7ff53;font-family:Manrope,sans-serif}
+.brand-card.ml .bc-mark{background:#101826;color:#ffc94d;font-family:Inter,sans-serif}
+.brand-card .bc-name{font-weight:800;font-size:13px;letter-spacing:.04em}
+.brand-card.rag .bc-name{font-family:Manrope,sans-serif}
+.brand-card.ml .bc-name{font-family:Inter,sans-serif}
+.brand-card .bc-kicker{font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;opacity:.65;margin-bottom:6px}
+.brand-card.rag .bc-kicker{font-family:'DM Mono',monospace;color:#61706a}
+.brand-card.ml .bc-kicker{font-family:'IBM Plex Mono',monospace;color:#5b6577}
+.brand-card h3{margin:0 0 8px;font-size:19px;line-height:1.15}
+.brand-card.rag h3{font-family:Manrope,sans-serif;font-weight:800}
+.brand-card.rag h3 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#194f3e}
+.brand-card.ml h3{font-family:Inter,sans-serif;font-weight:800}
+.brand-card.ml h3 em{font-family:Fraunces,serif;font-style:italic;font-weight:600;color:#1d4ed8}
+.brand-card .bc-stats{display:flex;gap:14px;margin-top:10px}
+.brand-card .bc-stats div{display:flex;flex-direction:column}
+.brand-card .bc-stats b{font-size:18px}
+.brand-card.rag .bc-stats b{font-family:Manrope,sans-serif}
+.brand-card.ml .bc-stats b{font-family:Inter,sans-serif}
+.brand-card .bc-stats span{font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;opacity:.6}
+.brand-card.rag .bc-stats span{font-family:'DM Mono',monospace}
+.brand-card.ml .bc-stats span{font-family:'IBM Plex Mono',monospace}
 .wrap{max-width:680px;margin:0 auto;padding:20px 16px 70px}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .back-link{font-size:13px;color:var(--ink-muted);text-decoration:none}
@@ -73,12 +104,27 @@ h1{font-size:23px;margin:14px 0 4px}
     <button class="theme-toggle" id="themeToggle" type="button">Dark</button>
   </div>
   <h1>How this is actually built</h1>
-  <p class="lead">Not a generic description — this is the real pipeline, with the actual numbers, including the parts that don't work perfectly. RAG Atlas and ML Atlas are built the same way: one lesson at a time, by an AI coding agent working from a detailed brief, never in parallel.</p>
+  <p class="lead">Not a generic description — this is the real pipeline, with the actual numbers, including the parts that don't work perfectly. Both course sites below lend their own look to this page — the mechanism underneath is identical either way: one lesson at a time, by an AI coding agent working from a detailed brief, never in parallel.</p>
 
-  <div class="stat-strip">
-    <div class="stat"><b>284</b><span>RAG Atlas lessons planned, 24 modules</span></div>
-    <div class="stat"><b>184</b><span>ML Atlas lessons planned, 20 modules</span></div>
-    <div class="stat"><b>1</b><span>agent per lesson, strictly one at a time</span></div>
+  <div class="brand-row">
+    <div class="brand-card rag">
+      <div class="bc-top"><span class="bc-mark">R</span><span class="bc-name">RAG ATLAS</span></div>
+      <p class="bc-kicker">RETRIEVAL FROM FIRST PRINCIPLES</p>
+      <h3>284 lessons.<br><em>Never taught twice.</em></h3>
+      <div class="bc-stats">
+        <div><b>24</b><span>Modules</span></div>
+        <div><b>284</b><span>Lessons planned</span></div>
+      </div>
+    </div>
+    <div class="brand-card ml">
+      <div class="bc-top"><span class="bc-mark">M</span><span class="bc-name">ML ATLAS</span></div>
+      <p class="bc-kicker">A SEQUENTIAL, FIRST-PRINCIPLES COURSE</p>
+      <h3>184 lessons.<br><em>One concept at a time.</em></h3>
+      <div class="bc-stats">
+        <div><b>20</b><span>Modules</span></div>
+        <div><b>184</b><span>Lessons planned</span></div>
+      </div>
+    </div>
   </div>
 
   <nav class="rail" aria-label="Jump to a stage">
