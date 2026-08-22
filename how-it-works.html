@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How this is built — Atlas status</title>
+<style>
+.viz-root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb;
+  --ink:#0b0b0b; --ink-2:#52514e; --ink-muted:#898781;
+  --line:#e1e0d9; --border:rgba(11,11,11,.10);
+  --rag:#1baf7a; --rag-bg:#e6f7f0;
+  --ml:#2a78d6; --ml-bg:#eaf2fc;
+  --good:#0ca30c;
+}
+[data-theme="dark"] .viz-root{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-muted:#898781;
+  --line:#2c2c2a; --border:rgba(255,255,255,.10);
+  --rag:#199e70; --rag-bg:#122a20;
+  --ml:#3987e5; --ml-bg:#122234;
+  --good:#0ca30c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.back-link{font-size:13px;color:var(--ink-muted);text-decoration:none}
+h1{font-size:22px;margin:14px 0 4px}
+.lead{font-size:14px;color:var(--ink-2);line-height:1.6;margin:0 0 20px}
+.theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:8px;padding:8px 12px;font-size:13px}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:18px 18px 16px;margin-bottom:14px}
+.card h2{font-size:15px;margin:0 0 4px}
+.card .kicker{font-size:11px;letter-spacing:.04em;color:var(--ink-muted);text-transform:uppercase;margin:0 0 6px;font-weight:700}
+.card p{font-size:13.5px;line-height:1.65;color:var(--ink-2);margin:8px 0}
+.card ol,.card ul{margin:8px 0 4px;padding-left:20px}
+.card li{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin-bottom:6px}
+.card li b{color:var(--ink)}
+.stat-row{display:flex;gap:10px;margin:10px 0}
+.stat{flex:1;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:11px;color:var(--ink-muted)}
+.tech-list{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.tech-chip{border:1px solid var(--line);border-radius:99px;padding:5px 10px;font-size:12px;color:var(--ink-2)}
+.note-block{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--ink-muted);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">← Back to status</a>
+    <button class="theme-toggle" id="themeToggle" type="button">Dark</button>
+  </div>
+  <h1>How this is actually built</h1>
+  <p class="lead">RAG Atlas and ML Atlas are two from-scratch course sites, built one lesson at a time. This page is the honest version of "what's going on behind the progress bar" — the process, the tooling, and the rough edges.</p>
+
+  <div class="card">
+    <p class="kicker">Scale</p>
+    <h2>Two courses, both concept-by-concept</h2>
+    <div class="stat-row">
+      <div class="stat"><b>284</b><span>RAG Atlas concepts, 24 modules</span></div>
+      <div class="stat"><b>184</b><span>ML Atlas concepts, 20 modules</span></div>
+    </div>
+    <p>Every concept is its own standalone lesson page: a static HTML file, a short JS file for a hands-on interactive lab, and a shared stylesheet. Nothing is templated at runtime — each lesson is a real, finished file sitting in the repo.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">The build unit</p>
+    <h2>One AI coding agent per concept</h2>
+    <p>Each lesson is produced by a single autonomous coding agent given a detailed, concept-specific brief: the exact title, which module it belongs to, and — critically — a written note describing exactly what the previous concept already covered and what this one must <i>not</i> repeat.</p>
+    <p>Per concept, that agent is instructed to:</p>
+    <ol>
+      <li>Read the site's lesson-template spec and the immediately preceding lesson in full, as both a style guide and a duplicate-content check.</li>
+      <li>Find 2–4 candidate external references (papers, docs) and independently verify each one with a live HTTP request before citing it — no reference gets included on trust alone.</li>
+      <li>Write the lesson into the site's fixed template: a short guided "beginner core" followed by an optional, much longer advanced deep dive.</li>
+      <li>Design and build one genuinely new interactive lab widget in plain JavaScript — never reused wholesale from an earlier concept.</li>
+      <li>Hand-verify any numeric worked example with an independent calculation before it's allowed into the lesson text.</li>
+      <li>Self-check the HTML: every tag balanced, every required section present exactly once, the JS parses cleanly.</li>
+      <li>Flip the previous lesson's status to "complete," bump the course's progress counter, and update the homepage's "what's active right now" summary.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <p class="kicker">Why sequential, never parallel</p>
+    <h2>Concept 2 cannot start until Concept 1 is really on disk</h2>
+    <p>Concepts are built strictly one after another, never concurrently. The dedup/continuity check in step 1 above only works if the previous lesson is already finished and readable — running several concepts at once would mean each one is guessing at content that might change underneath it. Slower, but it's the only way to guarantee nothing gets taught twice and nothing contradicts an earlier lesson.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">Orchestration</p>
+    <h2>Batches, not one giant run</h2>
+    <p>An orchestration layer runs a short, fixed pipeline of these builder agents — typically 3–4 concepts per batch — entirely unattended once launched. Each batch is its own background job; when one finishes, the next batch for that course is queued automatically rather than waiting to be manually restarted.</p>
+    <p>A course's repo is pushed to its public GitHub Pages site once a full <i>module</i> (roughly 8–12 concepts) is complete — not after every single concept — so the commit history reads as real milestones rather than noise.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">Being honest about the tracking</p>
+    <h2>The progress log is good, but not perfect</h2>
+    <p>Each agent is also asked to check in to a small progress-tracking file at three points — starting research, starting to write, and finishing — so this dashboard can show something close to live status. In practice, that check-in step is the least reliable part of the whole pipeline: an agent occasionally skips it under time pressure even though the actual lesson gets built perfectly fine. When that happens, the live "researching now / writing now" line on the dashboard is designed to just go quiet rather than show a stale status — the module/concept counters above it are the ones actually derived from the real, on-disk build state, so they stay trustworthy even when the finer-grained log has a gap.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">When an agent gets stuck</p>
+    <h2>Two strikes, then a person finishes it by hand</h2>
+    <p>If the same concept fails twice in a row, or a single attempt makes no forward progress for 20 minutes, the automated retry stops. Whatever research, references, or partial files that stuck attempt already produced get reused directly — nothing is thrown away and redone from scratch — and a person manually writes whatever's left (usually just the final HTML file) using that same verified material.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">This dashboard</p>
+    <h2>A small companion site, watching the other two</h2>
+    <p>This status page is its own separate, static site. It polls each course's progress file and a running cost-estimate log to draw the bars and numbers above, refreshes on a short interval, and shows exactly how stale its own data is (page-load time vs. when the underlying files were actually last synced) rather than pretending to be perfectly live.</p>
+    <p>It also carries a small two-way channel: the "Ask a question" box on the main page opens a pre-filled GitHub Issue on this dashboard's own repo. That's checked on a fast poll (every couple of minutes) — a question gets read, answered directly (sometimes by editing this very site), the issue gets closed, and the answer gets logged back onto the dashboard for anyone else to see.</p>
+  </div>
+
+  <div class="card">
+    <p class="kicker">What it's actually built with</p>
+    <h2>No frameworks, nothing fancy</h2>
+    <div class="tech-list">
+      <span class="tech-chip">Plain HTML / CSS / vanilla JS — no build step, no framework</span>
+      <span class="tech-chip">Git + GitHub for version control</span>
+      <span class="tech-chip">GitHub Pages for hosting, all three sites</span>
+      <span class="tech-chip">GitHub REST API for the Q&A channel</span>
+      <span class="tech-chip">Live curl checks to verify every external reference</span>
+      <span class="tech-chip">Node.js for structural self-checks (tag balance, syntax)</span>
+      <span class="tech-chip">A Windows scheduled task + PowerShell for syncing this dashboard's data</span>
+    </div>
+  </div>
+
+  <div class="note-block">This is a person-directed build: the course structure, module ordering, dedup rules, quality bar, and every published lesson are reviewed and decided by a human, with AI coding agents doing the drafting, reference-checking, and self-testing legwork against a fairly detailed brief per concept. Estimates on the main status page are approximate, not a live billing meter.</div>
+</div>
+</div>
+<script>
+const themeButton=document.querySelector('#themeToggle');
+const saved=localStorage.getItem('atlasPhoneStatusTheme');
+if(saved)document.documentElement.dataset.theme=saved;
+themeButton.textContent=document.documentElement.dataset.theme==='dark'?'Light':'Dark';
+themeButton.addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=next;
+  localStorage.setItem('atlasPhoneStatusTheme',next);
+  themeButton.textContent=next==='dark'?'Light':'Dark';
+});
+</script>
+</body>
+</html>
