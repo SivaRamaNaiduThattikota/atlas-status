@@ -26,5 +26,10 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Sat Aug 22 15:52:22 IST 2026"
+  },
+  "M04C01": {
+    "title": "Scalars, vectors and matrices",
+    "status": "writing",
+    "timestamp": "Sat Aug 22 16:55:00 IST 2026"
   }
 }
