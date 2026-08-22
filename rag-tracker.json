@@ -112,9 +112,20 @@
     "timestamp": "2026-08-22 21:20:00",
     "note": "Module 05 Concept 01 (What is information retrieval?) did not exist yet despite Module 04 being fully complete -- self-healed by building it first (minimal but complete, all b/s ids, own verified references) so Concept 02 had a real template/dedup source and backlink target, then built Concept 02 as assigned. roadmap.js builtCount for module 5 set 0->2 (both concepts), not 1->2 as originally assumed."
   },
+  "M05C01": {
+    "title": "What is information retrieval? Corpora, documents, queries and relevance",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 21:15:00",
+    "note": "Backfilled -- built by Concept 02's agent as a self-heal, no dedicated tracker entry landed at the time."
+  },
   "M05C03": {
     "title": "Sparse retrieval and dense retrieval",
-    "status": "writing",
-    "timestamp": "Sat Aug 22 21:20:56 IST 2026"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 22:55:00",
+    "note": "Agent had already written this concept's HTML/JS in full (verified tag-balanced, ids unique) before being stopped mid-run as part of applying the new reference-cache/ledger optimization to the rest of the batch -- only the downstream link-up (flip Concept 02, roadmap bump, index update) was still pending and was completed manually. No content was redone."
   }
 }
