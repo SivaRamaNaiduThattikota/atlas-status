@@ -99,5 +99,10 @@
     "title": "Outlier detection",
     "status": "writing",
     "timestamp": "2026-08-22"
+  },
+  "M03C05": {
+    "title": "Distribution-shift red flags",
+    "status": "researching",
+    "timestamp": "2026-08-22"
   }
 }
