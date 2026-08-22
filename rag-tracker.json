@@ -197,8 +197,11 @@
   },
   "M05C08": {
     "title": "Precision, recall and F-score",
-    "status": "writing",
-    "timestamp": "Sun Aug 23 00:04:14 IST 2026"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sun Aug 23 00:35:00 IST 2026",
+    "note": "Write-stage agent spent its whole budget re-planning content in full detail instead of transcribing the already-complete research plan, then got force-cut-off right before calling Write -- htmlFile/jsFile never created. Its own honest self-report (all b01-b10/s01-s24 copy, both SVG-equivalent figures, the rank-chip-row/confusion-quadrant visuals, the Top-k Confusion Grid lab, and the from-scratch Python code) was fully planned but not written. The orchestrating script then proceeded to the finalize stage anyway (a real bug -- no check that write actually succeeded) which began executing against files that didn't exist; caught and stopped via TaskStop before any roadmap.js/ledger damage landed (verified: builtCount still 7, Concept 07 still active, no M05C08 ledger entry). Fix applied to all three 3-stage batch scripts: check writeResult's tagBalanceOk/sectionCountOk/jsSyntaxOk before calling finalize, break the loop if any are false. Completed manually: precision@k/recall@k/F1@k worked on an 8-document ranked list (relevant={1,2,4,7}), all numbers verified via node script across k=1,3,5,8. Reused the CSS classes (.rank-chip, .confusion-quadrant, .relevance-toggles) the failed write-agent had already safely added to lesson.css."
   },
   "M06C06": {
     "title": "Deduplication and canonicalization",
