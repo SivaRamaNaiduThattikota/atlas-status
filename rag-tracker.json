@@ -103,5 +103,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 22:20:00",
     "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying every worked number (norms, cosine, distance, softmax, entropy, cross-entropy) before use. MODULE 04 COMPLETE (10/10) -- pushed to GitHub."
+  },
+  "M05C02": {
+    "title": "Inverted indexes and postings lists",
+    "status": "writing",
+    "timestamp": "2026-08-22 21:00:00"
   }
 }
