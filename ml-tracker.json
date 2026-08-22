@@ -134,7 +134,9 @@
   },
   "M03C09": {
     "title": "Temporal leakage in EDA",
-    "status": "writing",
-    "timestamp": "2026-08-23 02:28:32"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 02:36:42"
   }
 }
