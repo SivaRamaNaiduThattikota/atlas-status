@@ -210,7 +210,9 @@
   },
   "M05C09": {
     "title": "MRR, MAP, DCG and nDCG",
-    "status": "writing",
-    "timestamp": "Sun Aug 23 2026 00:50:02 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sun Aug 23 2026 00:55:48 GMT+0530 (India Standard Time)"
   }
 }
