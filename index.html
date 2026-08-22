@@ -63,6 +63,14 @@ h1{font-size:22px;margin:0}
 .qa-item{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:12px 14px;margin-bottom:10px;font-size:13px}
 .qa-item .q{color:var(--ink-muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
 .qa-item .a{line-height:1.5}
+.activity-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
+.activity-hint{font-size:12px;color:var(--ink-muted);margin:4px 0 12px;line-height:1.4}
+.activity-list{position:relative;padding-left:16px;border-left:2px solid var(--line)}
+.activity-item{position:relative;padding-bottom:14px;font-size:13px;line-height:1.55}
+.activity-item:last-child{padding-bottom:0}
+.activity-item::before{content:'';position:absolute;left:-21px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--ink-muted)}
+.activity-item .t{display:block;font-size:11px;color:var(--ink-muted);margin-bottom:2px}
+.activity-more{display:block;text-align:center;font-size:12px;color:var(--ink-muted);margin-top:10px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -89,6 +97,12 @@ h1{font-size:22px;margin:0}
     <div class="bar-track"><div class="bar-fill ml-fill" id="mlBar" style="width:0%"></div></div>
     <div class="active-concept ml-active" id="mlActive">Checking…</div>
     <div class="live-status" id="mlLiveStatus"></div>
+  </div>
+
+  <div class="activity-card">
+    <span class="progress-text">WHAT'S ACTUALLY HAPPENING</span>
+    <p class="activity-hint">A running log of real actions taken on this project — bugs found and fixed, questions answered, batches launched — not just the progress bars above.</p>
+    <div class="activity-list" id="activityList"></div>
   </div>
 
   <div class="cost-card">
@@ -222,9 +236,19 @@ async function checkQaLog(){
     `<div class="qa-item"><div class="q">Q: ${e.question}</div><div class="a">${e.answer}</div></div>`
   ).join('');
 }
+async function checkActivity(){
+  const el=document.querySelector('#activityList');
+  if(!el)return;
+  const log=await fetchJson('activity-log.json');
+  const entries=(log&&log.entries)||[];
+  if(!entries.length){el.innerHTML='<span style="color:var(--ink-muted);font-size:12.5px">Nothing logged yet.</span>';return}
+  el.innerHTML=entries.slice(-6).reverse().map(e=>
+    `<div class="activity-item"><span class="t">${e.time}</span>${e.note}</div>`
+  ).join('');
+}
 async function runCheck(){
   document.querySelector('#checkNow').disabled=true;
-  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog()]);
+  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog(),checkActivity()]);
   document.querySelector('#lastChecked').textContent='Last checked: '+new Date().toLocaleTimeString();
   document.querySelector('#checkNow').disabled=false;
 }
