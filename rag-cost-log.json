@@ -28,6 +28,15 @@
       "durationMs": 0,
       "estimatedCostLowUSD": 0,
       "estimatedCostHighUSD": 0
+    },
+    {
+      "label": "Batch run — Module 03 Concepts 1-4 (chained steps, HTML/JS parallel)",
+      "outcome": "All 4 concepts built cleanly, 16/16 agents succeeded, 0 errors, 0 empty results. Opens Module 03.",
+      "totalTokens": 1492063,
+      "toolUses": 215,
+      "durationMs": 4928927,
+      "estimatedCostLowUSD": 10.7,
+      "estimatedCostHighUSD": 12.7
     }
   ]
 }
