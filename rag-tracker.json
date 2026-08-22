@@ -71,5 +71,13 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "2026-08-22 19:20:00"
+  },
+  "M04C07": {
+    "title": "Entropy and cross-entropy",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 20:15:00",
+    "note": "Two agents in a row got cut off before writing this concept -- built manually, reusing the extensively node-verified softmax/entropy/cross-entropy numbers both failed attempts had already checked (independently re-verified before use)."
   }
 }
