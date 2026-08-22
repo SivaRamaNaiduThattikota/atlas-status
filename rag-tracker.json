@@ -187,5 +187,15 @@
     "jsExists": true,
     "timestamp": "2026-08-22 23:15:00",
     "note": "Agent got force-stopped before writing any files under the 1-attempt/15-minute policy, but left a fully-verified plan (CER worked example, Reading-Order Reconstructor lab, 4 pre-cached references). Built manually reusing that plan -- CER numbers independently re-verified via a Levenshtein edit-distance script before use (dist=2, CER=0.2 for the ORDER 4471 example)."
+  },
+  "M06C05": {
+    "title": "Cleaning and normalization",
+    "status": "researching",
+    "timestamp": "Sat Aug 22 23:58:20 IST 2026"
+  },
+  "M05C08": {
+    "title": "Precision, recall and F-score",
+    "status": "researching",
+    "timestamp": "Sat Aug 22 23:58:17 IST 2026"
   }
 }
