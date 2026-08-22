@@ -65,5 +65,13 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "2026-08-22 22:05:00"
+  },
+  "M02C10": {
+    "title": "Worked case — choosing CFPB Model 1's metric",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 22:40:00",
+    "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying candidate A/B's precision/recall/F1 from raw confusion-matrix counts before use. MODULE 02 COMPLETE (10/10), closing Phase 1 -- pushed to GitHub."
   }
 }
