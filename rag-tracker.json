@@ -127,5 +127,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 22:55:00",
     "note": "Agent had already written this concept's HTML/JS in full (verified tag-balanced, ids unique) before being stopped mid-run as part of applying the new reference-cache/ledger optimization to the rest of the batch -- only the downstream link-up (flip Concept 02, roadmap bump, index update) was still pending and was completed manually. No content was redone."
+  },
+  "M05C04": {
+    "title": "Term frequency and inverse document frequency",
+    "status": "researching",
+    "timestamp": "Sat Aug 22 2026 21:46:01 GMT+0530 (India Standard Time)"
   }
 }
