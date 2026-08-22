@@ -145,6 +145,7 @@ h1{font-size:23px;margin:14px 0 4px}
       <h2>Every lesson starts with a written dedup note, not just a title</h2>
       <p>Before any writing happens, each lesson's brief spells out exactly what the immediately preceding lesson already covered and what this one must not repeat — by name, by formula, by example. This is the single mechanism keeping 284 (or 184) lessons from ever re-teaching each other.</p>
       <div class="real-example"><b>Real example:</b> RAG Atlas's lesson on distance functions was explicitly told to reuse the exact same three example vectors its previous lesson (cosine similarity) had already used — on purpose, to prove that raw distance and cosine similarity disagree on ranking until the vectors are normalized. Nothing about that connection was invented after the fact; it was in the brief before a single line was written.</div>
+      <div class="real-example"><b>Newer optimization — a running ledger:</b> checking for repeats used to mean re-reading the entire previous lesson every time. A compact ledger file now holds a short summary of every lesson built so far, in both courses — the dedup check now runs against that full history in one pass, not just the single lesson immediately before it.</div>
     </div>
 
     <div class="step" id="stage2">
@@ -156,7 +157,8 @@ h1{font-size:23px;margin:14px 0 4px}
         <li><b>Every numeric example gets independently recomputed</b> before it's written into a lesson — not trusted from memory, run through an actual calculation.</li>
         <li><b>Every external link gets curled and grep-checked</b> against its own title tag, not assumed to still be live.</li>
       </ul>
-      <div class="real-example"><b>Why it takes so long:</b> this is a live network call plus a full re-read of the previous lesson (often 40,000+ characters) plus hand-verifying every formula, every time — for every single lesson. It's the reason a single concept can take 15–30 minutes even when nothing goes wrong.</div>
+      <div class="real-example"><b>Why it takes so long:</b> this is a live network call plus hand-verifying every formula, every time — for every single lesson. It's the reason a single concept can take 15–30 minutes even when nothing goes wrong.</div>
+      <div class="real-example"><b>Newer optimization — a reference cache:</b> the same sources (a Wikipedia page, a library's docs) get cited across many lessons. A shared cache now remembers which URLs were already verified and when — a repeat citation skips the network call entirely instead of re-checking a page that was already confirmed live days earlier.</div>
     </div>
 
     <div class="step" id="stage3">
@@ -204,8 +206,8 @@ h1{font-size:23px;margin:14px 0 4px}
     <p>Of the lessons attempted in the last several batches needed a manual finish — not because the research was wrong, but because the run got cut off after finishing all its verification, and sometimes even writing the interactive lab's code, just before writing the actual lesson page. When that happens, the already-verified research and code get reused directly rather than redone — only the missing piece gets hand-written.</p>
   </div>
   <div class="honesty-block">
-    <span class="num">2 strikes</span>
-    <p>The retry policy: if the same lesson fails twice in a row, or a single attempt makes zero forward progress for 20 minutes, the automatic retries stop and a person finishes it by hand instead of waiting indefinitely.</p>
+    <span class="num">1 strike</span>
+    <p>The retry policy (tightened from an earlier 2-attempts/20-minute rule): if a lesson's first attempt fails, or makes zero forward progress for 15 minutes, the automatic retries stop immediately and a person finishes it by hand — a second automated attempt was rarely doing any better anyway, so it stopped being worth the wait.</p>
   </div>
   <div class="honesty-block">
     <span class="num">3+</span>
