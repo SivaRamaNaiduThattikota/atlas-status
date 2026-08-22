@@ -205,7 +205,12 @@
   },
   "M06C06": {
     "title": "Deduplication and canonicalization",
+    "status": "writing",
+    "timestamp": "Sun Aug 23 00:41:08 IST 2026"
+  },
+  "M05C09": {
+    "title": "MRR, MAP, DCG and nDCG",
     "status": "researching",
-    "timestamp": "Sun Aug 23 00:29:11 IST 2026"
+    "timestamp": "Sun Aug 23 00:39:30 IST 2026"
   }
 }
