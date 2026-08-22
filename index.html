@@ -172,7 +172,7 @@ async function checkMl(){
   document.querySelector('#mlCount').textContent=`${built} / ${total}`;
   document.querySelector('#mlBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
-  document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · ACTIVE</b>${active.concept}`:'Could not read active concept';
+  document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
   renderLiveStatus(document.querySelector('#mlLiveStatus'),tracker);
 }
 async function checkCost(){
