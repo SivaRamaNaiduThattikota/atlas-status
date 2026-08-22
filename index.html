@@ -140,22 +140,19 @@ function activeConceptTitle(roadmapText){
   return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1],conceptNumber:idx+1};
 }
 
-function latestTrackerEntry(tracker){
-  if(!tracker||typeof tracker!=='object')return null;
-  const entries=Object.values(tracker).filter(e=>e&&e.timestamp);
-  if(!entries.length)return null;
-  entries.sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
-  return entries[0];
+function trackerEntryForTitle(tracker,title){
+  if(!tracker||typeof tracker!=='object'||!title)return null;
+  return Object.values(tracker).find(e=>e&&e.title===title)||null;
 }
 const STATUS_LABELS={researching:'researching now',writing:'writing now',done:'just finished',issues:'last attempt had issues'};
-function renderLiveStatus(el,tracker){
+function renderLiveStatus(el,tracker,activeTitle){
   if(!el)return;
-  const latest=latestTrackerEntry(tracker);
-  if(!latest){el.classList.remove('show');el.innerHTML='';return}
-  const label=STATUS_LABELS[latest.status]||'last attempt had issues';
+  const entry=trackerEntryForTitle(tracker,activeTitle);
+  if(!entry){el.classList.remove('show');el.innerHTML='';return}
+  const label=STATUS_LABELS[entry.status]||'last attempt had issues';
   el.classList.add('show');
-  const note=latest.note?`<div class="live-note">${latest.note}</div>`:'';
-  el.innerHTML=`<div><span class="live-dot"></span><span>${label}: <b>${latest.title||'?'}</b></span></div>${note}`;
+  const note=entry.note?`<div class="live-note">${entry.note}</div>`:'';
+  el.innerHTML=`<div><span class="live-dot"></span><span>${label}: <b>${entry.title||'?'}</b></span></div>${note}`;
 }
 async function checkRag(){
   const [roadmap,tracker]=await Promise.all([fetchText('rag-roadmap.js'),fetchJson('rag-tracker.json')]);
@@ -164,7 +161,7 @@ async function checkRag(){
   document.querySelector('#ragBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
-  renderLiveStatus(document.querySelector('#ragLiveStatus'),tracker);
+  renderLiveStatus(document.querySelector('#ragLiveStatus'),tracker,active&&active.concept);
 }
 async function checkMl(){
   const [roadmap,tracker]=await Promise.all([fetchText('ml-roadmap.js'),fetchJson('ml-tracker.json')]);
@@ -173,7 +170,7 @@ async function checkMl(){
   document.querySelector('#mlBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
-  renderLiveStatus(document.querySelector('#mlLiveStatus'),tracker);
+  renderLiveStatus(document.querySelector('#mlLiveStatus'),tracker,active&&active.concept);
 }
 async function checkCost(){
   const [ragLog,mlLog]=await Promise.all([fetchJson('rag-cost-log.json'),fetchJson('ml-cost-log.json')]);
