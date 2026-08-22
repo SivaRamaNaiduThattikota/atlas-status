@@ -73,5 +73,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 22:40:00",
     "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying candidate A/B's precision/recall/F1 from raw confusion-matrix counts before use. MODULE 02 COMPLETE (10/10), closing Phase 1 -- pushed to GitHub."
+  },
+  "M03C01": {
+    "title": "EDA as a discipline, not a checklist",
+    "status": "researching",
+    "timestamp": "2026-08-22 15:20:42"
   }
 }
