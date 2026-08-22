@@ -83,7 +83,9 @@
   },
   "M03C02": {
     "title": "Univariate and bivariate analysis",
-    "status": "researching",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
     "timestamp": "2026-08-22"
   }
 }
