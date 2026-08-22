@@ -217,5 +217,15 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Sun Aug 23 2026 00:55:48 GMT+0530 (India Standard Time)"
+  },
+  "M06C07": {
+    "title": "Document identity and versioning",
+    "status": "writing",
+    "timestamp": "2026-08-23 01:07:31"
+  },
+  "M05C10": {
+    "title": "Relevance judgments and test collections",
+    "status": "researching",
+    "timestamp": "Sun Aug 23 01:02:06 IST 2026"
   }
 }
