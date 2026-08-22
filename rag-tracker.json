@@ -205,8 +205,11 @@
   },
   "M06C06": {
     "title": "Deduplication and canonicalization",
-    "status": "writing",
-    "timestamp": "Sun Aug 23 00:41:08 IST 2026"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sun Aug 23 00:55:00 IST 2026",
+    "note": "Write stage got cut off before writing (StructuredOutput force-invoked), same pattern as M05C08 -- correctly caught by the new guard, which broke the batch loop cleanly instead of proceeding to finalize (confirmed via task notification: agents_done=5, agents_error=0, no roadmap/ledger damage). Left behind an excellent, fully-verified research + partial-write plan: SHA-256 hash equality for R1/R2, inequality for R3, word-trigram Jaccard(R1,R3)=0.50 (6/12), and Concept 01's auth(s) tiebreak correctly picking R2 as canonical -- all re-verified a third time via a fresh node script before use. Completed manually reusing that plan directly."
   },
   "M05C09": {
     "title": "MRR, MAP, DCG and nDCG",
