@@ -29,9 +29,17 @@
   },
   "M04C01": {
     "title": "Scalars, vectors and matrices",
-    "status": "issues",
-    "htmlExists": false,
-    "jsExists": false,
-    "timestamp": "Sat Aug 22 16:56:00 IST 2026"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:32:00",
+    "note": "Tracker was stale (an earlier failed attempt wrote issues here) -- corrected: this concept actually succeeded on a later attempt."
+  },
+  "M04C02": {
+    "title": "Vector norms, dimensions and normalization",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:32:00"
   }
 }
