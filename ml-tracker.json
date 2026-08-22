@@ -113,7 +113,9 @@
   },
   "M03C06": {
     "title": "Correlation versus causation traps",
-    "status": "writing",
-    "timestamp": "2026-08-23 01:10:18"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 01:23:23"
   }
 }
