@@ -241,8 +241,10 @@
   },
   "M06C09": {
     "title": "Incremental and event-driven ingestion",
-    "status": "writing",
-    "timestamp": "Sun Aug 23 01:51:09 IST 2026"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sun Aug 23 02:03:47 IST 2026"
   },
   "M05C11": {
     "title": "Lexical retrieval strengths and failures",
