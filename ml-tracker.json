@@ -27,5 +27,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 18:05:00",
     "note": "Agent finished all research + wrote the JS lab + verified both AUC numbers two independent ways each, but got force-terminated before writing the HTML file. Completed manually reusing that work directly -- no research redone."
+  },
+  "M02C07": {
+    "title": "Choosing a metric for a business problem",
+    "status": "researching",
+    "timestamp": "2026-08-22 18:30:00"
   }
 }
