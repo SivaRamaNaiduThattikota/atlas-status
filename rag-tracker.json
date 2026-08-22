@@ -144,8 +144,10 @@
   },
   "M06C02": {
     "title": "PDF, HTML, Word, Excel and Markdown parsing",
-    "status": "writing",
-    "timestamp": "Sat Aug 22 2026 22:22:12 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sat Aug 22 2026 22:30:16 GMT+0530 (India Standard Time)"
   },
   "M05C05": {
     "title": "TF–IDF derivation",
