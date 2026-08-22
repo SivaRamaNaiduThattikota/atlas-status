@@ -56,5 +56,10 @@
     "jsExists": true,
     "timestamp": "2026-08-22 17:43:00",
     "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but the agent's own final tracker checkpoint write never landed (no functional impact, just a gap in this log)."
+  },
+  "M04C06": {
+    "title": "Softmax, temperature and logarithms",
+    "status": "researching",
+    "timestamp": "2026-08-22 18:24:27"
   }
 }
