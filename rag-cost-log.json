@@ -37,6 +37,15 @@
       "durationMs": 4928927,
       "estimatedCostLowUSD": 10.7,
       "estimatedCostHighUSD": 12.7
+    },
+    {
+      "label": "Batch run — Module 03 Concepts 6-8 (lean one-agent-per-concept)",
+      "outcome": "Concepts 6-7 built cleanly. Concept 8 stalled once (525s no-progress), retried, then got cut off mid-write by a forced stop after finishing research + JS. Completed manually by Claude in-conversation reusing that agent's research and JS (not a separate metered run).",
+      "totalTokens": 674442,
+      "toolUses": 142,
+      "durationMs": 3443419,
+      "estimatedCostLowUSD": 4.8,
+      "estimatedCostHighUSD": 5.7
     }
   ]
 }
