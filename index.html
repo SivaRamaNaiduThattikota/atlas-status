@@ -55,6 +55,14 @@ h1{font-size:22px;margin:0}
 .cost-row:first-of-type{border-top:none}
 .note{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--ink-muted);line-height:1.5}
 .sync-meta{font-size:11.5px;color:var(--ink-muted);text-align:center;margin-bottom:16px;line-height:1.5}
+.qa-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-top:14px}
+.qa-hint{font-size:12px;color:var(--ink-muted);margin:6px 0 10px;line-height:1.4}
+.qa-textarea{width:100%;border:1px solid var(--border);border-radius:8px;background:var(--page);color:var(--ink);padding:10px;font-size:13.5px;font-family:inherit;resize:vertical;box-sizing:border-box}
+.qa-submit{display:block;text-align:center;margin-top:10px;border:none;border-radius:10px;background:var(--ink);color:var(--page);padding:12px;font-size:14px;font-weight:700;text-decoration:none}
+.qa-log{margin-top:14px}
+.qa-item{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:12px 14px;margin-bottom:10px;font-size:13px}
+.qa-item .q{color:var(--ink-muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
+.qa-item .a{line-height:1.5}
 </style>
 </head>
 <body>
@@ -87,6 +95,14 @@ h1{font-size:22px;margin:0}
     <div class="cost-total" id="costTotal">—</div>
     <div id="costRows"></div>
   </div>
+
+  <div class="qa-card">
+    <span class="progress-text">ASK A QUESTION</span>
+    <p class="qa-hint">Opens a GitHub Issue (needs a GitHub login) — checked and answered here, usually within ~20 min.</p>
+    <textarea id="qaInput" class="qa-textarea" placeholder="Type your question…" rows="2"></textarea>
+    <a id="qaSubmit" class="qa-submit" target="_blank" rel="noopener">Ask on GitHub →</a>
+  </div>
+  <div class="qa-log" id="qaLog"></div>
 
   <div class="note">Estimates only, updated after each batch — not a live billing meter. Check your Anthropic Console for the authoritative number.</div>
 </div>
@@ -186,12 +202,36 @@ async function checkSyncMeta(){
     el.innerHTML=`You loaded this page at ${pageLoadedAt.toLocaleTimeString()}. Data was last synced ${ageText} (${syncedAt.toLocaleTimeString()}). Auto-sync runs every ~4 min — if this looks stale, refresh again shortly.`;
   }catch(e){el.textContent=''}
 }
+function updateQaLink(){
+  const input=document.querySelector('#qaInput');
+  const link=document.querySelector('#qaSubmit');
+  if(!input||!link)return;
+  const text=input.value.trim()||'(type a question above first)';
+  const title=text.length>60?text.slice(0,57)+'...':text;
+  const url='https://github.com/SivaRamaNaiduThattikota/atlas-status/issues/new'
+    +'?title='+encodeURIComponent(title)
+    +'&body='+encodeURIComponent(text)
+    +'&labels=question';
+  link.href=url;
+}
+async function checkQaLog(){
+  const el=document.querySelector('#qaLog');
+  if(!el)return;
+  const log=await fetchJson('qa-log.json');
+  const entries=(log&&log.entries)||[];
+  if(!entries.length){el.innerHTML='';return}
+  el.innerHTML=entries.slice(-5).reverse().map(e=>
+    `<div class="qa-item"><div class="q">Q: ${e.question}</div><div class="a">${e.answer}</div></div>`
+  ).join('');
+}
 async function runCheck(){
   document.querySelector('#checkNow').disabled=true;
-  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta()]);
+  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog()]);
   document.querySelector('#lastChecked').textContent='Last checked: '+new Date().toLocaleTimeString();
   document.querySelector('#checkNow').disabled=false;
 }
+document.querySelector('#qaInput')?.addEventListener('input',updateQaLink);
+updateQaLink();
 document.querySelector('#checkNow').addEventListener('click',runCheck);
 runCheck();
 
