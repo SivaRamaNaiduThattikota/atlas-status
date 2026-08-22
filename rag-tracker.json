@@ -220,8 +220,10 @@
   },
   "M06C07": {
     "title": "Document identity and versioning",
-    "status": "writing",
-    "timestamp": "2026-08-23 01:07:31"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sun Aug 23 01:15:03 IST 2026"
   },
   "M05C10": {
     "title": "Relevance judgments and test collections",
