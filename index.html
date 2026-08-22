@@ -127,11 +127,12 @@ function latestTrackerEntry(tracker){
   entries.sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
   return entries[0];
 }
+const STATUS_LABELS={researching:'researching now',writing:'writing now',done:'just finished',issues:'last attempt had issues'};
 function renderLiveStatus(el,tracker){
   if(!el)return;
   const latest=latestTrackerEntry(tracker);
   if(!latest){el.classList.remove('show');el.innerHTML='';return}
-  const label=latest.status==='done'?'last finished':'last attempt had issues';
+  const label=STATUS_LABELS[latest.status]||'last attempt had issues';
   el.classList.add('show');
   el.innerHTML=`<span class="live-dot"></span><span>${label}: <b>${latest.title||'?'}</b></span>`;
 }
