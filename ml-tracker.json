@@ -127,7 +127,9 @@
   },
   "M03C08": {
     "title": "Cardinality and its consequences",
-    "status": "writing",
-    "timestamp": "2026-08-23 02:14:52"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 02:20:24"
   }
 }
