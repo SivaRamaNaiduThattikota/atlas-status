@@ -1,1 +1,31 @@
-{"M02C01":{"title":"Why accuracy lies","status":"done","htmlExists":true,"jsExists":true,"timestamp":"2026-08-22 17:03:03"},"M02C02":{"title":"The confusion matrix from first principles","status":"done","htmlExists":true,"jsExists":true,"timestamp":"2026-08-22 17:05:48"},"M02C03":{"title":"Precision, recall and F1","status":"done","htmlExists":true,"jsExists":true,"timestamp":"2026-08-22 17:08:13"},"M02C04":{"title":"ROC-AUC and PR-AUC","status":"writing","timestamp":"2026-08-22 17:24:12"}}
+{
+  "M02C01": {
+    "title": "Why accuracy lies",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:03:03"
+  },
+  "M02C02": {
+    "title": "The confusion matrix from first principles",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:05:48"
+  },
+  "M02C03": {
+    "title": "Precision, recall and F1",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 17:08:13"
+  },
+  "M02C04": {
+    "title": "ROC-AUC and PR-AUC",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 18:05:00",
+    "note": "Agent finished all research + wrote the JS lab + verified both AUC numbers two independent ways each, but got force-terminated before writing the HTML file. Completed manually reusing that work directly -- no research redone."
+  }
+}
