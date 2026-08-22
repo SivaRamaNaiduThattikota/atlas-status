@@ -105,7 +105,10 @@
   },
   "M03C05": {
     "title": "Distribution-shift red flags",
-    "status": "writing",
-    "timestamp": "2026-08-23 00:44:18"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 00:50:00",
+    "note": "Serious bug found: the write stage silently retried internally 3+ times over ~23 minutes without ever returning a result (each attempt hit the same terminal-error pattern, none produced a file), yet roadmap.js's builtCount had already been bumped to 5 with no corresponding file, ledger entry, or finalize result anywhere in the run's journal -- a real instance of the exact corruption class caught (but prevented in time) on RAG M5 Concept 08. Root cause of the roadmap bump itself not fully traced (no finalize agent/result exists in the journal), but the state was definitively wrong regardless of cause. Fixed by treating the already-excellent, twice-independently-verified research plan (KS two-sample test, D=0.625, train/prod resolution-time snapshots, sample-size-scaling table, Distribution-Shift Detector lab) as ground truth and writing the lesson manually -- numbers re-verified a third time via a fresh node script before use, matching the plan exactly. Concept 04 flipped to complete; roadmap builtCount:5 is now actually true."
   }
 }
