@@ -7,5 +7,6 @@
   {"time":"2026-08-22 21:05","note":"Launched the closing two-lesson batches for both courses' current modules."},
   {"time":"2026-08-22 21:20","note":"Split the GitHub-checking job into a fast 2-minute poll (just for new questions) and a slower 17-minute one (build health) — the fast one wasn't getting a chance to run during long back-and-forth conversations."},
   {"time":"2026-08-22 21:45","note":"Redesigned the how-it-works page with real numbers and a step-by-step layout instead of generic description, per a question asked here."},
-  {"time":"2026-08-22 21:50","note":"Added this activity feed so what's actually happening shows up here, instead of needing to be asked in chat."}
+  {"time":"2026-08-22 21:50","note":"Added this activity feed so what's actually happening shows up here, instead of needing to be asked in chat."},
+  {"time":"2026-08-22 22:05","note":"Answered two more questions from here — why 'researching' takes so long (real network calls + hand-checked math, every lesson), and added a matching how-it-built page to the RAG Atlas site itself, not just this dashboard."}
 ]}
