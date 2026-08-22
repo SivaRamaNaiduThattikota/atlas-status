@@ -151,13 +151,19 @@
   },
   "M05C05": {
     "title": "TF–IDF derivation",
-    "status": "writing",
-    "timestamp": "2026-08-22 22:20 IST"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-22 22:20 IST",
+    "note": "Backfilled -- file exists and roadmap.js builtCount confirms this concept built successfully; its own agent never wrote a completion checkpoint here before the batch was stopped."
   },
   "M05C06": {
     "title": "BM25 derivation and parameters",
-    "status": "writing",
-    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
+    "note": "Backfilled -- same tracker-write gap as M05C05."
   },
   "M06C03": {
     "title": "Databases, APIs, tickets and code repositories",
@@ -168,8 +174,11 @@
   },
   "M05C07": {
     "title": "Document-length normalization",
-    "status": "writing",
-    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
+    "note": "Backfilled -- same tracker-write gap as M05C05/M05C06. Concept 07 is the module's currently active concept (Concept 08 not yet built)."
   },
   "M06C04": {
     "title": "OCR, layout, tables and images",
