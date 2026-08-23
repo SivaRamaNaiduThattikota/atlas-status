@@ -167,6 +167,11 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "2026-08-23 10:43:45"
+    "timestamp": "2026-08-23 10:44:39"
+  },
+  "M04C04": {
+    "title": "Numerical scaling and transforms",
+    "status": "researching",
+    "timestamp": "2026-08-23 10:47:03"
   }
 }
