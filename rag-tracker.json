@@ -393,5 +393,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 20:25:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 8.5+ min -- reused its already-solid, dual-method-verified research plan (0.999354/-0.306189 cross-lingual contrast, 0.995797/-0.003623 domain-jargon contrast, 4 curl-verified references), independently re-verified via node before use."
+ },
+ "M08C10": {
+  "title": "Embedding-model selection",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 20:24:27 IST 2026"
  }
 }
