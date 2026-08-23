@@ -260,5 +260,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Sun Aug 23 2026 10:35:38 GMT+0530 (India Standard Time)"
+ },
+ "M07C02": {
+  "title": "Fixed-size and recursive chunking",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 10:37:39 IST 2026"
  }
 }
