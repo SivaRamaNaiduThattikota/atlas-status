@@ -260,6 +260,7 @@
  "M05C06": {
   "title": "Evaluation under imbalance",
   "status": "writing",
-  "timestamp": "2026-08-23 18:50:16"
+  "timestamp": "2026-08-23 18:50:16",
+  "note": "Write stage ~10.6 min elapsed, well past the 2-min threshold, no result yet -- flagged, agent still transcript-active but past hard threshold."
  }
 }
