@@ -244,6 +244,7 @@
  "M05C04": {
   "title": "Threshold moving versus resampling",
   "status": "writing",
-  "timestamp": "2026-08-23 17:34:23"
+  "timestamp": "2026-08-23 17:34:23",
+  "note": "Attempt 1 of 1 -- 4.9 min elapsed (write stage), past 2-min hard threshold"
  }
 }
