@@ -157,7 +157,14 @@
   },
   "M04C02": {
     "title": "Encoding categorical variables",
-    "status": "writing",
-    "timestamp": "2026-08-23 10:19:38"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 10:25:11"
+  },
+  "M04C03": {
+    "title": "High-cardinality encoding — out-of-fold target encoding",
+    "status": "researching",
+    "timestamp": "2026-08-23 10:27:46"
   }
 }
