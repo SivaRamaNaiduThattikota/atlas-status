@@ -271,5 +271,11 @@
   "jsExists": true,
   "timestamp": "2026-08-23 19:30:00",
   "note": "The batch's research stage genuinely stalled (transcript went quiet ~6.4+ min per monitor liveness check, tracker never advanced past 'researching'). No usable partial plan existed to salvage -- built entirely by hand from scratch, independently verifying every number via node (focal loss formula, the gamma=0-equals-class-weighting identity reproducing Concept 03's own 2.3539 to full float precision, and the 400x/2.3669x down-weighting contrast), plus verified the real Lin et al. 2017 paper's gamma=2/alpha=0.25 defaults via curl against the ar5iv full-text mirror."
+ },
+ "M05C08": {
+  "title": "Production consequences of imbalance choices",
+  "status": "researching",
+  "timestamp": "2026-08-23 19:31:00",
+  "note": "Research stage just started, ~1 min elapsed, healthy."
  }
 }
