@@ -403,7 +403,8 @@
  },
  "M08C11": {
   "title": "Versioning, drift and migration",
-  "status": "researching",
-  "timestamp": "Sun Aug 23 20:41:34 IST 2026"
+  "status": "writing",
+  "timestamp": "Sun Aug 23 20:53:36 IST 2026",
+  "note": "Closing concept write stage just started, healthy."
  }
 }
