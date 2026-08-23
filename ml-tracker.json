@@ -243,7 +243,8 @@
  },
  "M05C04": {
   "title": "Threshold moving versus resampling",
-  "status": "researching",
-  "timestamp": "2026-08-23 17:25:32"
+  "status": "writing",
+  "timestamp": "2026-08-23 17:34:23",
+  "note": "Write stage started per journal, tracker checkpoint pending"
  }
 }
