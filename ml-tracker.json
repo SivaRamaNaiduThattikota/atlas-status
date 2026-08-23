@@ -236,6 +236,7 @@
  "M05C03": {
   "title": "Class weighting",
   "status": "writing",
-  "timestamp": "2026-08-23 17:12:25"
+  "timestamp": "2026-08-23 17:12:25",
+  "note": "Attempt 1 of 1 -- 4.0 min elapsed (write stage), past 2-min hard threshold"
  }
 }
