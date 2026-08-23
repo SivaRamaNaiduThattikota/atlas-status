@@ -403,7 +403,9 @@
  },
  "M08C11": {
   "title": "Versioning, drift and migration",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 20:53:36 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 21:02:56 IST 2026"
  }
 }
