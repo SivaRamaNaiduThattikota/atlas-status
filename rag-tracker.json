@@ -400,5 +400,11 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Sun Aug 23 20:40:45 IST 2026"
+ },
+ "M08C11": {
+  "title": "Versioning, drift and migration",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 20:41:34 IST 2026",
+  "note": "Closing concept (11/11) research just started, healthy."
  }
 }
