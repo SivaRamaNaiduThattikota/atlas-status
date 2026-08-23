@@ -149,7 +149,10 @@
   },
   "M04C01": {
     "title": "What makes a feature \"good\"",
-    "status": "writing",
-    "timestamp": "2026-08-23 09:59:11"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-23 10:10:27",
+    "note": "MODULE 04 OPENS (1/10). Finalize pass complete: roadmap.js next flipped from Module 03 to Module 04 (builtCount:1), and index.html's CURRENT STATE block rewritten for the Module 03 -> Module 04 handoff."
   }
 }
