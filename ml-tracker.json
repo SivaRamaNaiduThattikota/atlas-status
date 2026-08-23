@@ -193,6 +193,7 @@
  "M04C07": {
   "title": "Feature engineering versus feature leakage",
   "status": "writing",
-  "timestamp": "2026-08-23 12:50:37"
+  "timestamp": "2026-08-23 12:50:37",
+  "note": "Attempt 1 of 1 -- 5.9 min elapsed (write stage)"
  }
 }
