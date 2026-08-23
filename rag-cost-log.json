@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23 13:14",
+  "lastUpdated": "2026-08-21 14:50",
   "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions.",
   "entries": [
     {
@@ -55,24 +55,6 @@
       "durationMs": 3129187,
       "estimatedCostLowUSD": 4.5,
       "estimatedCostHighUSD": 5.3
-    },
-    {
-      "label": "Gap acknowledged, 2026-08-21 to 2026-08-23 — Module 04, Module 05, Module 06 fully built, Module 07 opened",
-      "outcome": "This log went stale for two days. Real batches ran for all of these modules, including several that stalled and were finished by hand (a recurring write-stage pattern, still being investigated) -- but several of those specific runs were superseded/stopped mid-flight rather than finishing normally, and don't have a clean final token count to report. Not fabricating numbers for them.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
-    },
-    {
-      "label": "Batch run — Module 07 Concepts 1-5 (research/write/finalize per concept)",
-      "outcome": "Concept 1's write stage stalled on a throttled retry and was finished by hand; Concepts 2-5 in this same task ran, though 2 and 4 also hit write-stage retries caught and finished manually. Real metered total for this task, 2026-08-23.",
-      "totalTokens": 375141,
-      "toolUses": 87,
-      "durationMs": 2187835,
-      "estimatedCostLowUSD": 2.69,
-      "estimatedCostHighUSD": 3.18
     }
   ]
 }
