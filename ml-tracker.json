@@ -259,8 +259,14 @@
  },
  "M05C06": {
   "title": "Evaluation under imbalance",
-  "status": "writing",
-  "timestamp": "2026-08-23 18:50:16",
-  "note": "Write stage ~10.6 min elapsed, well past the 2-min threshold, no result yet -- flagged, agent still transcript-active but past hard threshold."
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:02:34"
+ },
+ "M05C07": {
+  "title": "Imbalance in classical ML versus deep learning",
+  "status": "researching",
+  "timestamp": "2026-08-23 19:05:00"
  }
 }
