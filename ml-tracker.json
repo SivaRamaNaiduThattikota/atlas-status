@@ -205,6 +205,7 @@
  "M04C09": {
   "title": "Missing values as a feature decision",
   "status": "researching",
-  "timestamp": "2026-08-23 14:09:48"
+  "timestamp": "2026-08-23 14:09:48",
+  "note": "Write stage running ~11.5 min (started ~14:22:10 per its own transcript) -- past new 5-min hard threshold"
  }
 }

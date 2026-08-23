@@ -305,7 +305,9 @@
  },
  "M07C08": {
   "title": "Hierarchical and late chunking",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 14:19:25 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 14:45:00"
  }
 }
