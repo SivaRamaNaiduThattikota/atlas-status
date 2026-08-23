@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-21 18:03",
-  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure.",
+  "lastUpdated": "2026-08-23 18:10",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One ML Atlas batch (Module 05 Concept 05) is still running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 01 Concepts 2-4",
@@ -9,7 +9,160 @@
       "toolUses": 160,
       "durationMs": 3998282,
       "estimatedCostLowUSD": 5.1,
-      "estimatedCostHighUSD": 6.0
+      "estimatedCostHighUSD": 6
+    },
+    {
+      "label": "Batch run — Module 01 Concepts 06-08",
+      "outcome": "Covered 3 concepts: \"Train, validation and test splits\", \"Baselines and why they matter\", \"Leakage — the silent killer\".",
+      "totalTokens": 41509222,
+      "toolUses": 315,
+      "durationMs": 11303813,
+      "estimatedCostLowUSD": 38.72,
+      "estimatedCostHighUSD": 38.72
+    },
+    {
+      "label": "Batch run — Module 02 Concepts 01-04",
+      "outcome": "Covered 4 concepts: \"Why accuracy lies\", \"The confusion matrix from first principles\", \"Precision, recall and F1\", \"ROC-AUC and PR-AUC\".",
+      "totalTokens": 42121727,
+      "toolUses": 265,
+      "durationMs": 8159414,
+      "estimatedCostLowUSD": 27.56,
+      "estimatedCostHighUSD": 27.56
+    },
+    {
+      "label": "Batch run — Module 02 Concepts 05-08",
+      "outcome": "Covered 4 concepts: \"Regression metrics — MAE, RMSE and R²\", \"Calibration — what a probability actually means\", \"Choosing a metric for a business problem\", \"Metric-target misalignment and Goodhart's law\".",
+      "totalTokens": 35307422,
+      "toolUses": 179,
+      "durationMs": 4252322,
+      "estimatedCostLowUSD": 20.18,
+      "estimatedCostHighUSD": 20.18
+    },
+    {
+      "label": "Batch run — Module 02 Concepts 09-10",
+      "outcome": "Covered 2 concepts: \"Statistical versus practical significance\", \"Worked case — choosing CFPB Model 1’s metric\".",
+      "totalTokens": 21329812,
+      "toolUses": 101,
+      "durationMs": 2144716,
+      "estimatedCostLowUSD": 11.26,
+      "estimatedCostHighUSD": 11.26
+    },
+    {
+      "label": "Batch run — Module 03 Concepts 01-03",
+      "outcome": "Covered 3 concepts: \"EDA as a discipline, not a checklist\", \"Univariate and bivariate analysis\", \"Missing data mechanisms — MCAR, MAR and MNAR\".",
+      "totalTokens": 21796595,
+      "toolUses": 114,
+      "durationMs": 2960310,
+      "estimatedCostLowUSD": 11.86,
+      "estimatedCostHighUSD": 11.86
+    },
+    {
+      "label": "Batch run — Module 03 Concepts 02-05",
+      "outcome": "Covered 4 concepts: \"Univariate and bivariate analysis\", \"Missing data mechanisms — MCAR, MAR and MNAR\", \"Outlier detection\", \"Distribution-shift red flags\".",
+      "totalTokens": 34744746,
+      "toolUses": 182,
+      "durationMs": 4345262,
+      "estimatedCostLowUSD": 19.68,
+      "estimatedCostHighUSD": 19.68
+    },
+    {
+      "label": "Batch run — Module 03 Concept 05",
+      "outcome": "Covered 1 concept: \"Distribution-shift red flags\".",
+      "totalTokens": 9563844,
+      "toolUses": 87,
+      "durationMs": 2739545,
+      "estimatedCostLowUSD": 8.47,
+      "estimatedCostHighUSD": 8.47
+    },
+    {
+      "label": "Batch run — Module 03 Concepts 06-10",
+      "outcome": "Covered 5 concepts: \"Correlation versus causation traps\", \"Diagnosing class imbalance early\", \"Cardinality and its consequences\", \"Temporal leakage in EDA\", \"Worked case — CFPB's real EDA findings\".",
+      "totalTokens": 54186821,
+      "toolUses": 387,
+      "durationMs": 7898345,
+      "estimatedCostLowUSD": 40.32,
+      "estimatedCostHighUSD": 40.32
+    },
+    {
+      "label": "Batch run — Module 04 Concepts 01-04",
+      "outcome": "Covered 4 concepts: \"What makes a feature 'good'\", \"Encoding categorical variables\", \"High-cardinality encoding — out-of-fold target encoding\", \"Numerical scaling and transforms\".",
+      "totalTokens": 32347211,
+      "toolUses": 257,
+      "durationMs": 5246673,
+      "estimatedCostLowUSD": 26.3,
+      "estimatedCostHighUSD": 26.3
+    },
+    {
+      "label": "Batch run — Module 04 Concept 05",
+      "outcome": "Covered 1 concept: \"Datetime and temporal features\".",
+      "totalTokens": 5590359,
+      "toolUses": 49,
+      "durationMs": 748744,
+      "estimatedCostLowUSD": 5.47,
+      "estimatedCostHighUSD": 5.47
+    },
+    {
+      "label": "Batch run — Module 04 Concepts 06-07",
+      "outcome": "Covered 2 concepts: \"Interaction and derived features\", \"Feature engineering versus feature leakage\".",
+      "totalTokens": 9156288,
+      "toolUses": 86,
+      "durationMs": 1938821,
+      "estimatedCostLowUSD": 11.08,
+      "estimatedCostHighUSD": 11.08
+    },
+    {
+      "label": "Batch run — Module 04 Concept 08",
+      "outcome": "Covered 1 concept: \"Feature selection methods\".",
+      "totalTokens": 4700769,
+      "toolUses": 39,
+      "durationMs": 1230782,
+      "estimatedCostLowUSD": 4.37,
+      "estimatedCostHighUSD": 4.37
+    },
+    {
+      "label": "Batch run — Module 04 Concepts 09-10",
+      "outcome": "Covered 2 concepts: \"Missing values as a feature decision\", \"Worked case — CFPB's leakage-free intake features\".",
+      "totalTokens": 18314887,
+      "toolUses": 125,
+      "durationMs": 3409887,
+      "estimatedCostLowUSD": 14.72,
+      "estimatedCostHighUSD": 14.72
+    },
+    {
+      "label": "Batch run — Module 05 Concept 01",
+      "outcome": "Covered 1 concept: \"Why imbalance breaks naive training\".",
+      "totalTokens": 7029732,
+      "toolUses": 41,
+      "durationMs": 813209,
+      "estimatedCostLowUSD": 6.83,
+      "estimatedCostHighUSD": 6.83
+    },
+    {
+      "label": "Batch run — Module 05 Concept 02",
+      "outcome": "Covered 1 concept: \"Resampling — oversampling, undersampling and SMOTE\".",
+      "totalTokens": 7840978,
+      "toolUses": 48,
+      "durationMs": 1115715,
+      "estimatedCostLowUSD": 5.66,
+      "estimatedCostHighUSD": 5.66
+    },
+    {
+      "label": "Batch run — Module 05 Concept 03",
+      "outcome": "Covered 1 concept: \"Class weighting\".",
+      "totalTokens": 8693014,
+      "toolUses": 48,
+      "durationMs": 1039820,
+      "estimatedCostLowUSD": 5.8,
+      "estimatedCostHighUSD": 5.8
+    },
+    {
+      "label": "Batch run — Module 05 Concept 04",
+      "outcome": "Covered 1 concept: \"Threshold moving versus resampling\".",
+      "totalTokens": 6788196,
+      "toolUses": 42,
+      "durationMs": 951929,
+      "estimatedCostLowUSD": 5.85,
+      "estimatedCostHighUSD": 5.85
     }
   ]
 }
