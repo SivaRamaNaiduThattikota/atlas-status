@@ -370,5 +370,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 19:10:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4+ min with no new lines -- reused its already-solid, dual-script-verified research plan (mean/first/last pooling cross-table, dot-equals-cosine proof, storage-cost table), independently re-verified via node before use."
+ },
+ "M08C07": {
+  "title": "Anisotropy and embedding-space pathologies",
+  "status": "researching",
+  "timestamp": "2026-08-23 19:11:22"
  }
 }
