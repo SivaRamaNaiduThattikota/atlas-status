@@ -193,18 +193,60 @@ async function checkMl(){
   const active=activeConceptTitle(roadmap);
   document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
 }
+function summarizeCostLog(log){
+  const entries=(log&&log.entries)||[];
+  return {
+    low:entries.reduce((s,e)=>s+(e.estimatedCostLowUSD||0),0),
+    high:entries.reduce((s,e)=>s+(e.estimatedCostHighUSD||0),0),
+    tokens:entries.reduce((s,e)=>s+(e.totalTokens||0),0),
+    toolUses:entries.reduce((s,e)=>s+(e.toolUses||0),0),
+    metered:entries.filter(e=>(e.totalTokens||0)>0).length,
+    handFinished:entries.filter(e=>(e.totalTokens||0)===0).length,
+    entries,
+  };
+}
+function fmtTokens(n){
+  if(n>=1000000)return (n/1000000).toFixed(2)+'M';
+  if(n>=1000)return (n/1000).toFixed(0)+'k';
+  return String(n);
+}
+function renderCostBreakdown(label,dotClass,summary){
+  if(!summary.entries.length)return '';
+  const items=summary.entries.map(e=>{
+    const zero=(e.totalTokens||0)===0;
+    return `<div class="cost-breakdown-item${zero?' zero':''}">
+      <div class="bd-head"><span>${e.label}</span><span>${zero?'—':'$'+e.estimatedCostLowUSD.toFixed(2)+'–$'+e.estimatedCostHighUSD.toFixed(2)}</span></div>
+      <div class="bd-outcome">${e.outcome}</div>
+    </div>`;
+  }).join('');
+  return `<div class="cost-breakdown-group"><h4><i class="dot ${dotClass}" style="width:7px;height:7px"></i> ${label}</h4>${items}</div>`;
+}
 async function checkCost(){
   const [ragLog,mlLog]=await Promise.all([fetchJson('rag-cost-log.json'),fetchJson('ml-cost-log.json')]);
-  const sum=(log)=>({
-    low:(log?.entries||[]).reduce((s,e)=>s+(e.estimatedCostLowUSD||0),0),
-    high:(log?.entries||[]).reduce((s,e)=>s+(e.estimatedCostHighUSD||0),0),
-  });
-  const rag=sum(ragLog),ml=sum(mlLog);
+  const rag=summarizeCostLog(ragLog),ml=summarizeCostLog(mlLog);
   const totalLow=rag.low+ml.low,totalHigh=rag.high+ml.high;
   document.querySelector('#costTotal').textContent=`$${totalLow.toFixed(2)}–$${totalHigh.toFixed(2)}`;
+
+  const splitEl=document.querySelector('#costSplit');
+  if(splitEl){
+    const ragPct=totalHigh?(rag.high/totalHigh*100):50;
+    splitEl.innerHTML=`<span class="cost-split-seg" style="width:${ragPct}%;background:var(--rag)"></span><span class="cost-split-seg" style="width:${100-ragPct}%;background:var(--ml)"></span>`;
+  }
+
   document.querySelector('#costRows').innerHTML=
-    `<div class="cost-row"><span>RAG Atlas</span><span>$${rag.low.toFixed(2)}–$${rag.high.toFixed(2)}</span></div>`+
-    `<div class="cost-row"><span>ML Atlas</span><span>$${ml.low.toFixed(2)}–$${ml.high.toFixed(2)}</span></div>`;
+    `<div class="cost-row"><span class="course"><i class="dot rag-dot"></i>RAG Atlas</span><span class="range">$${rag.low.toFixed(2)}–$${rag.high.toFixed(2)}</span></div>`+
+    `<div class="cost-row"><span class="course"><i class="dot ml-dot"></i>ML Atlas</span><span class="range">$${ml.low.toFixed(2)}–$${ml.high.toFixed(2)}</span></div>`;
+
+  const metaEl=document.querySelector('#costMeta');
+  if(metaEl){
+    const totalTokens=rag.tokens+ml.tokens,totalTool=rag.toolUses+ml.toolUses,totalHand=rag.handFinished+ml.handFinished,totalMetered=rag.metered+ml.metered;
+    metaEl.textContent=`${totalMetered} metered batch${totalMetered===1?'':'es'} · ${fmtTokens(totalTokens)} tokens · ${totalTool} tool calls. ${totalHand} row${totalHand===1?'':'s'} above cost \$0 because that work was finished by hand mid-conversation (a stalled or garbage batch output caught and redone) rather than as a separate metered run.`;
+  }
+
+  const breakdownEl=document.querySelector('#costBreakdown');
+  if(breakdownEl){
+    breakdownEl.innerHTML=renderCostBreakdown('RAG Atlas','rag-dot',rag)+renderCostBreakdown('ML Atlas','ml-dot',ml);
+  }
 }
 function parseTrackerKey(key){
   const m=/^M(\d{2})C(\d{2})$/.exec(key||'');
@@ -321,46 +363,12 @@ async function checkSyncMeta(){
     el.innerHTML=`You loaded this page at ${pageLoadedAt.toLocaleTimeString()}. Data was last synced ${ageText} (${syncedAt.toLocaleTimeString()}). Auto-sync runs every ~4 min — if this looks stale, refresh again shortly.`;
   }catch(e){el.textContent=''}
 }
-function updateQaLink(){
-  const input=document.querySelector('#qaInput');
-  const link=document.querySelector('#qaSubmit');
-  if(!input||!link)return;
-  const text=input.value.trim()||'(type a question above first)';
-  const title=text.length>60?text.slice(0,57)+'...':text;
-  const url='https://github.com/SivaRamaNaiduThattikota/atlas-status/issues/new'
-    +'?title='+encodeURIComponent(title)
-    +'&body='+encodeURIComponent(text)
-    +'&labels=question';
-  link.href=url;
-}
-async function checkQaLog(){
-  const el=document.querySelector('#qaLog');
-  if(!el)return;
-  const log=await fetchJson('qa-log.json');
-  const entries=(log&&log.entries)||[];
-  if(!entries.length){el.innerHTML='';return}
-  el.innerHTML=entries.slice(-5).reverse().map(e=>
-    `<div class="qa-item"><div class="q">Q: ${e.question}</div><div class="a">${e.answer}</div></div>`
-  ).join('');
-}
-async function checkActivity(){
-  const el=document.querySelector('#activityList');
-  if(!el)return;
-  const log=await fetchJson('activity-log.json');
-  const entries=(log&&log.entries)||[];
-  if(!entries.length){el.innerHTML='<span style="color:var(--ink-muted);font-size:12.5px">Nothing logged yet.</span>';return}
-  el.innerHTML=entries.slice(-6).reverse().map(e=>
-    `<div class="activity-item"><span class="t">${e.time}</span>${e.note}</div>`
-  ).join('');
-}
 async function runCheck(){
   document.querySelector('#checkNow').disabled=true;
-  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog(),checkActivity(),renderNowAndRecent()]);
+  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),renderNowAndRecent()]);
   document.querySelector('#lastChecked').textContent='Last checked: '+new Date().toLocaleTimeString();
   document.querySelector('#checkNow').disabled=false;
 }
-document.querySelector('#qaInput')?.addEventListener('input',updateQaLink);
-updateQaLink();
 document.querySelector('#checkNow').addEventListener('click',runCheck);
 runCheck();
 setInterval(()=>{if(document.visibilityState==='visible')runCheck()},60000);
