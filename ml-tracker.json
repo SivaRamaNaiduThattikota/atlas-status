@@ -196,5 +196,11 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Sun Aug 23 2026 13:07:16 GMT+0530 (India Standard Time)"
+ },
+ "M04C08": {
+  "title": "Feature selection methods",
+  "status": "researching",
+  "timestamp": "2026-08-23 13:09:36",
+  "note": "Attempt 1 of 1 -- 1.7 min elapsed"
  }
 }
