@@ -362,5 +362,11 @@
   "jsExists": true,
   "timestamp": "2026-08-23 18:35:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (409,007x hard/easy loss ratio at tau=0.05, DPR's Table 3 ablation +17.92%/+6.85%/+2.17%), independently re-verified via node before use."
+ },
+ "M08C06": {
+  "title": "Pooling, embedding dimensions and normalization",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 18:38:01 IST 2026",
+  "note": "Research stage just started, <1 min elapsed -- healthy."
  }
 }

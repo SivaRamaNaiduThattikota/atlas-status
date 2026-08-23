@@ -256,5 +256,11 @@
   "jsExists": true,
   "timestamp": "2026-08-23 18:45:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (t*=1/11≈0.0909, balanced-implied threshold 0.223 via two independent derivations, $1,000 vs $150 on the fixed 10-row set), independently re-verified via node before use."
+ },
+ "M05C06": {
+  "title": "Evaluation under imbalance",
+  "status": "researching",
+  "timestamp": "2026-08-23 18:38:09",
+  "note": "Research stage just started, <1 min elapsed -- healthy."
  }
 }
