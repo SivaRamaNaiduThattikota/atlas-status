@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-23 14:15",
-  "note": "Hand-maintained by Claude after each metered Workflow batch finishes — not a live billing meter. A batch that gets stopped mid-run or finished by hand (no clean final token report) is logged at $0 with an honest note rather than an invented number. Check the Anthropic Console for the authoritative figure.",
+  "lastUpdated": "2026-08-21 14:50",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions.",
   "entries": [
     {
       "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
@@ -8,8 +8,8 @@
       "totalTokens": 1532344,
       "toolUses": 201,
       "durationMs": 6283622,
-      "estimatedCostLowUSD": 11,
-      "estimatedCostHighUSD": 13
+      "estimatedCostLowUSD": 11.0,
+      "estimatedCostHighUSD": 13.0
     },
     {
       "label": "Resume attempt — re-verified Concepts 1-2, Concept 3 stalled 12+ more times",
@@ -17,12 +17,12 @@
       "totalTokens": 0,
       "toolUses": 0,
       "durationMs": 0,
-      "estimatedCostLowUSD": 6,
-      "estimatedCostHighUSD": 9
+      "estimatedCostLowUSD": 6.0,
+      "estimatedCostHighUSD": 9.0
     },
     {
-      "label": "Concept 03 built manually in-conversation",
-      "outcome": "Done — no subagent stalls. Cost is part of ongoing conversation usage, not a discrete metered run.",
+      "label": "Concept 03 built manually in-conversation (not a separate workflow run)",
+      "outcome": "Done — no subagent stalls. Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
       "totalTokens": 0,
       "toolUses": 0,
       "durationMs": 0,
@@ -30,8 +30,8 @@
       "estimatedCostHighUSD": 0
     },
     {
-      "label": "Batch run — Module 03 Concepts 1-4",
-      "outcome": "All 4 concepts built cleanly, 16/16 agents succeeded, 0 errors. Opens Module 03.",
+      "label": "Batch run — Module 03 Concepts 1-4 (chained steps, HTML/JS parallel)",
+      "outcome": "All 4 concepts built cleanly, 16/16 agents succeeded, 0 errors, 0 empty results. Opens Module 03.",
       "totalTokens": 1492063,
       "toolUses": 215,
       "durationMs": 4928927,
@@ -39,8 +39,8 @@
       "estimatedCostHighUSD": 12.7
     },
     {
-      "label": "Batch run — Module 03 Concepts 6-8",
-      "outcome": "Concepts 6-7 built cleanly. Concept 8 stalled once, retried, cut off mid-write — finished manually reusing that agent's research and JS.",
+      "label": "Batch run — Module 03 Concepts 6-8 (lean one-agent-per-concept)",
+      "outcome": "Concepts 6-7 built cleanly. Concept 8 stalled once (525s no-progress), retried, then got cut off mid-write by a forced stop after finishing research + JS. Completed manually by Claude in-conversation reusing that agent's research and JS (not a separate metered run).",
       "totalTokens": 674442,
       "toolUses": 142,
       "durationMs": 3443419,
@@ -48,49 +48,13 @@
       "estimatedCostHighUSD": 5.7
     },
     {
-      "label": "Batch run — Module 03 Concepts 9-12",
-      "outcome": "All 4 concepts built cleanly, 0 errors. Closes Module 03.",
+      "label": "Batch run — Module 03 Concepts 9-12 (lean one-agent-per-concept)",
+      "outcome": "All 4 concepts built cleanly, 4/4 agents succeeded, 0 errors. Closes Module 03 (correction: Phase 1 actually spans Modules 1-5, NOT just 1-3 as first assumed -- Phase 1 is not yet complete). Pushed to GitHub, live on Pages.",
       "totalTokens": 621009,
       "toolUses": 162,
       "durationMs": 3129187,
       "estimatedCostLowUSD": 4.5,
       "estimatedCostHighUSD": 5.3
-    },
-    {
-      "label": "Gap acknowledged, 2026-08-21 to 2026-08-23 — Modules 04, 05, 06 fully built, Module 07 opened",
-      "outcome": "This log went stale for two days. Real batches ran for all of these modules, including several that stalled and were finished by hand — several of those specific runs were superseded/stopped mid-flight rather than finishing normally, and don't have a clean final token count to report. Not fabricating numbers for them.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
-    },
-    {
-      "label": "Batch run — Module 07 Concepts 1-5",
-      "outcome": "Concept 1's write stage stalled on a throttled retry and was finished by hand; Concepts 2 and 4 also hit write-stage retries, caught and finished manually; Concepts 3 and 5 built cleanly.",
-      "totalTokens": 375141,
-      "toolUses": 87,
-      "durationMs": 2187835,
-      "estimatedCostLowUSD": 2.69,
-      "estimatedCostHighUSD": 3.18
-    },
-    {
-      "label": "Batch run — Module 07 Concept 6, then stopped",
-      "outcome": "Concept 6 built cleanly end-to-end. Concept 7's research stage returned placeholder/test content instead of real research (a genuine bug, not a timeout) and its write stage was retrying against that garbage — stopped before it could burn further budget, finished Concept 7 by hand with a freshly-researched and independently-verified worked example. No clean final token total for this stopped run.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
-    },
-    {
-      "label": "Batch run — Module 07 Concepts 8-10, in progress",
-      "outcome": "Launched 2026-08-23 ~14:05 to close Module 07 (10/10); write stage now forbidden from re-verifying research numbers, a fix for the Concept 6-8 batch's failure mode. Not yet finished — no total to report this cycle.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
     }
   ]
 }

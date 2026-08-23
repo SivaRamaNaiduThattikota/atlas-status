@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-23 14:15",
-  "note": "Hand-maintained by Claude after each metered Workflow batch finishes — not a live billing meter. A batch that gets stopped mid-run or finished by hand (no clean final token report) is logged at $0 with an honest note rather than an invented number. Check the Anthropic Console for the authoritative figure.",
+  "lastUpdated": "2026-08-21 18:03",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure.",
   "entries": [
     {
       "label": "Batch run #1 — Module 01 Concepts 2-4",
@@ -9,43 +9,7 @@
       "toolUses": 160,
       "durationMs": 3998282,
       "estimatedCostLowUSD": 5.1,
-      "estimatedCostHighUSD": 6
-    },
-    {
-      "label": "Gap acknowledged, 2026-08-21 to 2026-08-23 — Modules 02 and 03 fully built, Module 04 opened",
-      "outcome": "This log went stale for two days. Real batches ran for both modules, including some that stalled and were finished by hand — several specific runs were superseded/stopped mid-flight rather than finishing normally, and don't have a clean final token count to report. Not fabricating numbers for them.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
-    },
-    {
-      "label": "Batch run — Module 04 Concepts 6-10, stopped at Concept 7",
-      "outcome": "Concept 6 built cleanly (research/write/finalize). Concept 7's write stage ran out of runway before writing any file and was finished by hand from its own research plan.",
-      "totalTokens": 540647,
-      "toolUses": 86,
-      "durationMs": 1946657,
-      "estimatedCostLowUSD": 3.91,
-      "estimatedCostHighUSD": 4.59
-    },
-    {
-      "label": "Concepts 07-08 finished by hand",
-      "outcome": "Concept 7 completed from the stopped batch's own research plan (see row above). Concept 8's own batch run also hit a write-stage retry loop against nothing to retry against usefully — stopped and finished by hand with independently re-verified filter/wrapper/embedded correlations. Cost is part of ongoing conversation usage, not a discrete metered run.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
-    },
-    {
-      "label": "Batch run — Module 04 Concepts 9-10, in progress",
-      "outcome": "Launched 2026-08-23 ~14:07 to close Module 04 (10/10); write stage now forbidden from re-verifying research numbers, a fix for the Concept 8 batch's failure mode. Not yet finished — no total to report this cycle. Per standing instruction, no git push happens even once this reaches 10/10 — held for manual review.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
+      "estimatedCostHighUSD": 6.0
     }
   ]
 }
