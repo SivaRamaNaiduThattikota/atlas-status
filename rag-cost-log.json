@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-23 18:10",
-  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One RAG Atlas batch (Module 08 Concepts 03-05) is still running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-21 14:50",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions.",
   "entries": [
     {
       "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
@@ -8,8 +8,8 @@
       "totalTokens": 1532344,
       "toolUses": 201,
       "durationMs": 6283622,
-      "estimatedCostLowUSD": 11,
-      "estimatedCostHighUSD": 13
+      "estimatedCostLowUSD": 11.0,
+      "estimatedCostHighUSD": 13.0
     },
     {
       "label": "Resume attempt — re-verified Concepts 1-2, Concept 3 stalled 12+ more times",
@@ -17,8 +17,8 @@
       "totalTokens": 0,
       "toolUses": 0,
       "durationMs": 0,
-      "estimatedCostLowUSD": 6,
-      "estimatedCostHighUSD": 9
+      "estimatedCostLowUSD": 6.0,
+      "estimatedCostHighUSD": 9.0
     },
     {
       "label": "Concept 03 built manually in-conversation (not a separate workflow run)",
@@ -55,231 +55,6 @@
       "durationMs": 3129187,
       "estimatedCostLowUSD": 4.5,
       "estimatedCostHighUSD": 5.3
-    },
-    {
-      "label": "Batch run — Module 02 Concept 11",
-      "outcome": "Covered 1 concept: \"Structured generation and constrained outputs\".",
-      "totalTokens": 29667818,
-      "toolUses": 194,
-      "durationMs": 6519601,
-      "estimatedCostLowUSD": 22.05,
-      "estimatedCostHighUSD": 22.05
-    },
-    {
-      "label": "Batch run — Module 03 Concepts 01-04",
-      "outcome": "Covered 4 concepts: \"What exactly is Retrieval-Augmented Generation?\", \"Why we cannot simply ask the LLM: external knowledge\", \"Knowledge cutoffs, private company knowledge and frequently changing information\", \"Hallucination reduction, grounding and provenance\".",
-      "totalTokens": 26542925,
-      "toolUses": 215,
-      "durationMs": 4923717,
-      "estimatedCostLowUSD": 26.72,
-      "estimatedCostHighUSD": 26.72
-    },
-    {
-      "label": "Batch run — Module 03 Concepts 05-08",
-      "outcome": "Covered 4 concepts: \"Parametric and non-parametric memory\", \"The offline indexing and online query pipelines\", \"RAG versus prompting and long-context prompting\", \"RAG versus fine-tuning, search and tool use\".",
-      "totalTokens": 5308059,
-      "toolUses": 46,
-      "durationMs": 1009887,
-      "estimatedCostLowUSD": 5.3,
-      "estimatedCostHighUSD": 5.3
-    },
-    {
-      "label": "Batch run — Module 03 Concepts 06-08",
-      "outcome": "Covered 3 concepts: \"The offline indexing and online query pipelines\", \"RAG versus prompting and long-context prompting\", \"RAG versus fine-tuning, search and tool use\".",
-      "totalTokens": 32798819,
-      "toolUses": 142,
-      "durationMs": 3437698,
-      "estimatedCostLowUSD": 18.78,
-      "estimatedCostHighUSD": 18.78
-    },
-    {
-      "label": "Batch run — Module 03 Concepts 09-12",
-      "outcome": "Covered 4 concepts: \"Naive, advanced and modular RAG taxonomy\", \"Knowledge-intensive tasks and answerability\", \"The RAG failure chain\", \"When RAG should not be used\".",
-      "totalTokens": 31721019,
-      "toolUses": 162,
-      "durationMs": 3123040,
-      "estimatedCostLowUSD": 18.58,
-      "estimatedCostHighUSD": 18.58
-    },
-    {
-      "label": "Batch run — Module 04 Concepts 01-04",
-      "outcome": "Covered 4 concepts: \"Scalars, vectors and matrices\", \"Vector norms, dimensions and normalization\", \"Dot product, vector similarity, angles and cosine similarity\", \"Euclidean and other distance functions\".",
-      "totalTokens": 38113556,
-      "toolUses": 176,
-      "durationMs": 5125044,
-      "estimatedCostLowUSD": 20.51,
-      "estimatedCostHighUSD": 20.51
-    },
-    {
-      "label": "Batch run — Module 04 Concepts 05-08",
-      "outcome": "Covered 4 concepts: \"Probability and conditional probability\", \"Softmax, temperature and logarithms\", \"Entropy and cross-entropy\", \"Ranking functions and optimization objectives\".",
-      "totalTokens": 22787187,
-      "toolUses": 144,
-      "durationMs": 4942784,
-      "estimatedCostLowUSD": 14.47,
-      "estimatedCostHighUSD": 14.47
-    },
-    {
-      "label": "Batch run — Module 04 Concepts 09-10",
-      "outcome": "Covered 2 concepts: \"Time and space complexity\", \"Worked retrieval geometry\".",
-      "totalTokens": 11545804,
-      "toolUses": 65,
-      "durationMs": 2179821,
-      "estimatedCostLowUSD": 8.62,
-      "estimatedCostHighUSD": 8.62
-    },
-    {
-      "label": "Batch run — Module 05 Concepts 01-04",
-      "outcome": "Covered 4 concepts: \"What is information retrieval? Corpora, documents, queries and relevance\", \"Inverted indexes and postings lists\", \"Sparse retrieval and dense retrieval\", \"Term frequency and inverse document frequency\".",
-      "totalTokens": 17906622,
-      "toolUses": 102,
-      "durationMs": 2963408,
-      "estimatedCostLowUSD": 12.1,
-      "estimatedCostHighUSD": 12.1
-    },
-    {
-      "label": "Batch run — Module 05 Concepts 04-07",
-      "outcome": "Covered 4 concepts: \"Term frequency and inverse document frequency\", \"TF–IDF derivation\", \"BM25 derivation and parameters\", \"Document-length normalization\".",
-      "totalTokens": 28577642,
-      "toolUses": 148,
-      "durationMs": 4350148,
-      "estimatedCostLowUSD": 18.06,
-      "estimatedCostHighUSD": 18.06
-    },
-    {
-      "label": "Batch run — Module 06 Concepts 01-04",
-      "outcome": "Covered 4 concepts: \"Source inventory and authority\", \"PDF, HTML, Word, Excel and Markdown parsing\", \"Databases, APIs, tickets and code repositories\", \"OCR, layout, tables and images\".",
-      "totalTokens": 27110942,
-      "toolUses": 140,
-      "durationMs": 2683250,
-      "estimatedCostLowUSD": 15.84,
-      "estimatedCostHighUSD": 15.84
-    },
-    {
-      "label": "Batch run — Module 05 Concept 08",
-      "outcome": "Covered 1 concept: \"Precision, recall and F-score\".",
-      "totalTokens": 6704927,
-      "toolUses": 50,
-      "durationMs": 1626587,
-      "estimatedCostLowUSD": 7.73,
-      "estimatedCostHighUSD": 7.73
-    },
-    {
-      "label": "Batch run — Module 06 Concepts 05-06",
-      "outcome": "Covered 2 concepts: \"Cleaning and normalization\", \"Deduplication and canonicalization\".",
-      "totalTokens": 22152067,
-      "toolUses": 144,
-      "durationMs": 2805692,
-      "estimatedCostLowUSD": 16.13,
-      "estimatedCostHighUSD": 16.13
-    },
-    {
-      "label": "Batch run — Module 05 Concepts 09-11",
-      "outcome": "Covered 3 concepts: \"MRR, MAP, DCG and nDCG\", \"Relevance judgments and test collections\", \"Lexical retrieval strengths and failures\".",
-      "totalTokens": 31900376,
-      "toolUses": 202,
-      "durationMs": 5158469,
-      "estimatedCostLowUSD": 24.95,
-      "estimatedCostHighUSD": 24.95
-    },
-    {
-      "label": "Batch run — Module 06 Concepts 07-09",
-      "outcome": "Covered 3 concepts: \"Document identity and versioning\", \"Provenance, lineage and timestamps\", \"Incremental and event-driven ingestion\".",
-      "totalTokens": 33041478,
-      "toolUses": 244,
-      "durationMs": 3819810,
-      "estimatedCostLowUSD": 24.39,
-      "estimatedCostHighUSD": 24.39
-    },
-    {
-      "label": "Batch run — Module 07 Concept 01",
-      "outcome": "Covered 1 concept: \"Why chunk documents?\".",
-      "totalTokens": 12486744,
-      "toolUses": 87,
-      "durationMs": 2182521,
-      "estimatedCostLowUSD": 8.89,
-      "estimatedCostHighUSD": 8.89
-    },
-    {
-      "label": "Batch run — Module 07 Concept 02",
-      "outcome": "Covered 1 concept: \"Fixed-size and recursive chunking\".",
-      "totalTokens": 9821016,
-      "toolUses": 60,
-      "durationMs": 1789745,
-      "estimatedCostLowUSD": 7.4,
-      "estimatedCostHighUSD": 7.4
-    },
-    {
-      "label": "Batch run — Module 07 Concepts 03-04",
-      "outcome": "Covered 2 concepts: \"Sentence, paragraph and structural chunking\", \"Semantic and proposition-based chunking\".",
-      "totalTokens": 16421202,
-      "toolUses": 122,
-      "durationMs": 2293973,
-      "estimatedCostLowUSD": 12.84,
-      "estimatedCostHighUSD": 12.84
-    },
-    {
-      "label": "Batch run — Module 07 Concept 05",
-      "outcome": "Covered 1 concept: \"Chunk size as a precision–context trade-off\".",
-      "totalTokens": 7809443,
-      "toolUses": 51,
-      "durationMs": 1639094,
-      "estimatedCostLowUSD": 7.43,
-      "estimatedCostHighUSD": 7.43
-    },
-    {
-      "label": "Batch run — Module 07 Concepts 06-07",
-      "outcome": "Covered 2 concepts: \"Chunk overlap and boundary loss\", \"Parent-document, parent–child and small-to-big retrieval\".",
-      "totalTokens": 22799270,
-      "toolUses": 141,
-      "durationMs": 3014267,
-      "estimatedCostLowUSD": 15.65,
-      "estimatedCostHighUSD": 15.65
-    },
-    {
-      "label": "Batch run — Module 07 Concept 08",
-      "outcome": "Covered 1 concept: \"Hierarchical and late chunking\".",
-      "totalTokens": 7004594,
-      "toolUses": 36,
-      "durationMs": 1257655,
-      "estimatedCostLowUSD": 6.11,
-      "estimatedCostHighUSD": 6.11
-    },
-    {
-      "label": "Batch run — Module 07 Concept 09",
-      "outcome": "Covered 1 concept: \"Metadata and contextual headers\".",
-      "totalTokens": 10546340,
-      "toolUses": 58,
-      "durationMs": 1619099,
-      "estimatedCostLowUSD": 7.2,
-      "estimatedCostHighUSD": 7.2
-    },
-    {
-      "label": "Batch run — Module 07 Concept 10",
-      "outcome": "Covered 1 concept: \"Evaluating chunk quality\".",
-      "totalTokens": 11032106,
-      "toolUses": 42,
-      "durationMs": 1040770,
-      "estimatedCostLowUSD": 8.01,
-      "estimatedCostHighUSD": 8.01
-    },
-    {
-      "label": "Batch run — Module 08 Concept 01",
-      "outcome": "Covered 1 concept: \"What is an embedding?\".",
-      "totalTokens": 5831369,
-      "toolUses": 35,
-      "durationMs": 816914,
-      "estimatedCostLowUSD": 4.48,
-      "estimatedCostHighUSD": 4.48
-    },
-    {
-      "label": "Batch run — Module 08 Concept 02",
-      "outcome": "Covered 1 concept: \"Text-to-vector semantic representation\".",
-      "totalTokens": 9474527,
-      "toolUses": 52,
-      "durationMs": 1129646,
-      "estimatedCostLowUSD": 6.45,
-      "estimatedCostHighUSD": 6.45
     }
   ]
 }
