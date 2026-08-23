@@ -213,7 +213,7 @@ function fmtTokens(n){
 }
 function renderCostBreakdown(label,dotClass,summary){
   if(!summary.entries.length)return '';
-  const items=summary.entries.map(e=>{
+  const items=[...summary.entries].reverse().map(e=>{
     const zero=(e.totalTokens||0)===0;
     const stats=zero?'Not separately metered':`${fmtTokens(e.totalTokens)} tokens · ${e.toolUses} tool calls${e.durationMs?' · '+Math.round(e.durationMs/60000)+' min':''}`;
     return `<div class="cost-breakdown-item${zero?' zero':''}">
