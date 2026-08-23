@@ -193,6 +193,7 @@
  "M04C07": {
   "title": "Feature engineering versus feature leakage",
   "status": "writing",
-  "timestamp": "2026-08-23 12:50:37"
+  "timestamp": "2026-08-23 12:50:37",
+  "note": "Write attempt returned no files (tagBalanceOk/sectionCountOk/jsSyntaxOk all false) -- checkpoint stale since 12:50:37, 11.2 min, awaiting retry"
  }
 }
