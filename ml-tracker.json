@@ -240,5 +240,11 @@
   "jsExists": true,
   "timestamp": "2026-08-23 17:25:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (balanced weights 2.2422/0.6435, ratio 3.4843 matching Concept 01's break-even ratio exactly)."
+ },
+ "M05C04": {
+  "title": "Threshold moving versus resampling",
+  "status": "researching",
+  "timestamp": "2026-08-23 17:25:32",
+  "note": "Attempt 1 of 1 -- 0.3 min elapsed"
  }
 }
