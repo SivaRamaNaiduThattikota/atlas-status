@@ -267,5 +267,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Sun Aug 23 2026 11:17:27 GMT+0530 (India Standard Time)"
+ },
+ "M07C03": {
+  "title": "Sentence, paragraph and structural chunking",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 11:30:27 IST 2026"
  }
 }
