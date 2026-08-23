@@ -396,8 +396,9 @@
  },
  "M08C10": {
   "title": "Embedding-model selection",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 20:32:14 IST 2026",
-  "note": "Write stage ~6.1 min elapsed, past the 2-min threshold, no result yet -- flagged."
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 20:40:45 IST 2026"
  }
 }
