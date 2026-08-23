@@ -224,5 +224,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 16:25:00",
   "note": "MODULE 05 OPENS (1/9), closing module of Phase 2. Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (ΔE=TP-FP break-even identity, Model B sits exactly on the 3.4843 boundary). roadmap.js next flipped from Module 04 to Module 05 (builtCount:1)."
+ },
+ "M05C02": {
+  "title": "Resampling — oversampling, undersampling and SMOTE",
+  "status": "researching",
+  "timestamp": "2026-08-23 16:26:00"
  }
 }

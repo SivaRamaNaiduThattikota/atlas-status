@@ -332,5 +332,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 16:15:00",
   "note": "MODULE 08 OPENS (1/11). Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (5-word one-hot vs. illustrative-learned cosine matrix, both cross-checked). roadmap.js next flipped from Module 07 to Module 08 (builtCount:1)."
+ },
+ "M08C02": {
+  "title": "Text-to-vector semantic representation",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 16:25:31 IST 2026"
  }
 }
