@@ -274,8 +274,9 @@
  },
  "M05C08": {
   "title": "Production consequences of imbalance choices",
-  "status": "writing",
-  "timestamp": "2026-08-23 19:41:17",
-  "note": "Write stage ~4.6 min elapsed, past the 2-min threshold, no result yet -- flagged."
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:48:05"
  }
 }
