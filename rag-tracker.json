@@ -344,6 +344,7 @@
  "M08C03": {
   "title": "Bi-encoders and asymmetric query embeddings versus document embeddings",
   "status": "writing",
-  "timestamp": "2026-08-23 17:14:54"
+  "timestamp": "2026-08-23 17:14:54",
+  "note": "Attempt 1 of 1 -- 6.0 min elapsed (write stage), past 2-min hard threshold"
  }
 }
