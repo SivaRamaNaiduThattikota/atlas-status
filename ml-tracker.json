@@ -199,7 +199,8 @@
  },
  "M04C08": {
   "title": "Feature selection methods",
-  "status": "researching",
-  "timestamp": "2026-08-23 13:09:36"
+  "status": "writing",
+  "timestamp": "2026-08-23 13:19:21",
+  "note": "Attempt 1 of 1 -- 1.0 min elapsed (write stage)"
  }
 }

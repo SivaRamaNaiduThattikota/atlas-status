@@ -291,7 +291,15 @@
  },
  "M07C06": {
   "title": "Chunk overlap and boundary loss",
-  "status": "writing",
-  "timestamp": "2026-08-23 13:06:18"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 13:17:56 IST 2026"
+ },
+ "M07C07": {
+  "title": "Parent-document, parent–child and small-to-big retrieval",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 13:19:53 IST 2026",
+  "note": "Attempt 1 of 1 -- 0.4 min elapsed"
  }
 }
