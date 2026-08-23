@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-21 18:03",
-  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure.",
+  "lastUpdated": "2026-08-23 13:14",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Does not include the main conversation's own token usage (research/manual-takeover work done directly, not via a subagent batch) -- only metered Workflow batch runs.",
   "entries": [
     {
       "label": "Batch run #1 — Module 01 Concepts 2-4",
@@ -10,6 +10,24 @@
       "durationMs": 3998282,
       "estimatedCostLowUSD": 5.1,
       "estimatedCostHighUSD": 6.0
+    },
+    {
+      "label": "Gap acknowledged, 2026-08-21 to 2026-08-23 — Module 02, Module 03 fully built, Module 04 opened",
+      "outcome": "This log went stale for two days. Real batches ran for both modules, including some that stalled and were finished by hand -- but several specific runs were superseded/stopped mid-flight rather than finishing normally, and don't have a clean final token count to report. Not fabricating numbers for them.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
+    },
+    {
+      "label": "Batch run — Module 04 Concepts 6-10 (stopped early at Concept 7's write stage)",
+      "outcome": "Concept 6 built cleanly (research/write/finalize). Concept 7's write stage ran out of runway before writing any file and was finished by hand from its own research plan. Real metered total for this task, 2026-08-23.",
+      "totalTokens": 540647,
+      "toolUses": 86,
+      "durationMs": 1946657,
+      "estimatedCostLowUSD": 3.91,
+      "estimatedCostHighUSD": 4.59
     }
   ]
 }
