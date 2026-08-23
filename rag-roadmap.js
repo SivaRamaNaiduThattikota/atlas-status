@@ -37,11 +37,15 @@ const phases=[
  ]}
 ];
 
+window.ATLAS_PHASES=phases;
 const phasesRoot=document.querySelector('#phases');
 function moduleMarkup(module){const modId=String(module.n).padStart(2,'0');const id=`module-${modId}`;const built=module.builtCount||0;const concepts=module.concepts.map((concept,index)=>{const isBuilt=index<built;const isActive=module.next&&index===built-1;const done=isBuilt&&!isActive;const href=isBuilt?`lessons/module-${modId}-concept-${String(index+1).padStart(2,'0')}.html`:'';const label=done?'Complete':isActive?'Open lesson':'Planned';const content=href?`<a class="concept-link" href="${href}"><b>${concept}</b></a>`:`<b>${concept}</b>`;return `<li class="${done?'completed-concept':isActive?'next-concept':''}"><span>${String(index+1).padStart(2,'0')}</span>${content}<em>${label}</em></li>`}).join('');return `<article class="roadmap-module ${module.next?'next-module':''}" id="${id}"><button class="module-summary" aria-expanded="${module.next?'true':'false'}"><span class="module-number">${modId}</span><span class="module-copy"><small>${module.next?'ACTIVE MODULE':'PLANNED MODULE'} · ${module.concepts.length} CONCEPTS</small><b>${module.title}</b><p>${module.desc}</p></span><span class="module-state">${module.next?'Open':'Planned'}</span><i>+</i></button><div class="concept-plan"><div class="concept-heading"><span>CONCEPT-BY-CONCEPT PLAN</span><small>Each item becomes a separate HTML lesson when reached.</small></div><ol>${concepts}</ol></div></article>`}
+if(phasesRoot){
 phasesRoot.innerHTML=phases.map(phase=>`<section class="phase-block reveal" id="${phase.id}"><header class="phase-header"><span>${phase.number}</span><div><small>PHASE ${phase.number} · ${phase.modules.length} MODULE${phase.modules.length>1?'S':''}</small><h2>${phase.title}</h2><p>${phase.subtitle}</p></div></header><div class="phase-modules">${phase.modules.map(moduleMarkup).join('')}</div></section>`).join('');
 const moduleButtons=[...document.querySelectorAll('.module-summary')];
 moduleButtons.forEach(button=>button.addEventListener('click',()=>{const module=button.closest('.roadmap-module');const open=module.classList.toggle('open');button.setAttribute('aria-expanded',String(open))}));
 document.querySelector('.next-module')?.classList.add('open');
 const expandButton=document.querySelector('#expandAll');let expanded=false;
 expandButton?.addEventListener('click',()=>{expanded=!expanded;document.querySelectorAll('.roadmap-module').forEach(module=>{module.classList.toggle('open',expanded);module.querySelector('button').setAttribute('aria-expanded',String(expanded))});expandButton.textContent=expanded?'Collapse all':'Expand all'});
+}
+if(typeof dispatchEvent==='function')dispatchEvent(new Event('atlasphasesready'));
