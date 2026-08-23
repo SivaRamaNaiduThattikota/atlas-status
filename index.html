@@ -43,12 +43,6 @@ h1{font-size:22px;margin:0}
 .active-concept{font-size:13.5px;margin-top:8px;padding:10px;border-radius:8px}
 .rag-active{background:var(--rag-bg)}.ml-active{background:var(--ml-bg)}
 .active-concept b{display:block;font-size:12px;color:var(--ink-muted);margin-bottom:3px;font-weight:600}
-.live-status{font-size:12px;color:var(--ink-muted);margin-top:8px;display:none}
-.live-status.show{display:block}
-.live-status.show>div:first-child{display:flex;align-items:center;gap:6px}
-.live-note{margin-top:5px;padding-left:12px;color:var(--ink-muted);font-size:11.5px;line-height:1.4}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--good);flex:none;animation:live-pulse 1.6s ease-in-out infinite}
-@keyframes live-pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .cost-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px}
 .cost-total{font-size:24px;font-weight:800;margin:4px 0}
 .cost-row{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
@@ -119,20 +113,19 @@ html[data-theme="dark"] .now-step{background:var(--page)}
     <div class="card-head"><a class="course-link" href="https://sivaramanaiduthattikota.github.io/RAG/roadmap.html" target="_blank" rel="noopener"><span class="card-title"><i class="dot rag-dot"></i>RAG Atlas</span></a><span class="progress-text" id="ragCount">—</span></div>
     <div class="bar-track"><div class="bar-fill rag-fill" id="ragBar" style="width:0%"></div></div>
     <div class="active-concept rag-active" id="ragActive">Checking…</div>
-    <div class="live-status" id="ragLiveStatus"></div>
   </div>
 
   <div class="card">
     <div class="card-head"><a class="course-link" href="https://sivaramanaiduthattikota.github.io/ML-Atlas/roadmap.html" target="_blank" rel="noopener"><span class="card-title"><i class="dot ml-dot"></i>ML Atlas</span></a><span class="progress-text" id="mlCount">—</span></div>
     <div class="bar-track"><div class="bar-fill ml-fill" id="mlBar" style="width:0%"></div></div>
     <div class="active-concept ml-active" id="mlActive">Checking…</div>
-    <div class="live-status" id="mlLiveStatus"></div>
   </div>
 
   <div class="recent-card">
     <span class="progress-text">RECENTLY BUILT</span>
     <p class="recent-hint">The last few lessons finished on either site — click through to see the actual page.</p>
     <div id="recentList"><span style="color:var(--ink-muted);font-size:12.5px">Checking…</span></div>
+    <div id="recentPace" style="margin-top:10px;font-size:11.5px;color:var(--ink-muted)"></div>
   </div>
 
   <div class="activity-card">
@@ -191,37 +184,21 @@ function activeConceptTitle(roadmapText){
   return {module:activeModule[1],moduleTitle:activeModule[2],concept:concepts[idx]||concepts[concepts.length-1],conceptNumber:idx+1};
 }
 
-function trackerEntryForTitle(tracker,title){
-  if(!tracker||typeof tracker!=='object'||!title)return null;
-  return Object.values(tracker).find(e=>e&&e.title===title)||null;
-}
-const STATUS_LABELS={researching:'researching now',writing:'writing now',done:'just finished',issues:'last attempt had issues'};
-function renderLiveStatus(el,tracker,activeTitle){
-  if(!el)return;
-  const entry=trackerEntryForTitle(tracker,activeTitle);
-  if(!entry){el.classList.remove('show');el.innerHTML='';return}
-  const label=STATUS_LABELS[entry.status]||'last attempt had issues';
-  el.classList.add('show');
-  const note=entry.note?`<div class="live-note">${entry.note}</div>`:'';
-  el.innerHTML=`<div><span class="live-dot"></span><span>${label}: <b>${entry.title||'?'}</b></span></div>${note}`;
-}
 async function checkRag(){
-  const [roadmap,tracker]=await Promise.all([fetchText('rag-roadmap.js'),fetchJson('rag-tracker.json')]);
+  const roadmap=await fetchText('rag-roadmap.js');
   const {built,total}=countBuilt(roadmap);
   document.querySelector('#ragCount').textContent=`${built} / ${total}`;
   document.querySelector('#ragBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#ragActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
-  renderLiveStatus(document.querySelector('#ragLiveStatus'),tracker,active&&active.concept);
 }
 async function checkMl(){
-  const [roadmap,tracker]=await Promise.all([fetchText('ml-roadmap.js'),fetchJson('ml-tracker.json')]);
+  const roadmap=await fetchText('ml-roadmap.js');
   const {built,total}=countBuilt(roadmap);
   document.querySelector('#mlCount').textContent=`${built} / ${total}`;
   document.querySelector('#mlBar').style.width=(total?(built/total*100):0)+'%';
   const active=activeConceptTitle(roadmap);
   document.querySelector('#mlActive').innerHTML=active?`<b>MODULE ${active.module} · CONCEPT ${String(active.conceptNumber).padStart(2,'0')} · ACTIVE</b>${active.concept}`:'Could not read active concept';
-  renderLiveStatus(document.querySelector('#mlLiveStatus'),tracker,active&&active.concept);
 }
 async function checkCost(){
   const [ragLog,mlLog]=await Promise.all([fetchJson('rag-cost-log.json'),fetchJson('ml-cost-log.json')]);
@@ -258,6 +235,13 @@ function elapsedMinutes(text){
   return (Date.now()-d.getTime())/60000;
 }
 const STAGE_ORDER_0={researching:0,writing:1};
+function attributionFor(note){
+  if(!note)return null;
+  const lower=note.toLowerCase();
+  if(lower.includes('manual')||lower.includes('claude finished')||lower.includes('finished by hand'))return {text:'Manual takeover — Claude',cls:'warn'};
+  if(lower.includes('retry')||lower.includes('attempt 2')||/attempt [2-9]/.test(lower))return {text:'Workflow agent — on a retry',cls:'warn'};
+  return {text:'Workflow agent — automated',cls:'ok'};
+}
 function renderNowRow(courseLabel,dotClass,key,entry){
   const mins=elapsedMinutes(entry.timestamp);
   const stageIdx=STAGE_ORDER_0[entry.status]??0;
@@ -266,6 +250,7 @@ function renderNowRow(courseLabel,dotClass,key,entry){
   const url=lessonUrl(courseLabel==='RAG Atlas'?'rag':'ml',key);
   const parsed=parseTrackerKey(key);
   const label=parsed?('M'+parsed.module+' · C'+parsed.concept):key;
+  const attrib=attributionFor(entry.note);
   return `
     <div class="now-course"><i class="dot ${dotClass}"></i><span>${courseLabel} — ${label}</span></div>
     <div class="now-concept" style="margin-bottom:10px">${url?`<a href="${url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${entry.title||'?'} →</a>`:(entry.title||'?')}</div>
@@ -277,7 +262,8 @@ function renderNowRow(courseLabel,dotClass,key,entry){
       <div class="now-step">Finalize</div>
     </div>
     <div class="now-timer ${severity}"><span>${entry.status==='researching'?'Researching':'Writing'} — ${elapsedText}</span><span>${severity==='bad'?'WATCH':severity==='warn'?'SLOW':'OK'}</span></div>
-    ${entry.note?`<p class="recent-hint" style="margin:8px 0 0">${entry.note}</p>`:''}
+    ${attrib?`<p class="recent-hint" style="margin:8px 0 0"><b style="color:var(--ink)">${attrib.text}</b></p>`:''}
+    ${entry.note?`<p class="recent-hint" style="margin:2px 0 0">${entry.note}</p>`:''}
   `;
 }
 async function renderNowAndRecent(){
@@ -314,6 +300,18 @@ async function renderNowAndRecent(){
       const tag=parsed?('M'+parsed.module+'C'+parsed.concept):it.key;
       return `<div class="recent-item"><span>${url?`<a href="${url}" target="_blank" rel="noopener">${it.entry.title||'?'}</a>`:(it.entry.title||'?')}<br><span style="color:var(--ink-muted);font-size:11.5px">${it.label} · ${tag}</span></span><span class="recent-tag">${it.d?it.d.toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}):''}</span></div>`;
     }).join(''):'<span style="color:var(--ink-muted);font-size:12.5px">Nothing finished yet.</span>';
+    const paceEl=document.querySelector('#recentPace');
+    if(paceEl){
+      const dated=top.filter(it=>it.d).slice(0,6);
+      if(dated.length>=2){
+        const gaps=[];
+        for(let i=0;i<dated.length-1;i++)gaps.push(Math.abs(dated[i].d.getTime()-dated[i+1].d.getTime())/60000);
+        const avg=gaps.reduce((s,x)=>s+x,0)/gaps.length;
+        paceEl.textContent=`Pace: ~${Math.round(avg)} min/concept, averaged over the last ${dated.length} finishes (both courses combined).`;
+      }else{
+        paceEl.textContent='';
+      }
+    }
   }
 }
 async function checkSyncMeta(){
