@@ -277,7 +277,9 @@
  },
  "M07C04": {
   "title": "Semantic and proposition-based chunking",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 11:57:44 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 12:14:38 GMT+0530 (India Standard Time)"
  }
 }
