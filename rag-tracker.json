@@ -313,6 +313,7 @@
  "M07C09": {
   "title": "Metadata and contextual headers",
   "status": "writing",
-  "timestamp": "Sun Aug 23 14:58:38 IST 2026"
+  "timestamp": "Sun Aug 23 14:58:38 IST 2026",
+  "note": "Attempt 1 of 1 -- 6.3 min elapsed (write stage, past new 5-min hard threshold)"
  }
 }
