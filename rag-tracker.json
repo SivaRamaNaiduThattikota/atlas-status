@@ -291,8 +291,8 @@
  },
  "M07C06": {
   "title": "Chunk overlap and boundary loss",
-  "status": "researching",
-  "timestamp": "2026-08-23 12:53:02",
-  "note": "Attempt 1 of 1 -- 8.8 min elapsed"
+  "status": "researched",
+  "timestamp": "2026-08-23 13:04:20",
+  "note": "Research-only pass complete: worked example (stride/overlap sliding-window sim on a 297-char Oracle Order Management passage) independently verified via two rounds of executed Node.js scripts plus a hand-derived guarantee formula (overlap_size >= fact_length) cross-checked against the empirical table. 3 references identified, all already present in verified-references.json (no new cache writes needed). Lab designed: 'The Coverage Gamble'. Plan handed off for a separate write-stage call -- no HTML/JS written by this pass."
  }
 }
