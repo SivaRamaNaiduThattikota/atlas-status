@@ -235,8 +235,10 @@
  },
  "M05C03": {
   "title": "Class weighting",
-  "status": "writing",
-  "timestamp": "2026-08-23 17:12:25",
-  "note": "Main rebuilding by hand -- awaiting done"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 17:25:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (balanced weights 2.2422/0.6435, ratio 3.4843 matching Concept 01's break-even ratio exactly)."
  }
 }
