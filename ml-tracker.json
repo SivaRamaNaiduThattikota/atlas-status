@@ -227,7 +227,10 @@
  },
  "M05C02": {
   "title": "Resampling — oversampling, undersampling and SMOTE",
-  "status": "writing",
-  "timestamp": "2026-08-23 16:37:24"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 16:55:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (18-row fold, SMOTE synthetic points (1,1.6)/(3.2,3.6), the leakage wrong-vs-right demonstration)."
  }
 }
