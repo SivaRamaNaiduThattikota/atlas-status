@@ -350,7 +350,14 @@
  },
  "M08C04": {
   "title": "Contrastive learning objectives",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 17:38:11 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 17:56:57 IST 2026"
+ },
+ "M08C05": {
+  "title": "Positive pairs, negatives and hard negatives",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 17:58:07 IST 2026"
  }
 }
