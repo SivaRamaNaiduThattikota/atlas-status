@@ -357,8 +357,10 @@
  },
  "M08C05": {
   "title": "Positive pairs, negatives and hard negatives",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 18:16:04 IST 2026",
-  "note": "Write stage stopped after confirmed stall -- being finished by hand."
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 18:35:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (409,007x hard/easy loss ratio at tau=0.05, DPR's Table 3 ablation +17.92%/+6.85%/+2.17%), independently re-verified via node before use."
  }
 }
