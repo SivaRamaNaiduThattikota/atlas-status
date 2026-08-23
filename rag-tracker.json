@@ -281,5 +281,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Sun Aug 23 2026 12:14:38 GMT+0530 (India Standard Time)"
+ },
+ "M07C05": {
+  "title": "Chunk size as a precision–context trade-off",
+  "status": "researching",
+  "timestamp": "2026-08-23 12:17:15"
  }
 }
