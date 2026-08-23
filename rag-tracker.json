@@ -306,6 +306,7 @@
  "M07C08": {
   "title": "Hierarchical and late chunking",
   "status": "writing",
-  "timestamp": "Sun Aug 23 14:19:25 IST 2026"
+  "timestamp": "Sun Aug 23 14:19:25 IST 2026",
+  "note": "Attempt 1 of 1 -- 7.2 min elapsed (write stage, past new 5-min hard threshold)"
  }
 }
