@@ -324,5 +324,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 15:45:00",
   "note": "MODULE 07 COMPLETE (10/10). Pushed to GitHub directly by main session after correcting the git-path bug in the batch script's finalize prompt (it pointed at RAG/ instead of the real repo root RAG/rag/)."
+ },
+ "M08C01": {
+  "title": "What is an embedding?",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 15:56:25 IST 2026"
  }
 }

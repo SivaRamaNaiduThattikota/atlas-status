@@ -216,5 +216,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 15:20:00",
   "note": "MODULE 04 COMPLETE (10/10). Per standing user instruction, no git commit/add/push run -- held for the user's own review before pushing."
+ },
+ "M05C01": {
+  "title": "Why imbalance breaks naive training",
+  "status": "researching",
+  "timestamp": "2026-08-23 15:56:29"
  }
 }
