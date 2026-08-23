@@ -253,5 +253,10 @@
     "jsExists": true,
     "timestamp": "Sun Aug 23 02:05:00 IST 2026",
     "note": "Same write-stage failure pattern as M05C08 -- write agent got force-cut-off right before calling Write, but this time it had ALREADY fully written and runtime-smoke-tested lesson-05-11.js plus additive CSS before being cut off, leaving only the HTML unwritten. Correctly caught by the guard, which broke the batch loop cleanly (confirmed: no roadmap/ledger damage, tracker still 'writing'). Completed manually: wrote module-05-concept-11.html reusing the existing verified JS as-is, independently re-verified all three worked-example BM25 scores (Query A/B/C) via a fresh node script before writing -- all matched the plan exactly, including the Query C result (T3 scores 0.0000, ranked last behind 4 irrelevant tickets). MODULE 05 COMPLETE (11/11). Left roadmap.js's Module 05 next:true untouched and did not touch index.html, per the user's explicit instruction to reserve the Module 05->06 'next' handoff for morning review."
+  },
+  "M07C01": {
+    "title": "Why chunk documents?",
+    "status": "researching",
+    "timestamp": "Sun Aug 23 09:51:22 IST 2026"
   }
 }
