@@ -44,27 +44,28 @@ h1{font-size:22px;margin:0}
 .rag-active{background:var(--rag-bg)}.ml-active{background:var(--ml-bg)}
 .active-concept b{display:block;font-size:12px;color:var(--ink-muted);margin-bottom:3px;font-weight:600}
 .cost-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px}
-.cost-total{font-size:24px;font-weight:800;margin:4px 0}
-.cost-row{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.cost-total{font-size:28px;font-weight:800;margin:4px 0 12px;letter-spacing:-.01em}
+.cost-split{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--line);margin-bottom:12px}
+.cost-split-seg{height:100%}
+.cost-row{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;padding:9px 0;border-top:1px solid var(--line)}
 .cost-row:first-of-type{border-top:none}
+.cost-row .course{display:flex;align-items:center;gap:7px;font-weight:700}
+.cost-row .range{color:var(--ink-2);font-weight:600}
+.cost-meta{font-size:11.5px;color:var(--ink-muted);line-height:1.5;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.cost-detail{margin-top:12px}
+.cost-detail summary{font-size:12.5px;color:var(--ink-2);cursor:pointer;font-weight:700;list-style:none}
+.cost-detail summary::-webkit-details-marker{display:none}
+.cost-detail summary::before{content:'▸ ';color:var(--ink-muted)}
+.cost-detail[open] summary::before{content:'▾ '}
+.cost-breakdown-group{margin-top:10px}
+.cost-breakdown-group h4{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-muted);margin:0 0 6px;font-weight:700}
+.cost-breakdown-item{border-top:1px solid var(--line);padding:8px 0;font-size:12.5px}
+.cost-breakdown-item:first-child{border-top:0}
+.cost-breakdown-item .bd-head{display:flex;justify-content:space-between;font-weight:700;margin-bottom:3px}
+.cost-breakdown-item .bd-outcome{color:var(--ink-muted);line-height:1.45;font-size:12px}
+.cost-breakdown-item.zero .bd-outcome{font-style:italic}
 .note{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--ink-muted);line-height:1.5}
 .sync-meta{font-size:11.5px;color:var(--ink-muted);text-align:center;margin-bottom:16px;line-height:1.5}
-.qa-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-top:14px}
-.qa-hint{font-size:12px;color:var(--ink-muted);margin:6px 0 10px;line-height:1.4}
-.qa-textarea{width:100%;border:1px solid var(--border);border-radius:8px;background:var(--page);color:var(--ink);padding:10px;font-size:13.5px;font-family:inherit;resize:vertical;box-sizing:border-box}
-.qa-submit{display:block;text-align:center;margin-top:10px;border:none;border-radius:10px;background:var(--ink);color:var(--page);padding:12px;font-size:14px;font-weight:700;text-decoration:none}
-.qa-log{margin-top:14px}
-.qa-item{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:12px 14px;margin-bottom:10px;font-size:13px}
-.qa-item .q{color:var(--ink-muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
-.qa-item .a{line-height:1.5}
-.activity-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
-.activity-hint{font-size:12px;color:var(--ink-muted);margin:4px 0 12px;line-height:1.4}
-.activity-list{position:relative;padding-left:16px;border-left:2px solid var(--line)}
-.activity-item{position:relative;padding-bottom:14px;font-size:13px;line-height:1.55}
-.activity-item:last-child{padding-bottom:0}
-.activity-item::before{content:'';position:absolute;left:-21px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--ink-muted)}
-.activity-item .t{display:block;font-size:11px;color:var(--ink-muted);margin-bottom:2px}
-.activity-more{display:block;text-align:center;font-size:12px;color:var(--ink-muted);margin-top:10px;text-decoration:none}
 .now-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
 .now-empty{font-size:13px;color:var(--ink-muted);margin-top:6px}
 .now-course{display:flex;align-items:center;gap:7px;font-size:13.5px;margin:8px 0 12px}
@@ -128,25 +129,17 @@ html[data-theme="dark"] .now-step{background:var(--page)}
     <div id="recentPace" style="margin-top:10px;font-size:11.5px;color:var(--ink-muted)"></div>
   </div>
 
-  <div class="activity-card">
-    <span class="progress-text">WHAT'S ACTUALLY HAPPENING</span>
-    <p class="activity-hint">A running log of real actions taken on this project — bugs found and fixed, questions answered, batches launched — not just the progress bars above.</p>
-    <div class="activity-list" id="activityList"></div>
-  </div>
-
   <div class="cost-card">
     <span class="progress-text">TOTAL COST SO FAR (estimate)</span>
     <div class="cost-total" id="costTotal">—</div>
+    <div class="cost-split" id="costSplit"></div>
     <div id="costRows"></div>
+    <div class="cost-meta" id="costMeta"></div>
+    <details class="cost-detail">
+      <summary>Batch-by-batch breakdown</summary>
+      <div id="costBreakdown"></div>
+    </details>
   </div>
-
-  <div class="qa-card">
-    <span class="progress-text">ASK A QUESTION</span>
-    <p class="qa-hint">Opens a GitHub Issue (needs a GitHub login) — checked and answered here, usually within ~20 min.</p>
-    <textarea id="qaInput" class="qa-textarea" placeholder="Type your question…" rows="2"></textarea>
-    <a id="qaSubmit" class="qa-submit" target="_blank" rel="noopener">Ask on GitHub →</a>
-  </div>
-  <div class="qa-log" id="qaLog"></div>
 
   <div class="note">Estimates only, updated after each batch — not a live billing meter. Check your Anthropic Console for the authoritative number.</div>
 </div>
