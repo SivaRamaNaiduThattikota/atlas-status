@@ -204,7 +204,14 @@
  },
  "M04C09": {
   "title": "Missing values as a feature decision",
-  "status": "writing",
-  "timestamp": "2026-08-23 14:36:01"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 14:36:47"
+ },
+ "M04C10": {
+  "title": "Worked case — CFPB's leakage-free intake features",
+  "status": "researching",
+  "timestamp": "2026-08-23 14:39:00"
  }
 }
