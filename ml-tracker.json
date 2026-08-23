@@ -178,7 +178,9 @@
  },
  "M04C05": {
   "title": "Datetime and temporal features",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 11:35:51 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 11:42:10"
  }
 }
