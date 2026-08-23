@@ -164,7 +164,7 @@
   },
   "M04C03": {
     "title": "High-cardinality encoding — out-of-fold target encoding",
-    "status": "researching",
-    "timestamp": "2026-08-23 10:27:46"
+    "status": "research-complete",
+    "timestamp": "2026-08-23 (research call)"
   }
 }
