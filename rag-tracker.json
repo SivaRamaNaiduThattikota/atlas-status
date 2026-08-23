@@ -382,6 +382,7 @@
  "M08C08": {
   "title": "Embedding-model instructions and query/document prefixes",
   "status": "researching",
-  "timestamp": "Sun Aug 23 19:36:36 IST 2026"
+  "timestamp": "Sun Aug 23 19:36:36 IST 2026",
+  "note": "Research stage ~13.6 min elapsed, past threshold -- liveness check confirms alive (150 lines, last activity ~1.3 min ago), not stalled."
  }
 }
