@@ -373,7 +373,15 @@
  },
  "M08C07": {
   "title": "Anisotropy and embedding-space pathologies",
-  "status": "writing",
-  "timestamp": "Sun Aug 23 19:20:37 IST 2026"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:45:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4.5+ min -- reused its already-solid, dual-method-verified research plan (0.990608 anisotropic mean vs -0.333333 isotropic mean, the normalization-invariance proof to 10 decimals, the 3 curl-verified references), independently re-verified via node before use."
+ },
+ "M08C08": {
+  "title": "Embedding-model instructions and query/document prefixes",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 19:36:36 IST 2026"
  }
 }
