@@ -329,6 +329,6 @@
   "title": "What is an embedding?",
   "status": "researched",
   "timestamp": "Sun Aug 23 16:03:50 IST 2026",
-  "note": "Write stage ~2.7 min elapsed (started 16:06:07 per transcript) -- past new 2-min hard threshold"
+  "note": "Research-only pass complete: concept-structure.html, roadmap.js and module-07-concept-01.html (the opening-concept template) and module-07-concept-10.html (the closing-concept template) all read in full; concept-ledger.json read in full for dedup against Module 07's toy-vector concepts (01/04/05/07/08/09) and Module 04's cosine/dot-product concepts. 3 new references curl-verified (200 OK) and written to verified-references.json: en.wikipedia.org/wiki/Word_embedding, arxiv.org/abs/1301.3781 (word2vec), tensorflow.org/text/guide/word_embeddings. Worked example (5-word illustrative learned embedding vs. one-hot hand-built model) computed and cross-verified via two independently-coded Node.js cosine formulas (angle-difference trig identity vs. explicit dot-product/norm) -- both agreed to 4-5 decimal places; Python cross-check was attempted but python3 is not installed in this environment, so the second verification leg is Node-only (two independent formulas, not two languages). Full plan returned via StructuredOutput to the calling agent for the write stage. Write stage still needs to: create lessons/module-08-concept-01.html + lessons/lesson-08-01.js, flip roadmap.js module n=8 to add next:true and builtCount:1, add a concept-ledger.json entry, and update this tracker entry to done."
  }
 }

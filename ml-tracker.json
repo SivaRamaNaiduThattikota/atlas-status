@@ -220,7 +220,6 @@
  "M05C01": {
   "title": "Why imbalance breaks naive training",
   "status": "writing",
-  "timestamp": "2026-08-23 16:05:15",
-  "note": "Attempt 1 of 1 -- 2.95 min elapsed (write stage), past new 2-min hard threshold"
+  "timestamp": "2026-08-23 16:05:15"
  }
 }
