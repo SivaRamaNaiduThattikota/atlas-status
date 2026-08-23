@@ -228,7 +228,6 @@
  "M05C02": {
   "title": "Resampling — oversampling, undersampling and SMOTE",
   "status": "writing",
-  "timestamp": "2026-08-23 16:37:24",
-  "note": "Attempt 1 of 1 -- 5.1 min elapsed (write stage), past 2-min hard threshold"
+  "timestamp": "2026-08-23 16:37:24"
  }
 }

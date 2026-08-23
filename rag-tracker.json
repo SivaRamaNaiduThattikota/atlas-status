@@ -336,7 +336,6 @@
  "M08C02": {
   "title": "Text-to-vector semantic representation",
   "status": "writing",
-  "timestamp": "2026-08-23 16:38:46",
-  "note": "Attempt 1 of 1 -- 3.7 min elapsed (write stage), past 2-min hard threshold"
+  "timestamp": "2026-08-23 16:38:46"
  }
 }
