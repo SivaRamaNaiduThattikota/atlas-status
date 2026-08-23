@@ -366,7 +366,6 @@
  "M08C06": {
   "title": "Pooling, embedding dimensions and normalization",
   "status": "researching",
-  "timestamp": "Sun Aug 23 18:38:01 IST 2026",
-  "note": "Research stage ~17 min elapsed, past threshold -- transcript-liveness check confirms actively working (161 lines, growing steadily), not stalled."
+  "timestamp": "Sun Aug 23 18:38:01 IST 2026"
  }
 }

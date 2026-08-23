@@ -260,7 +260,6 @@
  "M05C06": {
   "title": "Evaluation under imbalance",
   "status": "writing",
-  "timestamp": "2026-08-23 18:50:16",
-  "note": "Tracker checkpoint shows writing since 18:50, but journal shows the write agent only just started (fresh, 0 elapsed) -- checkpoint-lag, treating as healthy per journal."
+  "timestamp": "2026-08-23 18:50:16"
  }
 }
