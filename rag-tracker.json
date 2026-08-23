@@ -285,6 +285,7 @@
  "M07C05": {
   "title": "Chunk size as a precision–context trade-off",
   "status": "writing",
-  "timestamp": "Sun Aug 23 12:37:36 IST 2026"
+  "timestamp": "Sun Aug 23 12:37:36 IST 2026",
+  "note": "Attempt 2 (retry) -- 5.2 min elapsed since checkpoint reset"
  }
 }
