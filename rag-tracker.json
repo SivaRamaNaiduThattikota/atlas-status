@@ -340,5 +340,10 @@
   "jsExists": true,
   "timestamp": "2026-08-23 16:52:00",
   "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, triple-independently-verified research plan (real scaled dot-product attention on 'The order shipped late', shipped self-weight 0.7267)."
+ },
+ "M08C03": {
+  "title": "Bi-encoders and asymmetric query embeddings versus document embeddings",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 17:00:21 IST 2026"
  }
 }
