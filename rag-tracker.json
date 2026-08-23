@@ -270,7 +270,14 @@
  },
  "M07C03": {
   "title": "Sentence, paragraph and structural chunking",
-  "status": "writing",
-  "timestamp": "2026-08-23T11:37:43+0530"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 11:49:34 IST 2026"
+ },
+ "M07C04": {
+  "title": "Semantic and proposition-based chunking",
+  "status": "researching",
+  "timestamp": "Sun Aug 23 11:50:25 IST 2026"
  }
 }
