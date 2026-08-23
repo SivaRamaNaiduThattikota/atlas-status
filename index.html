@@ -71,6 +71,30 @@ h1{font-size:22px;margin:0}
 .activity-item::before{content:'';position:absolute;left:-21px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--ink-muted)}
 .activity-item .t{display:block;font-size:11px;color:var(--ink-muted);margin-bottom:2px}
 .activity-more{display:block;text-align:center;font-size:12px;color:var(--ink-muted);margin-top:10px;text-decoration:none}
+.now-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
+.now-empty{font-size:13px;color:var(--ink-muted);margin-top:6px}
+.now-course{display:flex;align-items:center;gap:7px;font-size:13.5px;margin:8px 0 12px}
+.now-concept{font-weight:800}
+.now-pipeline{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.now-step{flex:1;text-align:center;font:11px system-ui;padding:9px 4px;border-radius:8px;background:var(--page);border:1px solid var(--line);color:var(--ink-muted)}
+.now-step.done{background:var(--good);color:#fff;border-color:var(--good)}
+.now-step.active{border-color:var(--ink);color:var(--ink);font-weight:800}
+.now-arrow{color:var(--ink-muted);font-size:12px}
+.now-timer{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;font-size:13px;font-weight:700}
+.now-timer.ok{background:#d7f2e0;color:#14532d}
+.now-timer.warn{background:#fdecd1;color:#7c4a03}
+.now-timer.bad{background:#fbdedb;color:#7f1d1d}
+html[data-theme="dark"] .now-step{background:var(--page)}
+.recent-card{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:14px}
+.recent-hint{font-size:12px;color:var(--ink-muted);margin:4px 0 12px;line-height:1.4}
+.recent-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+.recent-item:first-child{border-top:0}
+.recent-item a{color:inherit;text-decoration:none;font-weight:700}
+.recent-item a:hover{text-decoration:underline}
+.recent-tag{font-size:10.5px;color:var(--ink-muted);white-space:nowrap;padding-top:2px}
+.course-link{color:inherit;text-decoration:none}
+.course-link:hover{text-decoration:underline}
+.auto-refresh-note{font-size:11px;color:var(--ink-muted);text-align:center;margin:-4px 0 14px}
 </style>
 </head>
 <body>
@@ -84,19 +108,31 @@ h1{font-size:22px;margin:0}
   <button class="check-btn" id="checkNow" type="button">Refresh now</button>
   <span class="last-checked" id="lastChecked">Not checked yet</span>
   <div class="sync-meta" id="syncMeta"></div>
+  <div class="auto-refresh-note">Auto-refreshes every 60s while this tab is open.</div>
+
+  <div class="now-card">
+    <span class="progress-text">RIGHT NOW</span>
+    <div id="nowBody"><p class="now-empty">Checking…</p></div>
+  </div>
 
   <div class="card">
-    <div class="card-head"><span class="card-title"><i class="dot rag-dot"></i>RAG Atlas</span><span class="progress-text" id="ragCount">—</span></div>
+    <div class="card-head"><a class="course-link" href="https://sivaramanaiduthattikota.github.io/RAG/roadmap.html" target="_blank" rel="noopener"><span class="card-title"><i class="dot rag-dot"></i>RAG Atlas</span></a><span class="progress-text" id="ragCount">—</span></div>
     <div class="bar-track"><div class="bar-fill rag-fill" id="ragBar" style="width:0%"></div></div>
     <div class="active-concept rag-active" id="ragActive">Checking…</div>
     <div class="live-status" id="ragLiveStatus"></div>
   </div>
 
   <div class="card">
-    <div class="card-head"><span class="card-title"><i class="dot ml-dot"></i>ML Atlas</span><span class="progress-text" id="mlCount">—</span></div>
+    <div class="card-head"><a class="course-link" href="https://sivaramanaiduthattikota.github.io/ML-Atlas/roadmap.html" target="_blank" rel="noopener"><span class="card-title"><i class="dot ml-dot"></i>ML Atlas</span></a><span class="progress-text" id="mlCount">—</span></div>
     <div class="bar-track"><div class="bar-fill ml-fill" id="mlBar" style="width:0%"></div></div>
     <div class="active-concept ml-active" id="mlActive">Checking…</div>
     <div class="live-status" id="mlLiveStatus"></div>
+  </div>
+
+  <div class="recent-card">
+    <span class="progress-text">RECENTLY BUILT</span>
+    <p class="recent-hint">The last few lessons finished on either site — click through to see the actual page.</p>
+    <div id="recentList"><span style="color:var(--ink-muted);font-size:12.5px">Checking…</span></div>
   </div>
 
   <div class="activity-card">
@@ -200,6 +236,86 @@ async function checkCost(){
     `<div class="cost-row"><span>RAG Atlas</span><span>$${rag.low.toFixed(2)}–$${rag.high.toFixed(2)}</span></div>`+
     `<div class="cost-row"><span>ML Atlas</span><span>$${ml.low.toFixed(2)}–$${ml.high.toFixed(2)}</span></div>`;
 }
+function parseTrackerKey(key){
+  const m=/^M(\d{2})C(\d{2})$/.exec(key||'');
+  if(!m)return null;
+  return {module:m[1],concept:m[2]};
+}
+function lessonUrl(courseSlug,key){
+  const parsed=parseTrackerKey(key);
+  if(!parsed)return null;
+  const base=courseSlug==='rag'?'https://sivaramanaiduthattikota.github.io/RAG/lessons/':'https://sivaramanaiduthattikota.github.io/ML-Atlas/lessons/';
+  return base+'module-'+parsed.module+'-concept-'+parsed.concept+'.html';
+}
+function safeParseDate(text){
+  if(!text)return null;
+  const d=new Date(text);
+  return isNaN(d.getTime())?null:d;
+}
+function elapsedMinutes(text){
+  const d=safeParseDate(text);
+  if(!d)return null;
+  return (Date.now()-d.getTime())/60000;
+}
+const STAGE_ORDER_0={researching:0,writing:1};
+function renderNowRow(courseLabel,dotClass,key,entry){
+  const mins=elapsedMinutes(entry.timestamp);
+  const stageIdx=STAGE_ORDER_0[entry.status]??0;
+  const severity=mins==null?'ok':mins>15?'bad':mins>8?'warn':'ok';
+  const elapsedText=mins==null?'elapsed unknown':mins<1?'under a minute':Math.round(mins)+' min';
+  const url=lessonUrl(courseLabel==='RAG Atlas'?'rag':'ml',key);
+  const parsed=parseTrackerKey(key);
+  const label=parsed?('M'+parsed.module+' · C'+parsed.concept):key;
+  return `
+    <div class="now-course"><i class="dot ${dotClass}"></i><span>${courseLabel} — ${label}</span></div>
+    <div class="now-concept" style="margin-bottom:10px">${url?`<a href="${url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${entry.title||'?'} →</a>`:(entry.title||'?')}</div>
+    <div class="now-pipeline">
+      <div class="now-step ${stageIdx===0?'active':'done'}">Research</div>
+      <span class="now-arrow">→</span>
+      <div class="now-step ${stageIdx===1?'active':''}">Write</div>
+      <span class="now-arrow">→</span>
+      <div class="now-step">Finalize</div>
+    </div>
+    <div class="now-timer ${severity}"><span>${entry.status==='researching'?'Researching':'Writing'} — ${elapsedText}</span><span>${severity==='bad'?'WATCH':severity==='warn'?'SLOW':'OK'}</span></div>
+    ${entry.note?`<p class="recent-hint" style="margin:8px 0 0">${entry.note}</p>`:''}
+  `;
+}
+async function renderNowAndRecent(){
+  const [ragTracker,mlTracker]=await Promise.all([fetchJson('rag-tracker.json'),fetchJson('ml-tracker.json')]);
+  const nowBody=document.querySelector('#nowBody');
+  if(nowBody){
+    const rows=[];
+    if(ragTracker){
+      const activeKey=Object.keys(ragTracker).filter(k=>ragTracker[k]&&ragTracker[k].status!=='done').sort().pop();
+      if(activeKey)rows.push(renderNowRow('RAG Atlas','rag-dot',activeKey,ragTracker[activeKey]));
+    }
+    if(mlTracker){
+      const activeKey=Object.keys(mlTracker).filter(k=>mlTracker[k]&&mlTracker[k].status!=='done').sort().pop();
+      if(activeKey)rows.push(renderNowRow('ML Atlas','ml-dot',activeKey,mlTracker[activeKey]));
+    }
+    nowBody.innerHTML=rows.length?rows.join('<hr style="border:0;border-top:1px solid var(--line);margin:14px 0">'):'<p class="now-empty">Nothing actively building right now — both courses idle.</p>';
+  }
+  const recentList=document.querySelector('#recentList');
+  if(recentList){
+    const items=[];
+    [['RAG Atlas','rag',ragTracker],['ML Atlas','ml',mlTracker]].forEach(([label,slug,tracker])=>{
+      if(!tracker)return;
+      Object.keys(tracker).forEach(key=>{
+        const entry=tracker[key];
+        if(!entry||entry.status!=='done')return;
+        items.push({label,slug,key,entry,d:safeParseDate(entry.timestamp)});
+      });
+    });
+    items.sort((a,b)=>(b.d?b.d.getTime():0)-(a.d?a.d.getTime():0));
+    const top=items.slice(0,6);
+    recentList.innerHTML=top.length?top.map(it=>{
+      const url=lessonUrl(it.slug,it.key);
+      const parsed=parseTrackerKey(it.key);
+      const tag=parsed?('M'+parsed.module+'C'+parsed.concept):it.key;
+      return `<div class="recent-item"><span>${url?`<a href="${url}" target="_blank" rel="noopener">${it.entry.title||'?'}</a>`:(it.entry.title||'?')}<br><span style="color:var(--ink-muted);font-size:11.5px">${it.label} · ${tag}</span></span><span class="recent-tag">${it.d?it.d.toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}):''}</span></div>`;
+    }).join(''):'<span style="color:var(--ink-muted);font-size:12.5px">Nothing finished yet.</span>';
+  }
+}
 async function checkSyncMeta(){
   const el=document.querySelector('#syncMeta');
   if(!el)return;
@@ -248,7 +364,7 @@ async function checkActivity(){
 }
 async function runCheck(){
   document.querySelector('#checkNow').disabled=true;
-  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog(),checkActivity()]);
+  await Promise.all([checkRag(),checkMl(),checkCost(),checkSyncMeta(),checkQaLog(),checkActivity(),renderNowAndRecent()]);
   document.querySelector('#lastChecked').textContent='Last checked: '+new Date().toLocaleTimeString();
   document.querySelector('#checkNow').disabled=false;
 }
@@ -256,6 +372,7 @@ document.querySelector('#qaInput')?.addEventListener('input',updateQaLink);
 updateQaLink();
 document.querySelector('#checkNow').addEventListener('click',runCheck);
 runCheck();
+setInterval(()=>{if(document.visibilityState==='visible')runCheck()},60000);
 
 const themeButton=document.querySelector('#themeToggle');
 const saved=localStorage.getItem('atlasPhoneStatusTheme');
