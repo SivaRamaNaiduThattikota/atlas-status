@@ -1,418 +1,418 @@
 {
-  "M03C10": {
-    "title": "Knowledge-intensive tasks and answerability",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 16:05:53 IST 2026"
-  },
-  "M03C11": {
-    "title": "The RAG failure chain",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 16:18:44 IST 2026"
-  },
-  "M03C12": {
-    "title": "When RAG should not be used",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 16:34:25 IST 2026"
-  },
-  "M03C09": {
-    "title": "Naive, advanced and modular RAG taxonomy",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 15:52:22 IST 2026"
-  },
-  "M04C01": {
-    "title": "Scalars, vectors and matrices",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:32:00",
-    "note": "Tracker was stale (an earlier failed attempt wrote issues here) -- corrected: this concept actually succeeded on a later attempt."
-  },
-  "M04C02": {
-    "title": "Vector norms, dimensions and normalization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:32:00"
-  },
-  "M04C04": {
-    "title": "Euclidean and other distance functions",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 18:05:23 GMT+0530 (India Standard Time)"
-  },
-  "M04C03": {
-    "title": "Dot product, vector similarity, angles and cosine similarity",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:43:00",
-    "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but the agent's own final tracker checkpoint write never landed (no functional impact, just a gap in this log)."
-  },
-  "M04C06": {
-    "title": "Softmax, temperature and logarithms",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 19:45:00",
-    "note": "Concept 08's agent self-healed by rebuilding this concept's files directly, but wrote them in the wrong roadmap state (marked complete despite being the newest concept) and never flipped Concept 05 or bumped roadmap.js. Corrected manually: Concept 05 flipped to complete, this concept corrected to active, roadmap.js builtCount bumped 5->6, index.html updated."
-  },
-  "M04C05": {
-    "title": "Probability and conditional probability",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 19:20:00"
-  },
-  "M04C07": {
-    "title": "Entropy and cross-entropy",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 20:15:00",
-    "note": "Two agents in a row got cut off before writing this concept -- built manually, reusing the extensively node-verified softmax/entropy/cross-entropy numbers both failed attempts had already checked (independently re-verified before use)."
-  },
-  "M04C08": {
-    "title": "Ranking functions and optimization objectives",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 20:45:00",
-    "note": "Also built manually after the batch's own agent got cut off. Module 04 now at 8/10 -- Concepts 09-10 still needed to close the module before any push."
-  },
-  "M04C09": {
-    "title": "Time and space complexity",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 21:35:00",
-    "note": "Written by Concept 10's own agent as a self-heal (its required template/dedup source was missing), then flipped to complete manually when Concept 10 itself was finished by hand."
-  },
-  "M04C10": {
-    "title": "Worked retrieval geometry",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:20:00",
-    "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying every worked number (norms, cosine, distance, softmax, entropy, cross-entropy) before use. MODULE 04 COMPLETE (10/10) -- pushed to GitHub."
-  },
-  "M05C02": {
-    "title": "Inverted indexes and postings lists",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 21:20:00",
-    "note": "Module 05 Concept 01 (What is information retrieval?) did not exist yet despite Module 04 being fully complete -- self-healed by building it first (minimal but complete, all b/s ids, own verified references) so Concept 02 had a real template/dedup source and backlink target, then built Concept 02 as assigned. roadmap.js builtCount for module 5 set 0->2 (both concepts), not 1->2 as originally assumed."
-  },
-  "M05C01": {
-    "title": "What is information retrieval? Corpora, documents, queries and relevance",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 21:15:00",
-    "note": "Backfilled -- built by Concept 02's agent as a self-heal, no dedicated tracker entry landed at the time."
-  },
-  "M05C03": {
-    "title": "Sparse retrieval and dense retrieval",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:55:00",
-    "note": "Agent had already written this concept's HTML/JS in full (verified tag-balanced, ids unique) before being stopped mid-run as part of applying the new reference-cache/ledger optimization to the rest of the batch -- only the downstream link-up (flip Concept 02, roadmap bump, index update) was still pending and was completed manually. No content was redone."
-  },
-  "M05C04": {
-    "title": "Term frequency and inverse document frequency",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:14:44"
-  },
-  "M06C01": {
-    "title": "Source inventory and authority",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 22:15:04 GMT+0530 (India Standard Time)"
-  },
-  "M06C02": {
-    "title": "PDF, HTML, Word, Excel and Markdown parsing",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 22:30:16 GMT+0530 (India Standard Time)"
-  },
-  "M05C05": {
-    "title": "TF–IDF derivation",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:20 IST",
-    "note": "Backfilled -- file exists and roadmap.js builtCount confirms this concept built successfully; its own agent never wrote a completion checkpoint here before the batch was stopped."
-  },
-  "M05C06": {
-    "title": "BM25 derivation and parameters",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
-    "note": "Backfilled -- same tracker-write gap as M05C05."
-  },
-  "M06C03": {
-    "title": "Databases, APIs, tickets and code repositories",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 22:44:01 GMT+0530 (India Standard Time)"
-  },
-  "M05C07": {
-    "title": "Document-length normalization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
-    "note": "Backfilled -- same tracker-write gap as M05C05/M05C06. Concept 07 is the module's currently active concept (Concept 08 not yet built)."
-  },
-  "M06C04": {
-    "title": "OCR, layout, tables and images",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 23:15:00",
-    "note": "Agent got force-stopped before writing any files under the 1-attempt/15-minute policy, but left a fully-verified plan (CER worked example, Reading-Order Reconstructor lab, 4 pre-cached references). Built manually reusing that plan -- CER numbers independently re-verified via a Levenshtein edit-distance script before use (dist=2, CER=0.2 for the ORDER 4471 example)."
-  },
-  "M06C05": {
-    "title": "Cleaning and normalization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 00:25:31 IST 2026"
-  },
-  "M05C08": {
-    "title": "Precision, recall and F-score",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 00:35:00 IST 2026",
-    "note": "Write-stage agent spent its whole budget re-planning content in full detail instead of transcribing the already-complete research plan, then got force-cut-off right before calling Write -- htmlFile/jsFile never created. Its own honest self-report (all b01-b10/s01-s24 copy, both SVG-equivalent figures, the rank-chip-row/confusion-quadrant visuals, the Top-k Confusion Grid lab, and the from-scratch Python code) was fully planned but not written. The orchestrating script then proceeded to the finalize stage anyway (a real bug -- no check that write actually succeeded) which began executing against files that didn't exist; caught and stopped via TaskStop before any roadmap.js/ledger damage landed (verified: builtCount still 7, Concept 07 still active, no M05C08 ledger entry). Fix applied to all three 3-stage batch scripts: check writeResult's tagBalanceOk/sectionCountOk/jsSyntaxOk before calling finalize, break the loop if any are false. Completed manually: precision@k/recall@k/F1@k worked on an 8-document ranked list (relevant={1,2,4,7}), all numbers verified via node script across k=1,3,5,8. Reused the CSS classes (.rank-chip, .confusion-quadrant, .relevance-toggles) the failed write-agent had already safely added to lesson.css."
-  },
-  "M06C06": {
-    "title": "Deduplication and canonicalization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 00:55:00 IST 2026",
-    "note": "Write stage got cut off before writing (StructuredOutput force-invoked), same pattern as M05C08 -- correctly caught by the new guard, which broke the batch loop cleanly instead of proceeding to finalize (confirmed via task notification: agents_done=5, agents_error=0, no roadmap/ledger damage). Left behind an excellent, fully-verified research + partial-write plan: SHA-256 hash equality for R1/R2, inequality for R3, word-trigram Jaccard(R1,R3)=0.50 (6/12), and Concept 01's auth(s) tiebreak correctly picking R2 as canonical -- all re-verified a third time via a fresh node script before use. Completed manually reusing that plan directly."
-  },
-  "M05C09": {
-    "title": "MRR, MAP, DCG and nDCG",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 00:55:48 GMT+0530 (India Standard Time)"
-  },
-  "M06C07": {
-    "title": "Document identity and versioning",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 01:15:03 IST 2026"
-  },
-  "M05C10": {
-    "title": "Relevance judgments and test collections",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 01:42:44 IST 2026"
-  },
-  "M06C08": {
-    "title": "Provenance, lineage and timestamps",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 01:40:19 IST 2026"
-  },
-  "M06C09": {
-    "title": "Incremental and event-driven ingestion",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 02:03:47 IST 2026"
-  },
-  "M05C11": {
-    "title": "Lexical retrieval strengths and failures",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 02:05:00 IST 2026",
-    "note": "Same write-stage failure pattern as M05C08 -- write agent got force-cut-off right before calling Write, but this time it had ALREADY fully written and runtime-smoke-tested lesson-05-11.js plus additive CSS before being cut off, leaving only the HTML unwritten. Correctly caught by the guard, which broke the batch loop cleanly (confirmed: no roadmap/ledger damage, tracker still 'writing'). Completed manually: wrote module-05-concept-11.html reusing the existing verified JS as-is, independently re-verified all three worked-example BM25 scores (Query A/B/C) via a fresh node script before writing -- all matched the plan exactly, including the Query C result (T3 scores 0.0000, ranked last behind 4 irrelevant tickets). MODULE 05 COMPLETE (11/11). Left roadmap.js's Module 05 next:true untouched and did not touch index.html, per the user's explicit instruction to reserve the Module 05->06 'next' handoff for morning review."
-  },
-  "M07C01": {
-    "title": "Why chunk documents?",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 10:35:38 GMT+0530 (India Standard Time)"
-  },
-  "M07C02": {
-    "title": "Fixed-size and recursive chunking",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 11:17:27 GMT+0530 (India Standard Time)"
-  },
-  "M07C03": {
-    "title": "Sentence, paragraph and structural chunking",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 11:49:34 IST 2026"
-  },
-  "M07C04": {
-    "title": "Semantic and proposition-based chunking",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 12:14:38 GMT+0530 (India Standard Time)"
-  },
-  "M07C05": {
-    "title": "Chunk size as a precision–context trade-off",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 12:50:33 GMT+0530 (India Standard Time)"
-  },
-  "M07C06": {
-    "title": "Chunk overlap and boundary loss",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 13:17:56 IST 2026"
-  },
-  "M07C07": {
-    "title": "Parent-document, parent–child and small-to-big retrieval",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 13:55:00 IST 2026"
-  },
-  "M07C08": {
-    "title": "Hierarchical and late chunking",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 14:45:00"
-  },
-  "M07C09": {
-    "title": "Metadata and contextual headers",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 15:15:00"
-  },
-  "M07C10": {
-    "title": "Evaluating chunk quality",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 15:45:00",
-    "note": "MODULE 07 COMPLETE (10/10). Pushed to GitHub directly by main session after correcting the git-path bug in the batch script's finalize prompt (it pointed at RAG/ instead of the real repo root RAG/rag/)."
-  },
-  "M08C01": {
-    "title": "What is an embedding?",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 16:15:00",
-    "note": "MODULE 08 OPENS (1/11). Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (5-word one-hot vs. illustrative-learned cosine matrix, both cross-checked). roadmap.js next flipped from Module 07 to Module 08 (builtCount:1)."
-  },
-  "M08C02": {
-    "title": "Text-to-vector semantic representation",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 16:52:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, triple-independently-verified research plan (real scaled dot-product attention on 'The order shipped late', shipped self-weight 0.7267)."
-  },
-  "M08C03": {
-    "title": "Bi-encoders and asymmetric query embeddings versus document embeddings",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 17:22:19"
-  },
-  "M08C04": {
-    "title": "Contrastive learning objectives",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 17:56:57 IST 2026"
-  },
-  "M08C05": {
-    "title": "Positive pairs, negatives and hard negatives",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 18:35:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (409,007x hard/easy loss ratio at tau=0.05, DPR's Table 3 ablation +17.92%/+6.85%/+2.17%), independently re-verified via node before use."
-  },
-  "M08C06": {
-    "title": "Pooling, embedding dimensions and normalization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 19:10:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4+ min with no new lines -- reused its already-solid, dual-script-verified research plan (mean/first/last pooling cross-table, dot-equals-cosine proof, storage-cost table), independently re-verified via node before use."
-  },
-  "M08C07": {
-    "title": "Anisotropy and embedding-space pathologies",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 19:45:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4.5+ min -- reused its already-solid, dual-method-verified research plan (0.990608 anisotropic mean vs -0.333333 isotropic mean, the normalization-invariance proof to 10 decimals, the 3 curl-verified references), independently re-verified via node before use."
-  },
-  "M08C08": {
-    "title": "Embedding-model instructions and query/document prefixes",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 19:57:12 IST 2026"
-  },
-  "M08C09": {
-    "title": "Multilingual and domain embedding models",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 20:25:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 8.5+ min -- reused its already-solid, dual-method-verified research plan (0.999354/-0.306189 cross-lingual contrast, 0.995797/-0.003623 domain-jargon contrast, 4 curl-verified references), independently re-verified via node before use."
-  },
-  "M08C10": {
-    "title": "Embedding-model selection",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 20:40:45 IST 2026"
-  },
-  "M08C11": {
-    "title": "Versioning, drift and migration",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 21:02:56 IST 2026"
-  },
-  "M09C01": {
-    "title": "Exact vector similarity search",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Mon, Aug 24, 2026 10:16:05 AM"
-  }
+ "M03C10": {
+  "title": "Knowledge-intensive tasks and answerability",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 16:05:53 IST 2026"
+ },
+ "M03C11": {
+  "title": "The RAG failure chain",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 16:18:44 IST 2026"
+ },
+ "M03C12": {
+  "title": "When RAG should not be used",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 16:34:25 IST 2026"
+ },
+ "M03C09": {
+  "title": "Naive, advanced and modular RAG taxonomy",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 15:52:22 IST 2026"
+ },
+ "M04C01": {
+  "title": "Scalars, vectors and matrices",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:32:00",
+  "note": "Tracker was stale (an earlier failed attempt wrote issues here) -- corrected: this concept actually succeeded on a later attempt."
+ },
+ "M04C02": {
+  "title": "Vector norms, dimensions and normalization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:32:00"
+ },
+ "M04C04": {
+  "title": "Euclidean and other distance functions",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 18:05:23 GMT+0530 (India Standard Time)"
+ },
+ "M04C03": {
+  "title": "Dot product, vector similarity, angles and cosine similarity",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:43:00",
+  "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but the agent's own final tracker checkpoint write never landed (no functional impact, just a gap in this log)."
+ },
+ "M04C06": {
+  "title": "Softmax, temperature and logarithms",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 19:45:00",
+  "note": "Concept 08's agent self-healed by rebuilding this concept's files directly, but wrote them in the wrong roadmap state (marked complete despite being the newest concept) and never flipped Concept 05 or bumped roadmap.js. Corrected manually: Concept 05 flipped to complete, this concept corrected to active, roadmap.js builtCount bumped 5->6, index.html updated."
+ },
+ "M04C05": {
+  "title": "Probability and conditional probability",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 19:20:00"
+ },
+ "M04C07": {
+  "title": "Entropy and cross-entropy",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 20:15:00",
+  "note": "Two agents in a row got cut off before writing this concept -- built manually, reusing the extensively node-verified softmax/entropy/cross-entropy numbers both failed attempts had already checked (independently re-verified before use)."
+ },
+ "M04C08": {
+  "title": "Ranking functions and optimization objectives",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 20:45:00",
+  "note": "Also built manually after the batch's own agent got cut off. Module 04 now at 8/10 -- Concepts 09-10 still needed to close the module before any push."
+ },
+ "M04C09": {
+  "title": "Time and space complexity",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 21:35:00",
+  "note": "Written by Concept 10's own agent as a self-heal (its required template/dedup source was missing), then flipped to complete manually when Concept 10 itself was finished by hand."
+ },
+ "M04C10": {
+  "title": "Worked retrieval geometry",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:20:00",
+  "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying every worked number (norms, cosine, distance, softmax, entropy, cross-entropy) before use. MODULE 04 COMPLETE (10/10) -- pushed to GitHub."
+ },
+ "M05C02": {
+  "title": "Inverted indexes and postings lists",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 21:20:00",
+  "note": "Module 05 Concept 01 (What is information retrieval?) did not exist yet despite Module 04 being fully complete -- self-healed by building it first (minimal but complete, all b/s ids, own verified references) so Concept 02 had a real template/dedup source and backlink target, then built Concept 02 as assigned. roadmap.js builtCount for module 5 set 0->2 (both concepts), not 1->2 as originally assumed."
+ },
+ "M05C01": {
+  "title": "What is information retrieval? Corpora, documents, queries and relevance",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 21:15:00",
+  "note": "Backfilled -- built by Concept 02's agent as a self-heal, no dedicated tracker entry landed at the time."
+ },
+ "M05C03": {
+  "title": "Sparse retrieval and dense retrieval",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:55:00",
+  "note": "Agent had already written this concept's HTML/JS in full (verified tag-balanced, ids unique) before being stopped mid-run as part of applying the new reference-cache/ledger optimization to the rest of the batch -- only the downstream link-up (flip Concept 02, roadmap bump, index update) was still pending and was completed manually. No content was redone."
+ },
+ "M05C04": {
+  "title": "Term frequency and inverse document frequency",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:14:44"
+ },
+ "M06C01": {
+  "title": "Source inventory and authority",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 22:15:04 GMT+0530 (India Standard Time)"
+ },
+ "M06C02": {
+  "title": "PDF, HTML, Word, Excel and Markdown parsing",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 22:30:16 GMT+0530 (India Standard Time)"
+ },
+ "M05C05": {
+  "title": "TF–IDF derivation",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:20 IST",
+  "note": "Backfilled -- file exists and roadmap.js builtCount confirms this concept built successfully; its own agent never wrote a completion checkpoint here before the batch was stopped."
+ },
+ "M05C06": {
+  "title": "BM25 derivation and parameters",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
+  "note": "Backfilled -- same tracker-write gap as M05C05."
+ },
+ "M06C03": {
+  "title": "Databases, APIs, tickets and code repositories",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 22:44:01 GMT+0530 (India Standard Time)"
+ },
+ "M05C07": {
+  "title": "Document-length normalization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sat Aug 22 2026 22:48:03 GMT+0530 (India Standard Time)",
+  "note": "Backfilled -- same tracker-write gap as M05C05/M05C06. Concept 07 is the module's currently active concept (Concept 08 not yet built)."
+ },
+ "M06C04": {
+  "title": "OCR, layout, tables and images",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 23:15:00",
+  "note": "Agent got force-stopped before writing any files under the 1-attempt/15-minute policy, but left a fully-verified plan (CER worked example, Reading-Order Reconstructor lab, 4 pre-cached references). Built manually reusing that plan -- CER numbers independently re-verified via a Levenshtein edit-distance script before use (dist=2, CER=0.2 for the ORDER 4471 example)."
+ },
+ "M06C05": {
+  "title": "Cleaning and normalization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 00:25:31 IST 2026"
+ },
+ "M05C08": {
+  "title": "Precision, recall and F-score",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 00:35:00 IST 2026",
+  "note": "Write-stage agent spent its whole budget re-planning content in full detail instead of transcribing the already-complete research plan, then got force-cut-off right before calling Write -- htmlFile/jsFile never created. Its own honest self-report (all b01-b10/s01-s24 copy, both SVG-equivalent figures, the rank-chip-row/confusion-quadrant visuals, the Top-k Confusion Grid lab, and the from-scratch Python code) was fully planned but not written. The orchestrating script then proceeded to the finalize stage anyway (a real bug -- no check that write actually succeeded) which began executing against files that didn't exist; caught and stopped via TaskStop before any roadmap.js/ledger damage landed (verified: builtCount still 7, Concept 07 still active, no M05C08 ledger entry). Fix applied to all three 3-stage batch scripts: check writeResult's tagBalanceOk/sectionCountOk/jsSyntaxOk before calling finalize, break the loop if any are false. Completed manually: precision@k/recall@k/F1@k worked on an 8-document ranked list (relevant={1,2,4,7}), all numbers verified via node script across k=1,3,5,8. Reused the CSS classes (.rank-chip, .confusion-quadrant, .relevance-toggles) the failed write-agent had already safely added to lesson.css."
+ },
+ "M06C06": {
+  "title": "Deduplication and canonicalization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 00:55:00 IST 2026",
+  "note": "Write stage got cut off before writing (StructuredOutput force-invoked), same pattern as M05C08 -- correctly caught by the new guard, which broke the batch loop cleanly instead of proceeding to finalize (confirmed via task notification: agents_done=5, agents_error=0, no roadmap/ledger damage). Left behind an excellent, fully-verified research + partial-write plan: SHA-256 hash equality for R1/R2, inequality for R3, word-trigram Jaccard(R1,R3)=0.50 (6/12), and Concept 01's auth(s) tiebreak correctly picking R2 as canonical -- all re-verified a third time via a fresh node script before use. Completed manually reusing that plan directly."
+ },
+ "M05C09": {
+  "title": "MRR, MAP, DCG and nDCG",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 00:55:48 GMT+0530 (India Standard Time)"
+ },
+ "M06C07": {
+  "title": "Document identity and versioning",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 01:15:03 IST 2026"
+ },
+ "M05C10": {
+  "title": "Relevance judgments and test collections",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 01:42:44 IST 2026"
+ },
+ "M06C08": {
+  "title": "Provenance, lineage and timestamps",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 01:40:19 IST 2026"
+ },
+ "M06C09": {
+  "title": "Incremental and event-driven ingestion",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 02:03:47 IST 2026"
+ },
+ "M05C11": {
+  "title": "Lexical retrieval strengths and failures",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 02:05:00 IST 2026",
+  "note": "Same write-stage failure pattern as M05C08 -- write agent got force-cut-off right before calling Write, but this time it had ALREADY fully written and runtime-smoke-tested lesson-05-11.js plus additive CSS before being cut off, leaving only the HTML unwritten. Correctly caught by the guard, which broke the batch loop cleanly (confirmed: no roadmap/ledger damage, tracker still 'writing'). Completed manually: wrote module-05-concept-11.html reusing the existing verified JS as-is, independently re-verified all three worked-example BM25 scores (Query A/B/C) via a fresh node script before writing -- all matched the plan exactly, including the Query C result (T3 scores 0.0000, ranked last behind 4 irrelevant tickets). MODULE 05 COMPLETE (11/11). Left roadmap.js's Module 05 next:true untouched and did not touch index.html, per the user's explicit instruction to reserve the Module 05->06 'next' handoff for morning review."
+ },
+ "M07C01": {
+  "title": "Why chunk documents?",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 10:35:38 GMT+0530 (India Standard Time)"
+ },
+ "M07C02": {
+  "title": "Fixed-size and recursive chunking",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 11:17:27 GMT+0530 (India Standard Time)"
+ },
+ "M07C03": {
+  "title": "Sentence, paragraph and structural chunking",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 11:49:34 IST 2026"
+ },
+ "M07C04": {
+  "title": "Semantic and proposition-based chunking",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 12:14:38 GMT+0530 (India Standard Time)"
+ },
+ "M07C05": {
+  "title": "Chunk size as a precision–context trade-off",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 12:50:33 GMT+0530 (India Standard Time)"
+ },
+ "M07C06": {
+  "title": "Chunk overlap and boundary loss",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 13:17:56 IST 2026"
+ },
+ "M07C07": {
+  "title": "Parent-document, parent–child and small-to-big retrieval",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 13:55:00 IST 2026"
+ },
+ "M07C08": {
+  "title": "Hierarchical and late chunking",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 14:45:00"
+ },
+ "M07C09": {
+  "title": "Metadata and contextual headers",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 15:15:00"
+ },
+ "M07C10": {
+  "title": "Evaluating chunk quality",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 15:45:00",
+  "note": "MODULE 07 COMPLETE (10/10). Pushed to GitHub directly by main session after correcting the git-path bug in the batch script's finalize prompt (it pointed at RAG/ instead of the real repo root RAG/rag/)."
+ },
+ "M08C01": {
+  "title": "What is an embedding?",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 16:15:00",
+  "note": "MODULE 08 OPENS (1/11). Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (5-word one-hot vs. illustrative-learned cosine matrix, both cross-checked). roadmap.js next flipped from Module 07 to Module 08 (builtCount:1)."
+ },
+ "M08C02": {
+  "title": "Text-to-vector semantic representation",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 16:52:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, triple-independently-verified research plan (real scaled dot-product attention on 'The order shipped late', shipped self-weight 0.7267)."
+ },
+ "M08C03": {
+  "title": "Bi-encoders and asymmetric query embeddings versus document embeddings",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 17:22:19"
+ },
+ "M08C04": {
+  "title": "Contrastive learning objectives",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 17:56:57 IST 2026"
+ },
+ "M08C05": {
+  "title": "Positive pairs, negatives and hard negatives",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 18:35:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (409,007x hard/easy loss ratio at tau=0.05, DPR's Table 3 ablation +17.92%/+6.85%/+2.17%), independently re-verified via node before use."
+ },
+ "M08C06": {
+  "title": "Pooling, embedding dimensions and normalization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:10:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4+ min with no new lines -- reused its already-solid, dual-script-verified research plan (mean/first/last pooling cross-table, dot-equals-cosine proof, storage-cost table), independently re-verified via node before use."
+ },
+ "M08C07": {
+  "title": "Anisotropy and embedding-space pathologies",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:45:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 4.5+ min -- reused its already-solid, dual-method-verified research plan (0.990608 anisotropic mean vs -0.333333 isotropic mean, the normalization-invariance proof to 10 decimals, the 3 curl-verified references), independently re-verified via node before use."
+ },
+ "M08C08": {
+  "title": "Embedding-model instructions and query/document prefixes",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 19:57:12 IST 2026"
+ },
+ "M08C09": {
+  "title": "Multilingual and domain embedding models",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 20:25:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold and its transcript went quiet for 8.5+ min -- reused its already-solid, dual-method-verified research plan (0.999354/-0.306189 cross-lingual contrast, 0.995797/-0.003623 domain-jargon contrast, 4 curl-verified references), independently re-verified via node before use."
+ },
+ "M08C10": {
+  "title": "Embedding-model selection",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 20:40:45 IST 2026"
+ },
+ "M08C11": {
+  "title": "Versioning, drift and migration",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 21:02:56 IST 2026"
+ },
+ "M09C01": {
+  "title": "Exact vector similarity search",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Mon, Aug 24, 2026 10:16:05 AM"
+ }
 }
