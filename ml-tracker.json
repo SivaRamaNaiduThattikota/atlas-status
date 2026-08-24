@@ -307,5 +307,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Mon, Aug 24, 2026 10:58:02 AM"
+ },
+ "M06C04": {
+  "title": "Logistic regression and the sigmoid",
+  "status": "researching",
+  "timestamp": "Mon, Aug 24, 2026 10:59:41 AM"
  }
 }
