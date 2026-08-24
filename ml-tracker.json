@@ -304,6 +304,7 @@
  "M06C03": {
   "title": "Ridge and lasso regularization",
   "status": "researching",
-  "timestamp": "2026-08-24 10:35:07"
+  "timestamp": "2026-08-24 10:35:07",
+  "note": "Research stage ~5.6 min elapsed, under threshold, healthy."
  }
 }
