@@ -297,7 +297,6 @@
  "M06C02": {
   "title": "Ordinary least squares — the math",
   "status": "writing",
-  "timestamp": "2026-08-24 10:12:52",
-  "note": "Write stage ~15.6 min elapsed, well past the 2-min threshold -- JS file written (lesson-06-02.js, 10:18) but HTML file (module-06-concept-02.html) still missing. Agent transcript is live (48 lines, essentially real-time). Flagged."
+  "timestamp": "2026-08-24 10:12:52"
  }
 }
