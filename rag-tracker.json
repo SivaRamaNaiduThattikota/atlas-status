@@ -410,7 +410,9 @@
   },
   "M09C01": {
     "title": "Exact vector similarity search",
-    "status": "writing",
-    "timestamp": "Mon, Aug 24, 2026 10:09:30 AM"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Mon, Aug 24, 2026 10:16:05 AM"
   }
 }
