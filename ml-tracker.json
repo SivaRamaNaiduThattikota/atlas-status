@@ -288,7 +288,15 @@
  },
  "M06C01": {
   "title": "Linear regression from first principles",
-  "status": "writing",
-  "timestamp": "2026-08-24 09:54:47"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-24 10:02:38",
+  "note": "MODULE 06 OPENS (1/12). Finalize pass complete: roadmap.js next flipped from Module 05 to Module 06 (builtCount:1). Module 05's own 'next' flag was still true at close and has now been corrected to false. Module 05 Concept 09's status chip left untouched per this course's module-boundary convention. Module 06 not yet complete -- 11 concepts remain."
+ },
+ "M06C02": {
+  "title": "Ordinary least squares — the math",
+  "status": "researching",
+  "timestamp": "2026-08-24 10:04:09"
  }
 }
