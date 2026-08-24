@@ -304,6 +304,7 @@
  "M06C03": {
   "title": "Ridge and lasso regularization",
   "status": "writing",
-  "timestamp": "2026-08-24 10:45:25"
+  "timestamp": "2026-08-24 10:45:25",
+  "note": "Write stage ~5.35 min elapsed, past the 2-min threshold -- neither html nor js file exists yet, no result -- flagged."
  }
 }
