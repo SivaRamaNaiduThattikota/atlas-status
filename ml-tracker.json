@@ -311,6 +311,7 @@
  "M06C04": {
   "title": "Logistic regression and the sigmoid",
   "status": "writing",
-  "timestamp": "Mon, Aug 24, 2026 11:05:45 AM"
+  "timestamp": "Mon, Aug 24, 2026 11:05:45 AM",
+  "note": "Batch-closing concept write stage ~2.87 min elapsed, past the 2-min threshold -- neither file exists yet, no result -- flagged."
  }
 }
