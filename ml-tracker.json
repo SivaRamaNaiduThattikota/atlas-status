@@ -303,7 +303,9 @@
  },
  "M06C03": {
   "title": "Ridge and lasso regularization",
-  "status": "writing",
-  "timestamp": "2026-08-24 10:45:25"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Mon, Aug 24, 2026 10:58:02 AM"
  }
 }
