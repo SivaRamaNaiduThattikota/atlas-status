@@ -528,8 +528,10 @@
   },
   "M10C07": {
     "title": "Oracle Text and vector hybrid retrieval",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 21:00:35 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Thu Aug 27 2026 21:46:24 GMT+0530 (India Standard Time)"
   },
   "M10C08": {
     "title": "Python integration with python-oracledb",
