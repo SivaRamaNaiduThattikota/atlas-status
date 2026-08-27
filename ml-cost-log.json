@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-23 18:10",
-  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One ML Atlas batch (Module 05 Concept 05) is still running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-27 15:19",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One ML Atlas batch (Module 06 Concepts 09-12) is still running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 01 Concepts 2-4",
@@ -163,6 +163,69 @@
       "durationMs": 951929,
       "estimatedCostLowUSD": 5.85,
       "estimatedCostHighUSD": 5.85
+    },
+    {
+      "label": "Batch run — Module 05 Concept 05",
+      "outcome": "Covered 1 concept: \"Cost-sensitive learning\". Write stage crossed the 2-minute stall threshold; finished by hand reusing the agent's own dual-script-verified research plan.",
+      "totalTokens": 9398294,
+      "toolUses": 53,
+      "durationMs": 1197587,
+      "estimatedCostLowUSD": 6.41,
+      "estimatedCostHighUSD": 6.41
+    },
+    {
+      "label": "Batch run — Module 05 Concept 06",
+      "outcome": "Covered 1 concept: \"Evaluation under imbalance\". Built cleanly, 0 errors.",
+      "totalTokens": 17207996,
+      "toolUses": 104,
+      "durationMs": 2517966,
+      "estimatedCostLowUSD": 14.92,
+      "estimatedCostHighUSD": 14.92
+    },
+    {
+      "label": "Module 05 Concept 07 built manually in-conversation (not a separate workflow run)",
+      "outcome": "The batch's research stage genuinely stalled (transcript quiet 6.4+ minutes, tracker never advanced past 'researching') with no usable partial plan to salvage. Built entirely by hand from scratch — \"Imbalance in classical ML versus deep learning\" — independently verifying every number via node, including the real Lin et al. 2017 focal-loss paper defaults via curl. Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
+    },
+    {
+      "label": "Batch run — Module 05 Concept 08",
+      "outcome": "Covered 1 concept: \"Production consequences of imbalance choices\". Built cleanly, 0 errors.",
+      "totalTokens": 8432184,
+      "toolUses": 64,
+      "durationMs": 1207942,
+      "estimatedCostLowUSD": 7.61,
+      "estimatedCostHighUSD": 7.61
+    },
+    {
+      "label": "Batch run — Module 05 Concept 09",
+      "outcome": "Covered 1 concept: \"Worked case — CFPB's product-varying relief rate\". Built cleanly, 0 errors. MODULE 05 COMPLETE (9/9), closing Phase 2.",
+      "totalTokens": 7266325,
+      "toolUses": 54,
+      "durationMs": 1040320,
+      "estimatedCostLowUSD": 6.71,
+      "estimatedCostHighUSD": 6.71
+    },
+    {
+      "label": "Batch run — Module 06 Concepts 01-04",
+      "outcome": "Covered 4 concepts: \"Linear regression from first principles\", \"Ordinary least squares — the math\", \"Ridge and lasso regularization\", \"Logistic regression and the sigmoid\". All 4 built cleanly, 0 errors. Opens Module 06 and Phase 3.",
+      "totalTokens": 28153905,
+      "toolUses": 209,
+      "durationMs": 5222802,
+      "estimatedCostLowUSD": 26.68,
+      "estimatedCostHighUSD": 26.68
+    },
+    {
+      "label": "Batch run — Module 06 Concepts 05-08",
+      "outcome": "Covered 4 concepts: \"Odds, log-odds and coefficients\", \"Decision boundaries — geometric intuition\", \"Linear and quadratic discriminant analysis\", \"Multiclass extensions\". Concepts 05-07 built cleanly; Concept 08's write stage stalled 5.85+ minutes past threshold with no files on disk, so the batch was manually stopped and the concept finished by hand reusing the already node-verified research plan. Module 06 now at 8/12, not yet module-complete.",
+      "totalTokens": 33069962,
+      "toolUses": 236,
+      "durationMs": 7655933,
+      "estimatedCostLowUSD": 25.85,
+      "estimatedCostHighUSD": 25.85
     }
   ]
 }

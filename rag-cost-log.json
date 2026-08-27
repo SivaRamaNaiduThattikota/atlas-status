@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-23 18:10",
-  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One RAG Atlas batch (Module 08 Concepts 03-05) is still running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-27 15:19",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One RAG Atlas batch (Module 09 Concepts 09-10) is still running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
@@ -280,6 +280,78 @@
       "durationMs": 1129646,
       "estimatedCostLowUSD": 6.45,
       "estimatedCostHighUSD": 6.45
+    },
+    {
+      "label": "Batch run — Module 08 Concepts 03-05",
+      "outcome": "Covered 3 concepts: \"Bi-encoders and asymmetric query embeddings versus document embeddings\", \"Contrastive learning objectives\", \"Positive pairs, negatives and hard negatives\". Concepts 03-04 built cleanly by the workflow; Concept 05's write stage crossed the 2-minute stall threshold and was finished by hand reusing that agent's own verified research plan.",
+      "totalTokens": 37436392,
+      "toolUses": 196,
+      "durationMs": 4954459,
+      "estimatedCostLowUSD": 26.19,
+      "estimatedCostHighUSD": 26.19
+    },
+    {
+      "label": "Batch run — Module 08 Concept 06",
+      "outcome": "Covered 1 concept: \"Pooling, embedding dimensions and normalization\". Write stage crossed the 2-minute stall threshold and went quiet 4+ minutes; finished by hand reusing the agent's own dual-script-verified research plan.",
+      "totalTokens": 15375922,
+      "toolUses": 74,
+      "durationMs": 1536519,
+      "estimatedCostLowUSD": 8.24,
+      "estimatedCostHighUSD": 8.24
+    },
+    {
+      "label": "Batch run — Module 08 Concept 07",
+      "outcome": "Covered 1 concept: \"Anisotropy and embedding-space pathologies\". Write stage crossed the 2-minute stall threshold and went quiet 4.5+ minutes; finished by hand reusing the agent's own dual-method-verified research plan.",
+      "totalTokens": 4326195,
+      "toolUses": 36,
+      "durationMs": 1113148,
+      "estimatedCostLowUSD": 3.82,
+      "estimatedCostHighUSD": 3.82
+    },
+    {
+      "label": "Batch run — Module 08 Concepts 08-09",
+      "outcome": "Covered 2 concepts: \"Embedding-model instructions and query/document prefixes\", \"Multilingual and domain embedding models\". Concept 08 built cleanly; Concept 09's write stage crossed the 2-minute stall threshold and went quiet 8.5+ minutes, finished by hand reusing that agent's own verified research plan.",
+      "totalTokens": 19995814,
+      "toolUses": 119,
+      "durationMs": 2361476,
+      "estimatedCostLowUSD": 13.26,
+      "estimatedCostHighUSD": 13.26
+    },
+    {
+      "label": "Batch run — Module 08 Concepts 10-11",
+      "outcome": "Covered 2 concepts: \"Embedding-model selection\", \"Versioning, drift and migration\". Both built cleanly, 0 errors. MODULE 08 COMPLETE (11/11).",
+      "totalTokens": 24430747,
+      "toolUses": 173,
+      "durationMs": 2434557,
+      "estimatedCostLowUSD": 17.01,
+      "estimatedCostHighUSD": 17.01
+    },
+    {
+      "label": "Batch run — Module 09 Concepts 01-04",
+      "outcome": "Covered 4 concepts: \"Exact vector similarity search\", \"Approximate nearest-neighbour vector search\", \"HNSW graph construction and search\", \"IVF partitioning\". Concepts 01-02 built cleanly by the workflow; Concept 03's write stage stalled 10+ minutes past threshold with no journal result and was finished by hand from an independently re-verified research plan; Concept 04 was continued by hand in the same sitting rather than relaunching a fresh workflow batch. Opens Module 09.",
+      "totalTokens": 35185859,
+      "toolUses": 191,
+      "durationMs": 5126595,
+      "estimatedCostLowUSD": 24.57,
+      "estimatedCostHighUSD": 24.57
+    },
+    {
+      "label": "Batch run — Module 09 Concept 05 (research only, write done manually)",
+      "outcome": "Covered 1 concept: \"Product and scalar quantization\". Research stage completed and fully node-verified; the batch was manually stopped before the write stage ran (recurring write-stage stall pattern this session), and the concept was finished by hand in-conversation reusing that research plan directly, independently re-verified a second time before use.",
+      "totalTokens": 6562307,
+      "toolUses": 45,
+      "durationMs": 1806691,
+      "estimatedCostLowUSD": 4.56,
+      "estimatedCostHighUSD": 4.56
+    },
+    {
+      "label": "Batch run — Module 09 Concepts 06-08",
+      "outcome": "Covered 3 concepts: \"Recall–latency–memory trade-offs\", \"Metadata filtering strategies\", \"Updates, deletes and tombstones\". Concepts 06-07 built cleanly; Concept 08's write stage failed twice and the workflow failed outright (confirmed via task-completion notification, not just a stalled transcript). Finished by hand reusing the already node-verified research plan. Module 09 now at 8/10, not yet module-complete. totalTokens/toolUses/durationMs below are the workflow's own failure-notification figures (used as-is per the authoritative real count); estimated cost is computed from this same run's real per-agent input/output/cache-write/cache-read breakdown at Sonnet-class pricing.",
+      "totalTokens": 1010426,
+      "toolUses": 213,
+      "durationMs": 6154797,
+      "estimatedCostLowUSD": 22.16,
+      "estimatedCostHighUSD": 22.16
     }
   ]
 }
