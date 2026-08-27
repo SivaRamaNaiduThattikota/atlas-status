@@ -317,7 +317,9 @@
  },
  "M06C05": {
   "title": "Odds, log-odds and coefficients",
-  "status": "writing",
-  "timestamp": "2026-08-27 12:15:24"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 12:23:57"
  }
 }
