@@ -477,7 +477,8 @@
   },
   "M09C10": {
     "title": "Capacity planning and benchmarking",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 15:41:19 GMT+0530 (India Standard Time)"
+    "status": "research-complete",
+    "timestamp": "Thu Aug 27 2026 15:55:25 GMT+0530 (India Standard Time)",
+    "note": "Research-only pass. Full plan (worked N=200,000,000/d=128 sizing example using Qdrant own cited capacity-planning formulas, The Capacity Planner lab with 4 verified N-presets x 2 quantization states, beginner/advanced outline) handed off; no HTML/JS written by this agent."
   }
 }
