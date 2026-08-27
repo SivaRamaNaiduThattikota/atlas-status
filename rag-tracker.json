@@ -489,5 +489,10 @@
     "jsExists": true,
     "timestamp": "Thu Aug 27 2026 17:14:12 GMT+0530 (India Standard Time)",
     "note": "The decomposed-research pipeline (Context->parallel Refs/WorkedExample/LabDesign->Synthesis) produced an unusually rich, high-quality plan on its first real run -- but the resulting plan was too large for a single Write-stage agent to complete in one turn budget (it also needed to add new CSS to the shared lesson.css), and the write agent self-reported being interrupted mid-task (tagBalanceOk/sectionCountOk/jsSyntaxOk all false, files never written). The batch script correctly refused to proceed to finalize on that invalid result and stopped after just this one concept. Manual takeover: reused the full synthesis plan (verified live references, the byte-math worked example, the Boundary Sorter lab design) almost entirely as-is -- it was already solid -- reconciled 3 flagged citation-URL mismatches (LangChain/Oracle/Elastic) and sourced a missing OpenSearch citation, all verified live via curl. The CSS the interrupted write agent had already appended to lesson.css (bin-store/bin-database/bin-search/sorted-in modifiers, sortIn225 keyframe) was reused unchanged. Wrote both files fresh, structurally checked (tag-balance, id-uniqueness, node -c all passed). MODULE 10 OPENS (1/14)."
+  },
+  "M10C02": {
+    "title": "What the database owns in a RAG architecture",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 17:20:10 GMT+0530 (India Standard Time)"
   }
 }
