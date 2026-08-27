@@ -542,8 +542,8 @@
   },
   "M10C10": {
     "title": "Oracle security and operational considerations for RAG",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 21:57:21 GMT+0530 (India Standard Time)"
+    "status": "built",
+    "timestamp": "Thu Aug 27 2026 22:47:58 GMT+0530 (India Standard Time)"
   },
   "M10C09": {
     "title": "Transactions, updates, deletes and index synchronization",
