@@ -244,6 +244,24 @@
       "durationMs": 0,
       "estimatedCostLowUSD": 0,
       "estimatedCostHighUSD": 0
+    },
+    {
+      "label": "Batch run — Module 07 Concepts 05-06 (stopped via TaskStop before Concepts 07-08)",
+      "outcome": "Covered 2 concepts: \"Gaussian, multinomial and Bernoulli variants\", \"Support vector machines — margins and kernels\". Concept 05 built cleanly by the workflow. Concept 06's write stage produced a JS file but no matching HTML; stopped via TaskStop and finished by hand, reusing the workflow's own Synthesis plan pulled from its journal.jsonl. Module 07 now at 6/10, not module-complete. This run was stopped via TaskStop before it returned its own completion notification, so totalTokens/toolUses/durationMs below are reconstructed directly from this run's own agent transcripts (real input/output/cache-write/cache-read counts), and estimated cost is computed from that same real breakdown at Sonnet-class pricing.",
+      "totalTokens": 14432489,
+      "toolUses": 155,
+      "durationMs": 2576982,
+      "estimatedCostLowUSD": 16.41,
+      "estimatedCostHighUSD": 16.41
+    },
+    {
+      "label": "Module 07 Concept 06 finished manually in-conversation (not a separate workflow run)",
+      "outcome": "Done -- reused the stopped write agent's own Synthesis plan (pulled from the workflow's journal.jsonl), wrote the HTML file by hand, verified structurally (tag balance, id-uniqueness, node -c). Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
     }
   ]
 }

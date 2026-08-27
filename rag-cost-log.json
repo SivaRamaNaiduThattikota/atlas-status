@@ -379,6 +379,24 @@
       "durationMs": 0,
       "estimatedCostLowUSD": 0,
       "estimatedCostHighUSD": 0
+    },
+    {
+      "label": "Batch run — Module 10 Concepts 05-06 (stopped via TaskStop before Concepts 07-08)",
+      "outcome": "Covered 2 concepts: \"Oracle AI Database VECTOR type and vector-distance SQL\", \"Exact search and Oracle vector indexes\". Concept 05 built cleanly by the workflow, with both real-syntax claims (VECTOR type grammar, VECTOR_DISTANCE function) cited to a live curl re-verification against Oracle's own documentation. Concept 06's write stage produced an HTML file missing its own lab section and no JS at all; stopped via TaskStop and finished by hand, reusing the workflow's own Synthesis plan pulled from its journal.jsonl (added the missing \"Metric Gatekeeper\" lab, wrote the JS file, fixed two stale anchor links). Module 10 now at 6/14, not module-complete. This run was stopped via TaskStop before it returned its own completion notification, so totalTokens/toolUses/durationMs below are reconstructed directly from this run's own agent transcripts (real input/output/cache-write/cache-read counts), and estimated cost is computed from that same real breakdown at Sonnet-class pricing.",
+      "totalTokens": 18614059,
+      "toolUses": 155,
+      "durationMs": 3046654,
+      "estimatedCostLowUSD": 15.15,
+      "estimatedCostHighUSD": 15.15
+    },
+    {
+      "label": "Module 10 Concept 06 finished manually in-conversation (not a separate workflow run)",
+      "outcome": "Done -- reused the stopped write agent's own Synthesis plan (pulled from the workflow's journal.jsonl), added the missing lab section and JS file, fixed two stale anchor links, verified structurally (tag balance, id-uniqueness, node -c). Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
     }
   ]
 }
