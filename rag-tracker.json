@@ -538,7 +538,16 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Thu Aug 27 2026 21:35:00 GMT+0530 (India Standard Time)",
-    "note": "Built directly out of sequence per explicit assignment -- Module 10 position 7 (Oracle Text and vector hybrid retrieval, M10C07) has not been authored, so the built set is now {1,2,3,4,5,6,8} with a flagged hole at 7. Flagged in-page (Section 01 callout, checkpoint fine-print) rather than hidden. Deliberately did NOT bump roadmap.js's Module 10 builtCount past 6: both moduleMarkup() in roadmap.js and buildLessonsDropdown() in shell.js slice/link concepts by a contiguous builtCount prefix (index < built), so advancing it now would either wrongly mark position 7 'Complete' with a dead link to a nonexistent module-10-concept-07.html, or fail to link this concept at all. Consequence: this concept's HTML is complete and correct at its own URL but will not appear in the lessons dropdown or roadmap.html's per-concept list until Concept 07 is built and builtCount can advance contiguously. python-oracledb's own vector_data_type.html, connection_handling.html, and sql_execution.html pages were fetched live via curl this session (all HTTP 200) since WebFetch is blocked in this environment; the worked example's cosine-distance numbers (0.04 and 1.0, plus float32-rounded variants) were verified independently via node, not typed in by hand."
+    "timestamp": "Thu Aug 27 2026 21:55:28 GMT+0530 (India Standard Time)"
+  },
+  "M10C10": {
+    "title": "Oracle security and operational considerations for RAG",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:57:21 GMT+0530 (India Standard Time)"
+  },
+  "M10C09": {
+    "title": "Transactions, updates, deletes and index synchronization",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:57:29 GMT+0530 (India Standard Time)"
   }
 }

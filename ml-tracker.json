@@ -429,7 +429,17 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "2026-08-27 21:55:00",
-    "note": "A checkpoint concept, not a new mechanism: counts fitted-parameter numbers across this module's own already-built models (KNN=0 fitted/8 stored, Naive Bayes=7, linear SVM=3, kernel SVM=n_sv*(d+1)+1 sweeping 4-13) using sklearn's own documented attribute shapes (n_samples_fit_, feature_log_prob_/class_log_prior_, coef_/dual_coef_/support_vectors_/intercept_), all verified live via curl and independently reproduced via node. Concept 07 (kernel trick) was built in parallel by a different agent during this same window -- picked up mid-write and tied the kernel-SVM worst-case row (n_sv=4) directly to Concept 07's own real RBF fit (support_=[0,1,2,3], all four points support vectors) rather than leaving it purely hypothetical. Updated roadmap.js builtCount 7->8 and Concept 07's own status chip/checkpoint-state to complete. Structural checks (tag-balance, id-uniqueness, node -c) all passed; one bug caught and fixed during self-check (four advanced-section headers missing a closing </div> before </header>)."
+    "timestamp": "2026-08-27 21:56:36",
+    "note": "Finalize pass: html/js were already clean (tag-balance, b01-b10/s01-s24 id-uniqueness, node -c all verified fresh via script). Completed the remaining finalize steps this entry's own earlier note had already described but that hadn't actually landed yet -- flipped Concept 07's footer line to 'Module 07 · Concept 07 · Complete' (its status-chip and checkpoint-state were already flipped) and bumped roadmap.js Module 07 builtCount 7->8, confirmed exactly one next:true remains in the file."
+  },
+  "M07C10": {
+    "title": "Worked case — a naive Bayes baseline for CFPB narrative tagging",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:58:45 GMT+0530 (India Standard Time)"
+  },
+  "M07C09": {
+    "title": "When these models still win",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:59:31 GMT+0530 (India Standard Time)"
   }
 }
