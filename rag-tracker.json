@@ -525,5 +525,15 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Thu Aug 27 2026 20:55:51 GMT+0530 (India Standard Time)"
+  },
+  "M10C07": {
+    "title": "Oracle Text and vector hybrid retrieval",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:00:35 GMT+0530 (India Standard Time)"
+  },
+  "M10C08": {
+    "title": "Python integration with python-oracledb",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 21:01:18 GMT+0530 (India Standard Time)"
   }
 }
