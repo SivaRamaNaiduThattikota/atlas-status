@@ -437,7 +437,7 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "2026-08-27 22:44:30",
+    "timestamp": "2026-08-27 23:05:46",
     "note": "Finalize pass by a concurrent build: html/js were already complete and polished (24 sections, lab, node-verified numbers) but were written assuming Concept 09 did not exist yet -- corrected the stale self-references (b02, b10, s01, s24, fine-print, footer back-link) once Concept 09 landed, since the two concepts were built in parallel. Ledger entry added here as part of that same reconciliation."
   },
   "M07C09": {

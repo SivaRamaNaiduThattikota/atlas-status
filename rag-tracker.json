@@ -150,7 +150,7 @@
     "timestamp": "Sat Aug 22 2026 22:30:16 GMT+0530 (India Standard Time)"
   },
   "M05C05": {
-    "title": "TF\u00e2\u20ac\u201cIDF derivation",
+    "title": "TFâ€“IDF derivation",
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
@@ -283,7 +283,7 @@
     "timestamp": "Sun Aug 23 2026 12:14:38 GMT+0530 (India Standard Time)"
   },
   "M07C05": {
-    "title": "Chunk size as a precision\u00e2\u20ac\u201ccontext trade-off",
+    "title": "Chunk size as a precisionâ€“context trade-off",
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
@@ -297,7 +297,7 @@
     "timestamp": "Sun Aug 23 13:17:56 IST 2026"
   },
   "M07C07": {
-    "title": "Parent-document, parent\u00e2\u20ac\u201cchild and small-to-big retrieval",
+    "title": "Parent-document, parentâ€“child and small-to-big retrieval",
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
@@ -447,7 +447,7 @@
     "note": "Manual takeover after the write stage genuinely stalled (transcript stale 7+ min past the 2-min threshold, no files on disk, confirmed independently before and after the monitor's own report). Research plan (agent a8fea400ccaa34bc7) had already fully verified every number via node before the stall -- files written directly from that plan, independently re-verified a second time by the main session before writing, structural checks (tag-balance, id-uniqueness, node -c) all passed."
   },
   "M09C06": {
-    "title": "Recall\u00e2\u20ac\u201clatency\u00e2\u20ac\u201cmemory trade-offs",
+    "title": "Recallâ€“latencyâ€“memory trade-offs",
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
@@ -542,8 +542,11 @@
   },
   "M10C10": {
     "title": "Oracle security and operational considerations for RAG",
-    "status": "built",
-    "timestamp": "Thu Aug 27 2026 22:47:58 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Thu Aug 27 2026 23:06:18 GMT+0530 (India Standard Time)",
+    "note": "Reconciled: was built out-of-order ahead of M10C09; now that C09 is done, in-page gap-disclosure language was updated to reflect the closed gap, C09 was flipped to complete, and roadmap.js builtCount bumped 9->10."
   },
   "M10C09": {
     "title": "Transactions, updates, deletes and index synchronization",
