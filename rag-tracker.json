@@ -518,5 +518,10 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Thu Aug 27 20:21:50 IST 2026"
+  },
+  "M10C06": {
+    "title": "Exact search and Oracle vector indexes",
+    "status": "researching",
+    "timestamp": "Thu Aug 27 2026 20:24:44 GMT+0530 (India Standard Time)"
   }
 }
