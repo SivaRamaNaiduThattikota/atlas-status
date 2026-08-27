@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-27 15:19",
-  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One RAG Atlas batch (Module 09 Concepts 09-10) is still running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-27 17:25",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. Module 09 Concepts 09-10 finished and closed the module; Module 10 Concept 01 opened it but stopped early (write overload) and was finished by hand. A fresh batch (Module 10 Concepts 02-04) is running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
@@ -352,6 +352,33 @@
       "durationMs": 6154797,
       "estimatedCostLowUSD": 22.16,
       "estimatedCostHighUSD": 22.16
+    },
+    {
+      "label": "Batch run — Module 09 Concepts 09-10",
+      "outcome": "Covered 2 concepts: \"Replication, sharding and consistency\", \"Capacity planning and benchmarking\". 6/6 agents succeeded, 0 errors -- Concept 09's write stage went quiet once mid-run and the pipeline's own retry relaunched a fresh write agent that completed cleanly, no manual takeover needed. CLOSES MODULE 09 (10/10). Opens Module 10 (\"RAG databases & vector-store implementation\", 14 concepts). totalTokens/toolUses/durationMs/agent_count below are the workflow's own completion-notification figures (subagent_tokens=770912, tool_uses=155, duration_ms=4639091, agent_count=6), relayed as the authoritative real count; estimated cost is a range (not a precise single figure) since only the combined token count was available for this entry, not the full per-agent input/output/cache-read/cache-write split.",
+      "totalTokens": 770912,
+      "toolUses": 155,
+      "durationMs": 4639091,
+      "estimatedCostLowUSD": 5.6,
+      "estimatedCostHighUSD": 6.5
+    },
+    {
+      "label": "Batch run — Module 10 Concept 01 (new 5-phase research architecture)",
+      "outcome": "First batch under the new decomposed-research pipeline (Context -> parallel References/WorkedExample/LabDesign -> Synthesis -> Write -> Finalize). Covered \"Vector store versus vector database versus search engine\", opening Module 10. Stopped early, not failed -- the write stage self-reported an interrupt (too much work for one agent: two large files plus new CSS) and correctly halted rather than writing corrupted output; 0 errors otherwise. Finished by hand: the research plan itself was sound, just oversized for one write pass -- reconciled 3 flagged citation issues and wrote both files, verified structurally. Concepts 2-4 relaunched with a fix constraining LabDesign sub-agents to reuse only existing lesson.css classes. totalTokens/toolUses/durationMs/agent_count below are the workflow's own completion-notification figures (subagent_tokens=567261, tool_uses=163, duration_ms=2983122, agent_count=6); estimated cost is a range since only the combined token count was available, not the per-agent input/output/cache split.",
+      "totalTokens": 567261,
+      "toolUses": 163,
+      "durationMs": 2983122,
+      "estimatedCostLowUSD": 4.1,
+      "estimatedCostHighUSD": 4.8
+    },
+    {
+      "label": "Module 10 Concept 01 finished manually in-conversation (not a separate workflow run)",
+      "outcome": "Done -- reused the interrupted write agent's own sound research plan, reconciled 3 flagged citation issues, wrote both files by hand, verified structurally (tag balance, section ids, node -c). Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
+      "totalTokens": 0,
+      "toolUses": 0,
+      "durationMs": 0,
+      "estimatedCostLowUSD": 0,
+      "estimatedCostHighUSD": 0
     }
   ]
 }
