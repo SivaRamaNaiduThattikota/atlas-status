@@ -314,5 +314,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "Mon, Aug 24, 2026 11:12:09 AM"
+ },
+ "M06C05": {
+  "title": "Odds, log-odds and coefficients",
+  "status": "researching",
+  "timestamp": "2026-08-27 12:02:00"
  }
 }
