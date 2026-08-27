@@ -360,7 +360,9 @@
  },
  "M06C11": {
   "title": "Assumptions and their violations",
-  "status": "writing",
-  "timestamp": "2026-08-27 16:25:15"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 16:36:31"
  }
 }
