@@ -391,7 +391,9 @@
  },
  "M07C03": {
   "title": "Naive Bayes and the independence assumption",
-  "status": "writing",
-  "timestamp": "Thu, Aug 27, 2026  6:55:07 PM"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 19:04:30"
  }
 }
