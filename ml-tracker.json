@@ -328,5 +328,10 @@
   "htmlExists": true,
   "jsExists": true,
   "timestamp": "2026-08-27 12:50:16"
+ },
+ "M06C07": {
+  "title": "Linear and quadratic discriminant analysis",
+  "status": "researching",
+  "timestamp": "Thu, Aug 27, 2026 12:58:24 PM"
  }
 }
