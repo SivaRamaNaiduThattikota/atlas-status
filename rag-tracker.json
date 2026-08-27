@@ -470,7 +470,14 @@
   },
   "M09C09": {
     "title": "Replication, sharding and consistency",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Thu Aug 27 2026 15:37:10 GMT+0530 (India Standard Time)"
+  },
+  "M09C10": {
+    "title": "Capacity planning and benchmarking",
     "status": "researching",
-    "timestamp": "Thu Aug 27 2026 14:55:58 GMT+0530 (India Standard Time)"
+    "timestamp": "Thu Aug 27 2026 15:41:19 GMT+0530 (India Standard Time)"
   }
 }
