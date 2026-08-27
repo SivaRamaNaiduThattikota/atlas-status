@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-27 17:27",
-  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. Module 06 Concepts 09-12 finished and closed the module (Concept 12 stopped via TaskStop and finished by hand). A fresh batch (Module 07 Concepts 01-04, opening the new module) is running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-27 15:19",
+  "note": "Manually/cron-updated after each workflow run — not a live meter. Combined token counts give a cost range, not an exact figure. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One ML Atlas batch (Module 06 Concepts 09-12) is still running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 01 Concepts 2-4",
@@ -226,24 +226,6 @@
       "durationMs": 7655933,
       "estimatedCostLowUSD": 25.85,
       "estimatedCostHighUSD": 25.85
-    },
-    {
-      "label": "Batch run — Module 06 Concepts 09-12 (stopped via TaskStop, no clean total)",
-      "outcome": "Covered 4 concepts: \"Softmax and multiclass cross-entropy\", \"When linear models win\", \"Assumptions and their violations\", \"Worked case — a logistic baseline for CFPB relief prediction\". Concepts 09-11 built cleanly; Concept 12's research stage stalled (confirmed independently), and the batch was stopped via TaskStop before any completion notification arrived, so no authoritative real-usage total is available for this run -- unlike the failure-notification entries elsewhere in this log, this one was cut off mid-flight rather than returning its own figures. CLOSES MODULE 06 (12/12). Opens Module 07 (\"Instance-based & probabilistic models\", 10 concepts). Cost below is a rough range for the 3 clean concepts plus the partial Concept 12 research, not a metered figure.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 16,
-      "estimatedCostHighUSD": 24
-    },
-    {
-      "label": "Module 06 Concept 12 finished manually in-conversation (not a separate workflow run)",
-      "outcome": "Done -- salvaged the stalled research agent's partial work (weights, the real CFPB field citation), designed a fresh verified 8-row dataset, wrote both files by hand. Cost is part of ongoing conversation usage, not a discrete metered run, so not counted as a separate line item here.",
-      "totalTokens": 0,
-      "toolUses": 0,
-      "durationMs": 0,
-      "estimatedCostLowUSD": 0,
-      "estimatedCostHighUSD": 0
     }
   ]
 }
