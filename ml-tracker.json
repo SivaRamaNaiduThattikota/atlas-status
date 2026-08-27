@@ -346,7 +346,9 @@
   },
   "M06C09": {
     "title": "Softmax and multiclass cross-entropy",
-    "status": "writing",
-    "timestamp": "2026-08-27 15:11:21"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-27 15:20:10"
   }
 }
