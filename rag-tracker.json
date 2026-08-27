@@ -545,8 +545,8 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Thu Aug 27 2026 23:06:18 GMT+0530 (India Standard Time)",
-    "note": "Reconciled: was built out-of-order ahead of M10C09; now that C09 is done, in-page gap-disclosure language was updated to reflect the closed gap, C09 was flipped to complete, and roadmap.js builtCount bumped 9->10."
+    "timestamp": "Thu Aug 27 2026 23:07:19 GMT+0530 (India Standard Time)",
+    "note": "Contiguity held: M10C01-M10C09 were all already status done in the tracker, so the built set through this concept (1-10) is fully contiguous. Flipped Concept 09 to complete (status-chip + footer) and bumped roadmap.js Module 10 builtCount to 10, matching the Concept 07/08 pattern -- both were already in place from a prior session pass, verified rather than re-applied."
   },
   "M10C09": {
     "title": "Transactions, updates, deletes and index synchronization",
