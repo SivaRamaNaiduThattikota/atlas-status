@@ -434,12 +434,18 @@
   },
   "M07C10": {
     "title": "Worked case — a naive Bayes baseline for CFPB narrative tagging",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 21:58:45 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-27 22:44:30",
+    "note": "Finalize pass by a concurrent build: html/js were already complete and polished (24 sections, lab, node-verified numbers) but were written assuming Concept 09 did not exist yet -- corrected the stale self-references (b02, b10, s01, s24, fine-print, footer back-link) once Concept 09 landed, since the two concepts were built in parallel. Ledger entry added here as part of that same reconciliation."
   },
   "M07C09": {
     "title": "When these models still win",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 21:59:31 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-27 22:38:49",
+    "note": "Built as a synthesis/decision-grid concept, not a new mechanism -- reuses Concepts 01,03,06,07,08 own numbers verbatim, extends Concept 08 fixed-N=4 cost snapshot into a variable-N sweep (verified via node script, cross-checked against Concept 08 8/7/3/13 and Concept 03 7-vs-19/41-vs-461), and flags Concept 01 curse-of-dimensionality ratios as cited not re-derived. The Regime Dial lab (lesson-07-09.js) sweeps N=1..8. Flipped Concept 08 status-chip/checkpoint-state/footer to Complete and added its forward link; bumped roadmap.js Module 07 builtCount 8->9."
   }
 }
