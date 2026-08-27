@@ -514,7 +514,9 @@
   },
   "M10C05": {
     "title": "Oracle AI Database VECTOR type and vector-distance SQL",
-    "status": "researching",
-    "timestamp": "Thu Aug 27 2026 19:57:46"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Thu Aug 27 20:21:50 IST 2026"
   }
 }
