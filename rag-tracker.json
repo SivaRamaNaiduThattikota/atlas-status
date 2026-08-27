@@ -503,5 +503,10 @@
     "htmlExists": true,
     "jsExists": true,
     "timestamp": "Thu Aug 27 2026 18:09:18 GMT+0530 (India Standard Time)"
+  },
+  "M10C04": {
+    "title": "Metadata, tenant and authorization filters in SQL",
+    "status": "researching",
+    "timestamp": "Thu, Aug 27, 2026  6:10:28 PM"
   }
 }
