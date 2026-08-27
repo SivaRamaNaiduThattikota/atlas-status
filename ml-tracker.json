@@ -1,359 +1,361 @@
 {
-  "M02C01": {
-    "title": "Why accuracy lies",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:03:03"
-  },
-  "M02C02": {
-    "title": "The confusion matrix from first principles",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:05:48"
-  },
-  "M02C03": {
-    "title": "Precision, recall and F1",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:08:13"
-  },
-  "M02C04": {
-    "title": "ROC-AUC and PR-AUC",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 18:05:00",
-    "note": "Agent finished all research + wrote the JS lab + verified both AUC numbers two independent ways each, but got force-terminated before writing the HTML file. Completed manually reusing that work directly -- no research redone."
-  },
-  "M02C07": {
-    "title": "Choosing a metric for a business problem",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 19:10:00"
-  },
-  "M02C08": {
-    "title": "Metric-target misalignment and Goodhart's law",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 21:10:00",
-    "note": "Agent's own attempt got cut off before writing any files -- completed manually reusing its fully-verified plan (curl-checked references, hand-verified optimization-pressure simulation), independently re-verified before use."
-  },
-  "M02C05": {
-    "title": "Regression metrics — MAE, RMSE and R²",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:32:00",
-    "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but its tracker checkpoint entry was never written (a recurring gap in this log, no functional impact)."
-  },
-  "M02C06": {
-    "title": "Calibration — what a probability actually means",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 17:45:00",
-    "note": "Backfilled -- same tracker-write gap as M02C05."
-  },
-  "M02C09": {
-    "title": "Statistical versus practical significance",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:05:00"
-  },
-  "M02C10": {
-    "title": "Worked case — choosing CFPB Model 1's metric",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 22:40:00",
-    "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying candidate A/B's precision/recall/F1 from raw confusion-matrix counts before use. MODULE 02 COMPLETE (10/10), closing Phase 1 -- pushed to GitHub."
-  },
-  "M03C01": {
-    "title": "EDA as a discipline, not a checklist",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 15:45:33"
-  },
-  "M03C02": {
-    "title": "Univariate and bivariate analysis",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22"
-  },
-  "M03C03": {
-    "title": "Missing data mechanisms — MCAR, MAR and MNAR",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 16:56:20"
-  },
-  "M03C04": {
-    "title": "Outlier detection",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-22 23:40:00",
-    "note": "Agent got force-stopped before writing any files under the 1-attempt/15-minute policy -- it had already verified 3 references (NIST outlier detection, scipy zscore, CFPB complaint process) that stayed cached under this concept's name. Built manually from scratch: z-score vs. IQR on a 9-value CFPB resolution-time sample (3,4,4,5,5,6,6,7,45), with the exact ceiling on a single point's z-score, (n-1)/sqrt(n), derived and independently verified via script (sample std ddof=1, z=2.655, ceiling=2.667, both under threshold 3; IQR upper bound=9, correctly flags 45). Concept 05's earlier 'researching' entry reflected a different agent that was stopped before producing any file -- nothing to salvage there."
-  },
-  "M03C05": {
-    "title": "Distribution-shift red flags",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 00:50:00",
-    "note": "Serious bug found: the write stage silently retried internally 3+ times over ~23 minutes without ever returning a result (each attempt hit the same terminal-error pattern, none produced a file), yet roadmap.js's builtCount had already been bumped to 5 with no corresponding file, ledger entry, or finalize result anywhere in the run's journal -- a real instance of the exact corruption class caught (but prevented in time) on RAG M5 Concept 08. Root cause of the roadmap bump itself not fully traced (no finalize agent/result exists in the journal), but the state was definitively wrong regardless of cause. Fixed by treating the already-excellent, twice-independently-verified research plan (KS two-sample test, D=0.625, train/prod resolution-time snapshots, sample-size-scaling table, Distribution-Shift Detector lab) as ground truth and writing the lesson manually -- numbers re-verified a third time via a fresh node script before use, matching the plan exactly. Concept 04 flipped to complete; roadmap builtCount:5 is now actually true."
-  },
-  "M03C06": {
-    "title": "Correlation versus causation traps",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 01:25:56"
-  },
-  "M03C07": {
-    "title": "Diagnosing class imbalance early",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 02:07:44"
-  },
-  "M03C08": {
-    "title": "Cardinality and its consequences",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 02:22:43"
-  },
-  "M03C09": {
-    "title": "Temporal leakage in EDA",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 02:37:13"
-  },
-  "M03C10": {
-    "title": "Worked case — CFPB's real EDA findings",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 03:12:19",
-    "note": "MODULE 03 COMPLETE (10/10). Phase 2 is NOT complete -- Module 04 (Feature engineering) and Module 05 (Imbalanced data) remain. Finalize pass: roadmap.js builtCount for module 3 bumped 9→10; Module 03's own next flag and Module 04's next/builtCount are left for the user to flip separately."
-  },
-  "M04C01": {
-    "title": "What makes a feature \"good\"",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 10:10:27",
-    "note": "MODULE 04 OPENS (1/10). Finalize pass complete: roadmap.js next flipped from Module 03 to Module 04 (builtCount:1), and index.html's CURRENT STATE block rewritten for the Module 03 -> Module 04 handoff."
-  },
-  "M04C02": {
-    "title": "Encoding categorical variables",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 10:25:11"
-  },
-  "M04C03": {
-    "title": "High-cardinality encoding — out-of-fold target encoding",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 10:44:39"
-  },
-  "M04C04": {
-    "title": "Numerical scaling and transforms",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 11:26:21 GMT+0530 (India Standard Time)"
-  },
-  "M04C05": {
-    "title": "Datetime and temporal features",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 11:42:10"
-  },
-  "M04C06": {
-    "title": "Interaction and derived features",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 12:41:53"
-  },
-  "M04C07": {
-    "title": "Feature engineering versus feature leakage",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Sun Aug 23 2026 13:07:16 GMT+0530 (India Standard Time)"
-  },
-  "M04C08": {
-    "title": "Feature selection methods",
-    "status": "done",
-    "timestamp": "2026-08-23 13:37:00"
-  },
-  "M04C09": {
-    "title": "Missing values as a feature decision",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 14:36:47"
-  },
-  "M04C10": {
-    "title": "Worked case — CFPB's leakage-free intake features",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 15:20:00",
-    "note": "MODULE 04 COMPLETE (10/10). Per standing user instruction, no git commit/add/push run -- held for the user's own review before pushing."
-  },
-  "M05C01": {
-    "title": "Why imbalance breaks naive training",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 16:25:00",
-    "note": "MODULE 05 OPENS (1/9), closing module of Phase 2. Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (ΔE=TP-FP break-even identity, Model B sits exactly on the 3.4843 boundary). roadmap.js next flipped from Module 04 to Module 05 (builtCount:1)."
-  },
-  "M05C02": {
-    "title": "Resampling — oversampling, undersampling and SMOTE",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 16:55:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (18-row fold, SMOTE synthetic points (1,1.6)/(3.2,3.6), the leakage wrong-vs-right demonstration)."
-  },
-  "M05C03": {
-    "title": "Class weighting",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 17:25:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (balanced weights 2.2422/0.6435, ratio 3.4843 matching Concept 01's break-even ratio exactly)."
-  },
-  "M05C04": {
-    "title": "Threshold moving versus resampling",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 17:56:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid research plan, but independently re-verified the Model Z discrimination-floor claim across the FULL threshold sweep (0.05-0.95) and corrected it: the plan said precision never clears ~29%, but the actual ceiling across every threshold is exactly 33.3% (1/3) -- used the corrected, verified number in the lesson and lab."
-  },
-  "M05C05": {
-    "title": "Cost-sensitive learning",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 18:45:00",
-    "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (t*=1/11≈0.0909, balanced-implied threshold 0.223 via two independent derivations, $1,000 vs $150 on the fixed 10-row set), independently re-verified via node before use."
-  },
-  "M05C06": {
-    "title": "Evaluation under imbalance",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 19:02:34"
-  },
-  "M05C07": {
-    "title": "Imbalance in classical ML versus deep learning",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 19:30:00",
-    "note": "The batch's research stage genuinely stalled (transcript went quiet ~6.4+ min per monitor liveness check, tracker never advanced past 'researching'). No usable partial plan existed to salvage -- built entirely by hand from scratch, independently verifying every number via node (focal loss formula, the gamma=0-equals-class-weighting identity reproducing Concept 03's own 2.3539 to full float precision, and the 400x/2.3669x down-weighting contrast), plus verified the real Lin et al. 2017 paper's gamma=2/alpha=0.25 defaults via curl against the ar5iv full-text mirror."
-  },
-  "M05C08": {
-    "title": "Production consequences of imbalance choices",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 19:48:05"
-  },
-  "M05C09": {
-    "title": "Worked case — CFPB's product-varying relief rate",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-23 20:10:02"
-  },
-  "M06C01": {
-    "title": "Linear regression from first principles",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-24 10:02:38",
-    "note": "MODULE 06 OPENS (1/12). Finalize pass complete: roadmap.js next flipped from Module 05 to Module 06 (builtCount:1). Module 05's own 'next' flag was still true at close and has now been corrected to false. Module 05 Concept 09's status chip left untouched per this course's module-boundary convention. Module 06 not yet complete -- 11 concepts remain."
-  },
-  "M06C02": {
-    "title": "Ordinary least squares — the math",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-24 10:32:55"
-  },
-  "M06C03": {
-    "title": "Ridge and lasso regularization",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Mon, Aug 24, 2026 10:58:02 AM"
-  },
-  "M06C04": {
-    "title": "Logistic regression and the sigmoid",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Mon, Aug 24, 2026 11:12:09 AM"
-  },
-  "M06C05": {
-    "title": "Odds, log-odds and coefficients",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-27 12:23:57"
-  },
-  "M06C06": {
-    "title": "Decision boundaries — geometric intuition",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-27 12:50:16"
-  },
-  "M06C07": {
-    "title": "Linear and quadratic discriminant analysis",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Thu, Aug 27, 2026  1:44:50 PM"
-  },
-  "M06C08": {
-    "title": "Multiclass extensions",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "Thu Aug 27 2026 14:16:30 GMT+0530 (India Standard Time)",
-    "note": "Manual takeover after the write stage genuinely stalled (transcript stale 5.85+ min past the 2-min threshold, no files on disk, confirmed independently before and after the monitor's own report -- same pattern as RAG M09C05 earlier this session). Research plan had already fully verified every number via node (including a brute-force grid scan). Files written directly from that plan, independently re-verified a second time by the main session before writing. One structural bug caught and fixed during self-check: a stray closing </span> inside an <h3> tag in the Objectives section, found by the tag-balance script. Structural checks (tag-balance, id-uniqueness, node -c) all passed after the fix. MODULE 06 BATCH COMPLETE (5-8) -- Module 06 now at 8/12, not yet fully complete (12 concepts total)."
-  },
-  "M06C09": {
-    "title": "Softmax and multiclass cross-entropy",
-    "status": "done",
-    "htmlExists": true,
-    "jsExists": true,
-    "timestamp": "2026-08-27 15:20:10"
-  },
-  "M06C10": {
-    "title": "When linear models win",
-    "status": "writing",
-    "timestamp": "2026-08-27 15:49:14"
-  }
+ "M02C01": {
+  "title": "Why accuracy lies",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:03:03"
+ },
+ "M02C02": {
+  "title": "The confusion matrix from first principles",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:05:48"
+ },
+ "M02C03": {
+  "title": "Precision, recall and F1",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:08:13"
+ },
+ "M02C04": {
+  "title": "ROC-AUC and PR-AUC",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 18:05:00",
+  "note": "Agent finished all research + wrote the JS lab + verified both AUC numbers two independent ways each, but got force-terminated before writing the HTML file. Completed manually reusing that work directly -- no research redone."
+ },
+ "M02C07": {
+  "title": "Choosing a metric for a business problem",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 19:10:00"
+ },
+ "M02C08": {
+  "title": "Metric-target misalignment and Goodhart's law",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 21:10:00",
+  "note": "Agent's own attempt got cut off before writing any files -- completed manually reusing its fully-verified plan (curl-checked references, hand-verified optimization-pressure simulation), independently re-verified before use."
+ },
+ "M02C05": {
+  "title": "Regression metrics — MAE, RMSE and R²",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:32:00",
+  "note": "Backfilled -- file and roadmap builtCount confirm this concept built successfully, but its tracker checkpoint entry was never written (a recurring gap in this log, no functional impact)."
+ },
+ "M02C06": {
+  "title": "Calibration — what a probability actually means",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 17:45:00",
+  "note": "Backfilled -- same tracker-write gap as M02C05."
+ },
+ "M02C09": {
+  "title": "Statistical versus practical significance",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:05:00"
+ },
+ "M02C10": {
+  "title": "Worked case — choosing CFPB Model 1's metric",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 22:40:00",
+  "note": "Agent got cut off after research/planning only -- built manually, independently re-verifying candidate A/B's precision/recall/F1 from raw confusion-matrix counts before use. MODULE 02 COMPLETE (10/10), closing Phase 1 -- pushed to GitHub."
+ },
+ "M03C01": {
+  "title": "EDA as a discipline, not a checklist",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 15:45:33"
+ },
+ "M03C02": {
+  "title": "Univariate and bivariate analysis",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22"
+ },
+ "M03C03": {
+  "title": "Missing data mechanisms — MCAR, MAR and MNAR",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 16:56:20"
+ },
+ "M03C04": {
+  "title": "Outlier detection",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-22 23:40:00",
+  "note": "Agent got force-stopped before writing any files under the 1-attempt/15-minute policy -- it had already verified 3 references (NIST outlier detection, scipy zscore, CFPB complaint process) that stayed cached under this concept's name. Built manually from scratch: z-score vs. IQR on a 9-value CFPB resolution-time sample (3,4,4,5,5,6,6,7,45), with the exact ceiling on a single point's z-score, (n-1)/sqrt(n), derived and independently verified via script (sample std ddof=1, z=2.655, ceiling=2.667, both under threshold 3; IQR upper bound=9, correctly flags 45). Concept 05's earlier 'researching' entry reflected a different agent that was stopped before producing any file -- nothing to salvage there."
+ },
+ "M03C05": {
+  "title": "Distribution-shift red flags",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 00:50:00",
+  "note": "Serious bug found: the write stage silently retried internally 3+ times over ~23 minutes without ever returning a result (each attempt hit the same terminal-error pattern, none produced a file), yet roadmap.js's builtCount had already been bumped to 5 with no corresponding file, ledger entry, or finalize result anywhere in the run's journal -- a real instance of the exact corruption class caught (but prevented in time) on RAG M5 Concept 08. Root cause of the roadmap bump itself not fully traced (no finalize agent/result exists in the journal), but the state was definitively wrong regardless of cause. Fixed by treating the already-excellent, twice-independently-verified research plan (KS two-sample test, D=0.625, train/prod resolution-time snapshots, sample-size-scaling table, Distribution-Shift Detector lab) as ground truth and writing the lesson manually -- numbers re-verified a third time via a fresh node script before use, matching the plan exactly. Concept 04 flipped to complete; roadmap builtCount:5 is now actually true."
+ },
+ "M03C06": {
+  "title": "Correlation versus causation traps",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 01:25:56"
+ },
+ "M03C07": {
+  "title": "Diagnosing class imbalance early",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 02:07:44"
+ },
+ "M03C08": {
+  "title": "Cardinality and its consequences",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 02:22:43"
+ },
+ "M03C09": {
+  "title": "Temporal leakage in EDA",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 02:37:13"
+ },
+ "M03C10": {
+  "title": "Worked case — CFPB's real EDA findings",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 03:12:19",
+  "note": "MODULE 03 COMPLETE (10/10). Phase 2 is NOT complete -- Module 04 (Feature engineering) and Module 05 (Imbalanced data) remain. Finalize pass: roadmap.js builtCount for module 3 bumped 9→10; Module 03's own next flag and Module 04's next/builtCount are left for the user to flip separately."
+ },
+ "M04C01": {
+  "title": "What makes a feature \"good\"",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 10:10:27",
+  "note": "MODULE 04 OPENS (1/10). Finalize pass complete: roadmap.js next flipped from Module 03 to Module 04 (builtCount:1), and index.html's CURRENT STATE block rewritten for the Module 03 -> Module 04 handoff."
+ },
+ "M04C02": {
+  "title": "Encoding categorical variables",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 10:25:11"
+ },
+ "M04C03": {
+  "title": "High-cardinality encoding — out-of-fold target encoding",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 10:44:39"
+ },
+ "M04C04": {
+  "title": "Numerical scaling and transforms",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 11:26:21 GMT+0530 (India Standard Time)"
+ },
+ "M04C05": {
+  "title": "Datetime and temporal features",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 11:42:10"
+ },
+ "M04C06": {
+  "title": "Interaction and derived features",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 12:41:53"
+ },
+ "M04C07": {
+  "title": "Feature engineering versus feature leakage",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Sun Aug 23 2026 13:07:16 GMT+0530 (India Standard Time)"
+ },
+ "M04C08": {
+  "title": "Feature selection methods",
+  "status": "done",
+  "timestamp": "2026-08-23 13:37:00"
+ },
+ "M04C09": {
+  "title": "Missing values as a feature decision",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 14:36:47"
+ },
+ "M04C10": {
+  "title": "Worked case — CFPB's leakage-free intake features",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 15:20:00",
+  "note": "MODULE 04 COMPLETE (10/10). Per standing user instruction, no git commit/add/push run -- held for the user's own review before pushing."
+ },
+ "M05C01": {
+  "title": "Why imbalance breaks naive training",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 16:25:00",
+  "note": "MODULE 05 OPENS (1/9), closing module of Phase 2. Finished by hand after the batch's write stage crossed the new 2-min threshold -- reused its already-solid, independently-verified research plan (ΔE=TP-FP break-even identity, Model B sits exactly on the 3.4843 boundary). roadmap.js next flipped from Module 04 to Module 05 (builtCount:1)."
+ },
+ "M05C02": {
+  "title": "Resampling — oversampling, undersampling and SMOTE",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 16:55:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (18-row fold, SMOTE synthetic points (1,1.6)/(3.2,3.6), the leakage wrong-vs-right demonstration)."
+ },
+ "M05C03": {
+  "title": "Class weighting",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 17:25:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, twice-independently-verified research plan (balanced weights 2.2422/0.6435, ratio 3.4843 matching Concept 01's break-even ratio exactly)."
+ },
+ "M05C04": {
+  "title": "Threshold moving versus resampling",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 17:56:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid research plan, but independently re-verified the Model Z discrimination-floor claim across the FULL threshold sweep (0.05-0.95) and corrected it: the plan said precision never clears ~29%, but the actual ceiling across every threshold is exactly 33.3% (1/3) -- used the corrected, verified number in the lesson and lab."
+ },
+ "M05C05": {
+  "title": "Cost-sensitive learning",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 18:45:00",
+  "note": "Finished by hand after the batch's write stage crossed the 2-min threshold -- reused its already-solid, dual-script-verified research plan (t*=1/11≈0.0909, balanced-implied threshold 0.223 via two independent derivations, $1,000 vs $150 on the fixed 10-row set), independently re-verified via node before use."
+ },
+ "M05C06": {
+  "title": "Evaluation under imbalance",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:02:34"
+ },
+ "M05C07": {
+  "title": "Imbalance in classical ML versus deep learning",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:30:00",
+  "note": "The batch's research stage genuinely stalled (transcript went quiet ~6.4+ min per monitor liveness check, tracker never advanced past 'researching'). No usable partial plan existed to salvage -- built entirely by hand from scratch, independently verifying every number via node (focal loss formula, the gamma=0-equals-class-weighting identity reproducing Concept 03's own 2.3539 to full float precision, and the 400x/2.3669x down-weighting contrast), plus verified the real Lin et al. 2017 paper's gamma=2/alpha=0.25 defaults via curl against the ar5iv full-text mirror."
+ },
+ "M05C08": {
+  "title": "Production consequences of imbalance choices",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 19:48:05"
+ },
+ "M05C09": {
+  "title": "Worked case — CFPB's product-varying relief rate",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-23 20:10:02"
+ },
+ "M06C01": {
+  "title": "Linear regression from first principles",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-24 10:02:38",
+  "note": "MODULE 06 OPENS (1/12). Finalize pass complete: roadmap.js next flipped from Module 05 to Module 06 (builtCount:1). Module 05's own 'next' flag was still true at close and has now been corrected to false. Module 05 Concept 09's status chip left untouched per this course's module-boundary convention. Module 06 not yet complete -- 11 concepts remain."
+ },
+ "M06C02": {
+  "title": "Ordinary least squares — the math",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-24 10:32:55"
+ },
+ "M06C03": {
+  "title": "Ridge and lasso regularization",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Mon, Aug 24, 2026 10:58:02 AM"
+ },
+ "M06C04": {
+  "title": "Logistic regression and the sigmoid",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Mon, Aug 24, 2026 11:12:09 AM"
+ },
+ "M06C05": {
+  "title": "Odds, log-odds and coefficients",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 12:23:57"
+ },
+ "M06C06": {
+  "title": "Decision boundaries — geometric intuition",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 12:50:16"
+ },
+ "M06C07": {
+  "title": "Linear and quadratic discriminant analysis",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Thu, Aug 27, 2026  1:44:50 PM"
+ },
+ "M06C08": {
+  "title": "Multiclass extensions",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "Thu Aug 27 2026 14:16:30 GMT+0530 (India Standard Time)",
+  "note": "Manual takeover after the write stage genuinely stalled (transcript stale 5.85+ min past the 2-min threshold, no files on disk, confirmed independently before and after the monitor's own report -- same pattern as RAG M09C05 earlier this session). Research plan had already fully verified every number via node (including a brute-force grid scan). Files written directly from that plan, independently re-verified a second time by the main session before writing. One structural bug caught and fixed during self-check: a stray closing </span> inside an <h3> tag in the Objectives section, found by the tag-balance script. Structural checks (tag-balance, id-uniqueness, node -c) all passed after the fix. MODULE 06 BATCH COMPLETE (5-8) -- Module 06 now at 8/12, not yet fully complete (12 concepts total)."
+ },
+ "M06C09": {
+  "title": "Softmax and multiclass cross-entropy",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 15:20:10"
+ },
+ "M06C10": {
+  "title": "When linear models win",
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 16:03:26"
+ }
 }
