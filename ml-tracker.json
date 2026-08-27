@@ -422,8 +422,7 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Thu Aug 27 2026 21:32:18 GMT+0530 (India Standard Time)",
-    "note": "Worked example: 4-point ring/cross dataset (R1=(1,0),R2=(-1,0) resolve; E1=(0,4),E2=(0,-4) escalate) proven NOT linearly separable via convex-hull segment intersection, a 1,000,000-direction angular sweep, and a non-converging Perceptron (all via node). Explicit feature map phi(x1,x2)=(x1,x2,x1^2+x2^2) -- the exact map from Wikipedia Kernel_method own canonical illustration, verified live via curl -- lifts it to margin=7.500000 with all 4 points as support vectors, cross-checked with a 500,000-direction 3D brute-force sweep and live scikit-learn (linear SVC: 50% on raw vs 100% on mapped, margin 7.4995; RBF SVC: 100% directly on raw, no manual map). Kernel-equivalence K(x,x prime)=phi(x).phi(x prime) verified for all 16 pairs via node. sklearn kernel formulas (linear/poly/rbf/sigmoid) quoted verbatim from live-fetched docs. RBF infinite-dimensionality claim cited from Wikipedia, explicitly flagged as not independently re-derived. Also updated M07C06 status chip/checkpoint-state to complete, and roadmap.js builtCount 6->7."
+    "timestamp": "Thu Aug 27 2026 21:51:32 GMT+0530 (India Standard Time)"
   },
   "M07C08": {
     "title": "Complexity versus interpretability tradeoffs",
