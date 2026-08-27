@@ -324,7 +324,9 @@
  },
  "M06C06": {
   "title": "Decision boundaries — geometric intuition",
-  "status": "writing",
-  "timestamp": "2026-08-27 12:38:29"
+  "status": "done",
+  "htmlExists": true,
+  "jsExists": true,
+  "timestamp": "2026-08-27 12:50:16"
  }
 }
