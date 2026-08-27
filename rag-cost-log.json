@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-27 15:19",
-  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. One RAG Atlas batch (Module 09 Concepts 09-10) is still running as of this update and will be added once it finishes.",
+  "lastUpdated": "2026-08-27 16:15",
+  "note": "Manually updated by Claude after each workflow run/notification — not a live meter. Real usage report gives a combined token count, not a separate input/output split, so cost is shown as a range based on plausible split assumptions. Entries from 2026-08-22 onward are computed from each workflow run's actual per-agent token usage (real input/output/cache-read/cache-write counts, Sonnet-class pricing) rather than an assumed split, so those rows show a single precise figure (low=high) instead of a range. Module 09 Concepts 09-10 has finished and closed the module; that entry is now in the list below. A fresh batch (Module 10 Concepts 01-04, opening the new module) is running as of this update and will be added once it finishes.",
   "entries": [
     {
       "label": "Batch run #1 — Module 02 Concepts 1-4 (FAILED partway)",
