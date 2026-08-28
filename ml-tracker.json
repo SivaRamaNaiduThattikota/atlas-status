@@ -458,8 +458,10 @@
   },
   "M08C02": {
     "title": "Overfitting in trees — depth and pruning",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 10:42:38 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 12:05:08 GMT+0530 (India Standard Time)"
   },
   "M08C03": {
     "title": "Bagging — bootstrap aggregation",
