@@ -479,8 +479,10 @@
   },
   "M08C05": {
     "title": "Feature importance from trees",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 15:07:39 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 15:47:00 GMT+0530 (India Standard Time)"
   },
   "M08C06": {
     "title": "Boosting — the sequential-correction idea",
