@@ -620,26 +620,34 @@
   },
   "M11C05": {
     "title": "Query embedding, retrieval and candidate search",
-    "status": "built",
-    "timestamp": "Fri Aug 28 2026 16:18:34 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "timestamp": "Fri Aug 28 2026 16:18:34 GMT+0530 (India Standard Time)",
+    "htmlExists": true,
+    "jsExists": true,
+    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
   },
   "M11C06": {
     "title": "Top-k evidence selection",
-    "status": "built",
+    "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Fri Aug 28 2026 16:32:00 GMT+0530 (India Standard Time)"
+    "timestamp": "Fri Aug 28 2026 16:32:00 GMT+0530 (India Standard Time)",
+    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
   },
   "M11C07": {
     "title": "Context injection, context construction and prompt construction",
-    "status": "built",
-    "timestamp": "Fri Aug 28 2026 16:26:30 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "timestamp": "Fri Aug 28 2026 16:26:30 GMT+0530 (India Standard Time)",
+    "htmlExists": true,
+    "jsExists": true,
+    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
   },
   "M11C08": {
     "title": "LLM generation and the final answer",
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Fri Aug 28 2026 16:32:37 GMT+0530 (India Standard Time)"
+    "timestamp": "Fri Aug 28 2026 16:32:37 GMT+0530 (India Standard Time)",
+    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
   }
 }
