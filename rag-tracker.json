@@ -565,5 +565,15 @@
     "title": "Managed and specialist stores: Pinecone, Qdrant, Weaviate and Milvus",
     "status": "researching",
     "timestamp": "Fri Aug 28 2026 10:40:20 GMT+0530 (India Standard Time)"
+  },
+  "M10C13": {
+    "title": "Choosing a store by workload, governance, scale and cost",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:42:45 GMT+0530 (India Standard Time)"
+  },
+  "M10C14": {
+    "title": "Retrieval-store interfaces and database portability lab",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:43:53 GMT+0530 (India Standard Time)"
   }
 }

@@ -452,5 +452,15 @@
     "title": "Decision trees — splits and impurity measures",
     "status": "researching",
     "timestamp": "Fri Aug 28 2026 10:40:32 GMT+0530 (India Standard Time)"
+  },
+  "M08C02": {
+    "title": "Overfitting in trees — depth and pruning",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:42:38 GMT+0530 (India Standard Time)"
+  },
+  "M08C03": {
+    "title": "Bagging — bootstrap aggregation",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:44:16 GMT+0530 (India Standard Time)"
   }
 }
