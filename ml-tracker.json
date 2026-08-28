@@ -462,5 +462,10 @@
     "title": "Bagging — bootstrap aggregation",
     "status": "researching",
     "timestamp": "Fri Aug 28 2026 10:44:16 GMT+0530 (India Standard Time)"
+  },
+  "M08C04": {
+    "title": "Random forests — decorrelating trees",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:46:35 GMT+0530 (India Standard Time)"
   }
 }
