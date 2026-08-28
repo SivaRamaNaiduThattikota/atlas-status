@@ -555,5 +555,15 @@
     "jsExists": true,
     "timestamp": "Thu Aug 27 2026 23:21:31 GMT+0530 (India Standard Time)",
     "note": "Finalization pass: node -c clean, tag-balance and b01-b10/s01-s24 id-uniqueness checks both passed. Contiguity check found M10C01-M10C09 all already status done -- fully contiguous {1..9} -- so the previous concept (08) should have been flipped to complete when this one was built. Found that flip had never actually been applied (Concept 08 status-chip/footer still read \"active\" even though Concepts 09 and 10 already existed and builtCount was already 10) -- applied it now, matching the Concept 07/09 pattern exactly (status-chip + footer only, body text left as originally written). roadmap.js builtCount was already 10 (correct, reflecting Concepts 1-10 actually built) so it was left unchanged rather than regressed to 9; confirmed exactly one next:true remains in the file."
+  },
+  "M10C11": {
+    "title": "PostgreSQL and pgvector portability comparison",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:39:21 GMT+0530 (India Standard Time)"
+  },
+  "M10C12": {
+    "title": "Managed and specialist stores: Pinecone, Qdrant, Weaviate and Milvus",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 10:40:20 GMT+0530 (India Standard Time)"
   }
 }
