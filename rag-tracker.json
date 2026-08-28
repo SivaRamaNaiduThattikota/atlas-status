@@ -620,13 +620,15 @@
   },
   "M11C05": {
     "title": "Query embedding, retrieval and candidate search",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:08:21 GMT+0530 (India Standard Time)"
+    "status": "built",
+    "timestamp": "Fri Aug 28 2026 16:18:34 GMT+0530 (India Standard Time)"
   },
   "M11C06": {
     "title": "Top-k evidence selection",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:10:04 GMT+0530 (India Standard Time)"
+    "status": "built",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 16:32:00 GMT+0530 (India Standard Time)"
   },
   "M11C07": {
     "title": "Context injection, context construction and prompt construction",
