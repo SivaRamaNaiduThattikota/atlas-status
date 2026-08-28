@@ -522,5 +522,10 @@
     "title": "Hyperparameters that matter most",
     "status": "researching",
     "timestamp": "Fri Aug 28 2026 16:44:38 GMT+0530 (India Standard Time)"
+  },
+  "M08C12": {
+    "title": "Worked case — gradient boosting for CFPB's relief-risk model",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 16:45:09 GMT+0530 (India Standard Time)"
   }
 }
