@@ -515,13 +515,15 @@
   },
   "M08C09": {
     "title": "XGBoost versus LightGBM — what's actually different",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:42:22 GMT+0530 (India Standard Time)"
+    "status": "built",
+    "timestamp": "Fri Aug 28 2026 16:56:03 GMT+0530 (India Standard Time)"
   },
   "M08C11": {
     "title": "Hyperparameters that matter most",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:44:38 GMT+0530 (India Standard Time)"
+    "status": "written",
+    "timestamp": "Fri Aug 28 2026 16:44:38 GMT+0530 (India Standard Time)",
+    "file": "mlatlas/lessons/module-08-concept-11.html",
+    "completedAt": "Fri Aug 28 2026 16:57:21 GMT+0530 (India Standard Time)"
   },
   "M08C12": {
     "title": "Worked case — gradient boosting for CFPB's relief-risk model",

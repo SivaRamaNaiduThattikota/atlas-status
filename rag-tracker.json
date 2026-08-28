@@ -637,10 +637,10 @@
   "M11C07": {
     "title": "Context injection, context construction and prompt construction",
     "status": "done",
-    "timestamp": "Fri Aug 28 2026 16:26:30 GMT+0530 (India Standard Time)",
     "htmlExists": true,
     "jsExists": true,
-    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
+    "timestamp": "Fri Aug 28 2026 16:54:44 GMT+0530 (India Standard Time)",
+    "note": "Finalization pass on module-11-concept-07.html/lesson-11-07.js: node -c clean, tag-balance and b01-b10/s01-s24 id-uniqueness checks both passed. Flipped Concept 06's status-chip/footer to complete (it was still 'active' despite the tracker already marking M11C06 done). Found roadmap.js Module 11 builtCount already at 8, and module-11-concept-08.html/lesson-11-08.js already fully built on disk (a prior session's race-condition fix note for M11C05 already describes bumping builtCount 4->8 in one shot to cover the concurrent C04-C08 batch) -- left builtCount at 8 rather than regressing it to 7, matching the M10C09/M10C11 precedent of never rolling back an already-correct, more-advanced count. Concept 07's own status-chip/footer was left as 'active' (not flipped to complete) since flipping the previous concept on a finalize pass is Concept 08's own finalize task's responsibility, symmetric to this task flipping Concept 06."
   },
   "M11C08": {
     "title": "LLM generation and the final answer",
