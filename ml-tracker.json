@@ -465,8 +465,10 @@
   },
   "M08C03": {
     "title": "Bagging — bootstrap aggregation",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 10:44:16 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 12:11:06 GMT+0530 (India Standard Time)"
   },
   "M08C04": {
     "title": "Random forests — decorrelating trees",
