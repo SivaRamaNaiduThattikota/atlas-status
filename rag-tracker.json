@@ -632,8 +632,8 @@
   },
   "M11C07": {
     "title": "Context injection, context construction and prompt construction",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:10:08 GMT+0530 (India Standard Time)"
+    "status": "built",
+    "timestamp": "Fri Aug 28 2026 16:26:30 GMT+0530 (India Standard Time)"
   },
   "M11C08": {
     "title": "LLM generation and the final answer",
