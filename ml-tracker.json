@@ -450,8 +450,11 @@
   },
   "M08C01": {
     "title": "Decision trees — splits and impurity measures",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 10:40:32 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "2026-08-28 11:20:00",
+    "note": "MODULE 08 OPENS (1/12). Reused the exact 10-row CFPB dataset from Module 06 Concept 06 / Module 07 Concept 01 (prior_contact_attempts, satisfaction_score, relief/no-relief) rather than inventing a fresh toy set, per the scope package's own reuse recommendation. Root Gini 0.48 / entropy 0.970951, and an exhaustive threshold scan on both features (the same greedy midpoint search scikit-learn's own tree docs describe) independently verified via node: best x1 split at t=2.25 reaches Gini 0 on both children (gain 0.48, the maximum possible), 13.5x the best x2 split (t=4.25, gain 0.035556). Also verified, and used honestly rather than hidden, that Gini and entropy tie at t=0.75/t=5.25 on Gini gain (0.08 both) but disagree on info gain (0.144484 vs 0.170951) -- a real, non-overclaimed nuance. The Split Finder lab (lesson-08-01.js) re-runs the same exhaustive scan live on either feature. Structural checks (tag-balance, id-uniqueness across 52 ids, node -c) all passed. roadmap.js Module 08 builtCount bumped 0->1; Module 07 was already next:false / Module 08 already next:true from the prior module's own finalize pass, so no roadmap module-boundary flip was needed here."
   },
   "M08C02": {
     "title": "Overfitting in trees — depth and pruning",
