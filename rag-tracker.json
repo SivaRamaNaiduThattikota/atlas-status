@@ -604,8 +604,11 @@
   },
   "M11C03": {
     "title": "Document chunking and embedding flow",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 14:23:27 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 14:54:04 GMT+0530 (India Standard Time)",
+    "note": "Closes the gap left by the out-of-order M11C04 build. Fresh Oracle Order Management passage run against real all-MiniLM-L6-v2 weights (not approximated): overlap=6 (below the 10-word fact) keeps the fact intact in 0 of 4 chunks; overlap=10 (at the fact length) keeps it intact in 2 of 6 -- proving the overlap-sizing guarantee is a floor, not a ceiling. Manual tokenize-contextualize-pool matches model.encode() to float32 noise (cosine 1.0000001). Reconciled M11C04 in-page gap-disclosure language (POSITION, Section 01, MODULE STATE, b10, beginner-memory, checkpoint, fine-print) to reflect the closed gap, matching the M10C08/M10C10 precedent. Flipped C02 to complete. roadmap.js builtCount bumped 2->4."
   },
   "M11C04": {
     "title": "Vector database and vector-store persistence",
