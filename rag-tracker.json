@@ -605,11 +605,14 @@
   "M11C03": {
     "title": "Document chunking and embedding flow",
     "status": "researching",
-    "timestamp": "Fri Aug 28 2026 13:41:29 GMT+0530 (India Standard Time)"
+    "timestamp": "Fri Aug 28 2026 14:23:27 GMT+0530 (India Standard Time)"
   },
   "M11C04": {
     "title": "Vector database and vector-store persistence",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 13:42:43 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 14:21:30 GMT+0530 (India Standard Time)",
+    "note": "Built out of sequence -- Concept 03 (document chunking and embedding flow) not yet authored. builtCount deliberately held at 2, not advanced to 4, to avoid a dead-link/wrongly-complete gap (matching the M10C08/M10C10 precedent). Gap flagged in-page (POSITION line, Section 01, MODULE STATE, checkpoint, fine-print). Chunk c007 reused from Module 10 Concept 14 own adapter code, not from Concept 03, so nothing here depends on the missing concept."
   }
 }
