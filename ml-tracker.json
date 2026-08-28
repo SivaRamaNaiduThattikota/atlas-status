@@ -510,24 +510,34 @@
   },
   "M08C10": {
     "title": "Stacking and blending heterogeneous models",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 16:41:54 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 16:41:54 GMT+0530 (India Standard Time)",
+    "note": "Write-stage agent (a607e7023f69683c2 in wf_f892bf4e-1c8) crossed the strict 2-minute stall threshold with zero output files. TaskStop'd the workflow, extracted the cached Synthesis result (agentId adb19f40fbb7b3177) from journal.jsonl, and hand-wrote module-08-concept-10.html + lesson-08-10.js from it. The Synthesis merge caught and corrected a real bug in the upstream lab-design output: its BASE_VOTES (knn:0,nb:1,tree:1) and 'row H truth is 1' comment contradicted the module's own canonical data (row H y=0) and the worked-example agent's own verified numbers (NB pred=0, stump pred=1) -- corrected to BASE_VOTES {knn:0,nb:0,tree:1} with truth check predicted===0, and dropped an unverified SVM leg the lab design invented but never computed. Structural self-checks passed: tag-balance, b01-10/s01-24 id-uniqueness (61 total ids, no dupes), node -c on the JS, and every getElementById reference (templated and static) cross-checked against the HTML's actual ids."
   },
   "M08C09": {
     "title": "XGBoost versus LightGBM — what's actually different",
-    "status": "built",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
     "timestamp": "Fri Aug 28 2026 16:56:03 GMT+0530 (India Standard Time)"
   },
   "M08C11": {
     "title": "Hyperparameters that matter most",
-    "status": "written",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
     "timestamp": "Fri Aug 28 2026 16:44:38 GMT+0530 (India Standard Time)",
     "file": "mlatlas/lessons/module-08-concept-11.html",
-    "completedAt": "Fri Aug 28 2026 16:57:21 GMT+0530 (India Standard Time)"
+    "completedAt": "Fri Aug 28 2026 16:57:21 GMT+0530 (India Standard Time)",
+    "note": "Files (html+js) and ledger entry confirmed complete on direct inspection; status normalized from stale 'written' to 'done' -- this was the Finalize-stage status-field-never-flipped symptom flagged in the finalize-race-condition memory, not a content issue."
   },
   "M08C12": {
     "title": "Worked case — gradient boosting for CFPB's relief-risk model",
-    "status": "complete",
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
     "timestamp": "Fri Aug 28 2026 17:07:50 GMT+0530 (India Standard Time)"
   }
 }
