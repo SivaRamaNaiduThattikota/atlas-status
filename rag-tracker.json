@@ -631,8 +631,7 @@
     "status": "done",
     "htmlExists": true,
     "jsExists": true,
-    "timestamp": "Fri Aug 28 2026 16:32:00 GMT+0530 (India Standard Time)",
-    "note": "Content/write stage completed cleanly (no manual takeover needed), but this batch's concurrent Finalize calls raced on shared files (roadmap.js, previous concept's HTML) -- builtCount never advanced past 4 and status-chip flips never landed for C04-C07, despite each Finalize agent reporting success. Diagnosed and fixed directly: verified all 4 concepts structurally (tag-balance/id-uniqueness/node -c, all clean), flipped C04-C07 status-chips/footers to complete, bumped roadmap.js builtCount 4->8, corrected tracker status to done/htmlExists/jsExists, and added the two missing ledger entries (C07/C08) the same race had dropped."
+    "timestamp": "Fri Aug 28 2026 17:01:15 GMT+0530 (India Standard Time)"
   },
   "M11C07": {
     "title": "Context injection, context construction and prompt construction",
