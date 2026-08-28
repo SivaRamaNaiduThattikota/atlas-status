@@ -587,5 +587,15 @@
     "jsExists": true,
     "timestamp": "Fri Aug 28 2026 13:05:00 GMT+0530 (India Standard Time)",
     "note": "Contiguity check: M10C01-M10C13 all already status done, so the built set through this concept is fully contiguous {1..14} -- Module 10 is now COMPLETE. Flipped Concept 13's status-chip/footer to complete (matching the Concept 11/12 pattern) and bumped roadmap.js Module 10 builtCount from 13 to 14. node -c clean on the JS; tag-balance (27 tag types checked) and b01-b10/s01-s24 id-uniqueness checks both passed on the HTML. Designed a 3-method store-agnostic interface (upsert/query/delete) anchored to Concept 01's own already-cited LangChain VectorStore ABC (add_texts/similarity_search/delete) rather than inventing a contract from nothing, then implemented it for Oracle (python-oracledb, reusing Concepts 08-09's exact cited syntax verbatim, no new fetch), pgvector (via psycopg -- a real Python driver Concept 11 never cited, since C11 only ever used raw SQL; psycopg's own 'Basic module usage' doc fetched live this session via curl, HTTP 200, quoted verbatim for the connect()/cursor()/execute()/commit() shape and %s placeholder syntax), and Pinecone (reusing Concept 12's own upsert/query citations verbatim; added one new live-verified citation, HTTP 200 via curl, for index.delete(ids=..., namespace=...) from Pinecone's own delete-data guide, never cited in this course before now; also re-confirmed the results.matches return attribute against Pinecone's own README). Named the three real things that stay outside the interface's contract in all three adapters -- schema DDL, index DDL, tenant mechanism -- the same three things Concepts 11 and 12 already found breaking independently; no new claim invented, only organized. WebFetch/WebSearch were blocked in this environment as usual; curl to raw.githubusercontent.com and docs.pinecone.io/psycopg.org (all HTTP 200) was the verification fallback, consistent with this project's established method. Flag: the upstream scoping note for this task described M10C13 as still 'status: researching', but the tracker's own M10C13 entry was already 'status: done' (with its own full completion note) by the time this task actually read the file -- C13 finished between when the scoping snapshot was taken and when this task started. C13's HTML/JS were confirmed already correct and complete; only its status-chip/footer text (still reading 'active') was flipped to 'complete' as part of this task, matching the pattern every prior concept used on the one before it."
+  },
+  "M11C01": {
+    "title": "End-to-end basic RAG pipeline and architecture",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 13:38:41 GMT+0530 (India Standard Time)"
+  },
+  "M11C02": {
+    "title": "Document ingestion and index construction workflow",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 13:39:07 GMT+0530 (India Standard Time)"
   }
 }
