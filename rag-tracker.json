@@ -597,5 +597,15 @@
     "title": "Document ingestion and index construction workflow",
     "status": "researching",
     "timestamp": "Fri Aug 28 2026 13:39:07 GMT+0530 (India Standard Time)"
+  },
+  "M11C03": {
+    "title": "Document chunking and embedding flow",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 13:41:29 GMT+0530 (India Standard Time)"
+  },
+  "M11C04": {
+    "title": "Vector database and vector-store persistence",
+    "status": "researching",
+    "timestamp": "Fri Aug 28 2026 13:42:43 GMT+0530 (India Standard Time)"
   }
 }
