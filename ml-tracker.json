@@ -472,7 +472,9 @@
   },
   "M08C04": {
     "title": "Random forests — decorrelating trees",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 10:46:35 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 12:20:24 GMT+0530 (India Standard Time)"
   }
 }
