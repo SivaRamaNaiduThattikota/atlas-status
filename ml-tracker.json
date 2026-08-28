@@ -502,7 +502,10 @@
   },
   "M08C08": {
     "title": "Gradient boosting — fitting residuals",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 15:10:57 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 16:04:01 GMT+0530 (India Standard Time)",
+    "note": "Hand-written from a cached Synthesis that predated C05-C07 (self-flagged this gap; filled in the real C06/C07 recap and a real AdaBoost comparison row in s20, since those concepts now exist). Two node-verified rounds of gradient boosting on the shared 8-row table: F0=0.375, round1 x1<=2.5 (SSE reduction 1.125) -> F1, round2 x1<=3.5 (SSE reduction 0.510417) -> F2. Row H residual drifts -0.375->-0.5625->-0.489583 (non-monotonic, explicitly not generalized). Train acc 5/8->7/8(miss H)->7/8(miss C, since C and H land on identical 0.489583). Lab deliberately capped at rounds 0-2 per the synthesis own safe-fallback recommendation -- rounds 3-4 were flagged as unverified placeholders and dropped rather than shipped. Flipped C07 to complete. roadmap.js builtCount bumped 7->8."
   }
 }
