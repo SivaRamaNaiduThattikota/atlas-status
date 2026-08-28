@@ -566,8 +566,11 @@
   },
   "M10C12": {
     "title": "Managed and specialist stores: Pinecone, Qdrant, Weaviate and Milvus",
-    "status": "researching",
-    "timestamp": "Fri Aug 28 2026 10:40:20 GMT+0530 (India Standard Time)"
+    "status": "done",
+    "htmlExists": true,
+    "jsExists": true,
+    "timestamp": "Fri Aug 28 2026 11:49:34 GMT+0530 (India Standard Time)",
+    "note": "Contiguity check: M10C01-M10C11 all already status done, so the built set through this concept is fully contiguous {1..12}. Flipped Concept 11's status-chip/footer to complete (matching the Concept 10 pattern) and bumped roadmap.js Module 10 builtCount from 11 to 12. node -c clean; tag-balance and b01-b10/s01-s24 id-uniqueness checks both passed. All API-shape claims (Pinecone and Qdrant GitHub client READMEs; Weaviate client source files executor.py and config_vectors.py via raw.githubusercontent.com; Weaviate docs.weaviate.io similarity and multi-tenancy pages; Milvus quickstart.md and multi_tenancy.md; Pinecone upsert-data and filter-by-metadata guides; Qdrant filtering docs) re-fetched live this session, HTTP 200 each. Milvus's database-level/partition-key-level multi-tenancy alternatives are named and cited but explicitly flagged as not coded/verified at the exact FieldSchema syntax level this session."
   },
   "M10C13": {
     "title": "Choosing a store by workload, governance, scale and cost",
